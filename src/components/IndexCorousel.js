@@ -10,7 +10,7 @@ class IndexCorousel extends Component{
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="https://www.campusvarta.com/wp-content/uploads/2019/06/Patna-University-Campus-Varta-31.jpg"
+                src="https://i.ibb.co/CHgTjYS/pexels-pixabay-2478.jpg"
                 alt="Patna University"
                 />
                 <Carousel.Caption>
@@ -21,7 +21,7 @@ class IndexCorousel extends Component{
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="https://www.campusvarta.com/wp-content/uploads/2019/05/College-of-Commerce-1.jpg"
+                src="https://i.ibb.co/MZdHmsL/pexels-meliani-idriss-29824.jpg"
                 alt="Patliputra University"
                 />
 
@@ -33,7 +33,7 @@ class IndexCorousel extends Component{
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Open_University_Malaysia_%28Melaka%29.jpg/1200px-Open_University_Malaysia_%28Melaka%29.jpg"
+                src="https://i.ibb.co/cb2c16j/pexels-mary-taylor-589657.jpg"
                 alt="Open University"
                 />
 
@@ -49,3 +49,5 @@ class IndexCorousel extends Component{
 }
 
 export default IndexCorousel;
+
+
