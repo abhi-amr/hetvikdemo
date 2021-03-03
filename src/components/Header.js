@@ -6,13 +6,13 @@ class Header extends Component{
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-              <Navbar.Brand href="#home">hetvik</Navbar.Brand>
+              <Navbar.Brand href="#home"><strong>hetvik</strong></Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                   <Nav.Link href="#features">Features</Nav.Link>
                   <Nav.Link href="#pricing">Questions</Nav.Link>
-                  <NavDropdown title="Year" id="collasible-nav-dropdown">
+                  <NavDropdown title="Years" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">2020</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">2019</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.3">2018</NavDropdown.Item>

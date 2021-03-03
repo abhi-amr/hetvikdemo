@@ -1,0 +1,9 @@
+.sign {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.sign:hover {
+  border: 2px solid white;
+  border-radius: 5px;
+}
