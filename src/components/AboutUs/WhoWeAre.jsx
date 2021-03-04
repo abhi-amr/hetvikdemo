@@ -24,7 +24,7 @@ class WhoWeAre extends Component {
             <Container>
                 
                 <Row>
-                    <Col style={{padding:"1em", fontSize:"1.5em"}}>
+                    <Col sm style={{padding:"1em", fontSize:"1.5em"}}>
                         <Text family= "RocknRoll One">
                         <ul>
                             <li>Mobile Learning</li>
@@ -37,7 +37,7 @@ class WhoWeAre extends Component {
                     {/* <p>Access previous year questions<br/>Save your time in accomodating questions.
                     <br/>Answers to the questions <br/>Be updated to all the news and notices</p> */}
                     </Col>
-                    <Col>
+                    <Col sm>
                     <img
                          className="d-block w-100"
                          src={slide1}
