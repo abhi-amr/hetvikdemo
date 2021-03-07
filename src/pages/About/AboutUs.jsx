@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {Container, Col, Row, Carousel} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
 import {  } from 'react-icons/fa';
-import GoalsMission from "./GoalsMission";
-import Team from "./Team";
-import WhoWeAre from "./WhoWeAre";
+import GoalsMission from "../../components/AboutUs/GoalsMission";
+import Team from "../../components/AboutUs/Team";
+import WhoWeAre from "../../components/AboutUs/WhoWeAre";
 
 
 

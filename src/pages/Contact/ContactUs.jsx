@@ -4,8 +4,8 @@ import Font, { Text } from 'react-font';
 import {  } from 'react-icons/im';
 import {  } from 'react-icons/bs';
 import {  } from 'react-icons/gr';
-import RequestPaper from './RequestPaper';
-import Feedback from './Feedback';
+import RequestPaper from '../../components/ContactUs/RequestPaper';
+import Feedback from '../../components/ContactUs/Feedback';
 
 
 
