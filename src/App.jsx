@@ -18,7 +18,6 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-<Questions/>
           <Switch>
             <Route path = "/" exact component = {Home} />
             <Route path = "/about" exact component = {AboutUs} />
