@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Container, Col, Row, Button} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
 import { FaInstagram, FaFacebook, FaTwitter, FaCopyright } from 'react-icons/fa';
-import './Footer.css'
+import './Footer.css';
+import {Link} from 'react-router-dom';
 
 
 class Footer extends Component {
@@ -32,12 +33,12 @@ class Footer extends Component {
                 <Container>
                   <Row>
                         <Text family = "Roboto" color ="white">
-                        <Col><a className="link" href="index.html">Home</a></Col>
-                        <Col><a className="link" href="#">About</a></Col>
-                        <Col><a className="link" href="#">Team</a></Col>
+                        <Col><Link className="link" to="/">Home</Link></Col>
+                        <Col><Link className="link" to="/about">About</Link></Col>
+                        <Col><Link className="link" to="/team">Team</Link></Col>
                         </Text>
                       {/* <Col><Button variant="light">More Info</Button></Col> */}
-                      <Col><Button variant="light">Contact Us</Button></Col>
+                      <Col><Link className = "btn btn-light" to="/contact">Contact Us</Link></Col>
                       
                     <Col>
                     <Container>
