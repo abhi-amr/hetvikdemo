@@ -1,0 +1,82 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.main {
+  border: 2px solid black;
+  border-radius: 7px;
+  /* align-items: center; */
+  justify-content: center;
+  /* text-align: center; */
+  max-width: 380px;
+  min-height: 400px;
+  background-color: white;
+  padding: 20px;
+  margin: 6% auto;
+  position: relative;
+
+  /* min-height: 300px; */
+  /* display: block; */
+  /* filter: blur(1px); */
+}
+
+.butbox {
+  width: 220px;
+  border: 1px solid black;
+  border-radius: 30px;
+  position: relative;
+  margin: 35px auto;
+}
+.togbutton {
+  padding: 10px 25px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  font-weight: bold;
+}
+.bt-bg {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  /* background: linear-gradient(to right, #ff105f, #ffad06); */
+  background-color: rgb(105, 105, 105);
+  border-radius: 30px;
+  transition: 0.4s;
+}
+.bt-active {
+  color: white;
+}
+
+.bt-inactive {
+  color: black;
+}
+.frm-active {
+  /* display: block; */
+  animation: mymove 1s 1;
+}
+
+.frm-inactive {
+  display: none;
+}
+
+@keyframes mymove {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+span {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
