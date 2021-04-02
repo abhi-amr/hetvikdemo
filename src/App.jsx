@@ -11,6 +11,9 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import PageNotFound from "./components/Errors/PageNotFound";
 import QFilter from './components/QPaper/QFilter';
 import Questions from "./pages/Questions/Questions";
+import AddProgramme from "./components/Admin/AddProgramme"
+import AddSubject from "./components/Admin/AddSubject"
+// import AddProgramme from "./components/TestPurpose/AddProgrammeWithBasicBootstrap"
 
 
 function App() {
@@ -18,6 +21,8 @@ function App() {
     <div className="App">
       <Router>
         <Header />
+        {/* <AddProgramme />
+        <AddSubject /> */}
           <Switch>
             <Route path = "/" exact component = {Home} />
             <Route path = "/about" exact component = {AboutUs} />

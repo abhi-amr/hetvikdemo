@@ -24,7 +24,7 @@ class Header extends Component{
                   </NavDropdown> */}
                 </Nav>
                 <Nav>
-                  <Nav.Link className="sign">Sign In</Nav.Link>
+                  <Nav.Link><Link className = "btn btn-light" to="/login">Sign In</Link></Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
