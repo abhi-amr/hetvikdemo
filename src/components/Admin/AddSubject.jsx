@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import CustomAlert from "../../components/CustomAlert";
-import axios from "axios";
+import endpoint from "../axios";
 
 class AddSubject extends Component{
  constructor(){
@@ -34,7 +34,7 @@ logMeTheInfo = (event) => {
  handleSubmit = (event) =>{
    event.preventDefault();
 
-   const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
+   //const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
 
    const data = {
     "id" : this.state.id,
@@ -42,12 +42,16 @@ logMeTheInfo = (event) => {
     "type" : this.state.type
   }
 
-   axios.post(API_ENDPOINT + "PatnaUniversity/AddSubject", data)
+   endpoint.post("PatnaUniversity/AddSubject", data)
    .then(res => {
      console.log(res.data);
      this.setState({
        responseMessage : res.data.message,
-       responseSuccess : res.data.success
+       responseSuccess : res.data.success,
+//changing to default value
+      id : '',
+      name : '',
+      type : ''
      });
 
      console.log(this.state);

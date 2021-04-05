@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import {Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import CustomAlert from "../../components/CustomAlert";
-import axios from "axios";
-import endpoint from '../axios';
+import endpoint from "../axios";
 
-class AddProgramme extends Component{
+
+class AddProgrammeForm extends Component{
  constructor(){
    super();
    
@@ -42,13 +42,13 @@ logMeTheInfo = (event) => {
  handleSubmit = (event) =>{
    event.preventDefault();
 
-   const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
+   //const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
 
    const data = {
     "id" : this.state.id,
     "name" : this.state.name,
     "level" : this.state.level,
-    "durationInMonths" : this.state.durationInMonths,
+    "durationInMonths" : Number(this.state.durationInMonths),
     "currentAffliation" : this.state.currentAffliation
   }
 
@@ -57,7 +57,14 @@ logMeTheInfo = (event) => {
      console.log(res.data);
      this.setState({
        responseMessage : res.data.message,
-       responseSuccess : res.data.success
+       responseSuccess : res.data.success,
+//changing to default value
+      id : '',
+      name : '',
+      level : '',
+      durationInMonths : 36,
+      currentAffliation : "Permanent",
+
      });
 
      console.log(this.state);
@@ -118,7 +125,7 @@ logMeTheInfo = (event) => {
               </Form.Row>
 
               <Button variant="primary" type="submit">
-                Add Programme
+                Add
               </Button>
               {/* <Button variant="primary" type="" onClick={this.logMeTheInfo}>
                 Log
@@ -137,4 +144,4 @@ logMeTheInfo = (event) => {
   
 }
 
-export default AddProgramme;
+export default AddProgrammeForm;
