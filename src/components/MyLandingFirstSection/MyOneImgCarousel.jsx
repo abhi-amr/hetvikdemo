@@ -19,8 +19,8 @@ class MyCarousel extends Component {
                 alt="True Friend"
                 />
                 <Carousel.Caption>
-                <Link className="btn btn-success" to="/questions"><h3>Get Started</h3></Link>
-                <p>Search your papers or use our quick links below</p>
+                <Link className="btn btn-success" to="/questions">Get Started</Link>
+                {/* <p>Search your papers or use our quick links below</p> */}
                 </Carousel.Caption>
             </Carousel.Item>
             
