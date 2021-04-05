@@ -6,7 +6,7 @@ import Home from "./pages/Home/Home";
 import AboutUs from "./pages/About/AboutUs";
 import ContactUs from "./pages/Contact/ContactUs";
 import GoalsMission from "./components/AboutUs/GoalsMission";
-import Team from "./components/AboutUs/Team";
+import Team from "./components/AboutUs/CoreTeam";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import PageNotFound from "./components/Errors/PageNotFound";
 import QFilter from './components/QPaper/QFilter';

@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import Qpaper from "../../components/Home/Qpaper";
-import MyCarousel from "../../components/MyLandingFirstSection/MyCarousel";
 import MyOneCarousel from "../../components/MyLandingFirstSection/MyOneImgCarousel";
-import WhoWeAre from "../../components/AboutUs/WhoWeAre";
 import WhatWeOffer from "../../components/AboutUs/WhatWeOffer";
-import GoalsMission from "../../components/AboutUs/GoalsMission";
-import Team from "../../components/AboutUs/Team";
+import CoreTeam from "../../components/AboutUs/CoreTeam";
 import Font, { Text } from 'react-font';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 class Home extends Component {
     render() {
@@ -28,6 +26,7 @@ class Home extends Component {
             <div className="home">
                 <MyOneCarousel />
                 
+                <Container>
                 <br /> <br /> <br />
                 <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>Quick Links</strong></span></h1></Text>
                 <br />
@@ -41,7 +40,8 @@ class Home extends Component {
                 <br /> <br /> <br />
                 <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>Our Core Team</strong></span></h1></Text>
                 <br />
-                <Team/>
+                <CoreTeam/>
+                </Container>
 
                 <br /> <br /> <br />
             </div>
