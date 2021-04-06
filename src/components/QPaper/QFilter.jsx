@@ -1,25 +1,50 @@
 import React, {Component} from 'react';
-import {Form, Button, Card, Row, Col} from 'react-bootstrap';
+import {Form, Button, Card, Row, Col, Container} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
+import QFetched from '../../components/QPaper/QFetched';
 
 
 
 
 class QFilter extends Component {
+    constructor(){
+        super();
+        
+        this.state = {
+          programmeId : '',
+          subjectCode : '',
+          year : '',
+          link : '',
+
+          responseMessage : '',
+          responseSuccess : false,
+          responseError : ''
+        };
+       
+      }
+
+
+ onChangeHandler = (event) => {
+  this.setState({
+    [event.target.name] : event.target.value
+  });
+}
+
+handleSubmit = (event) =>{
+   event.preventDefault();
+
+    this.setState({
+        link : '../../images/pag19.pdf'
+    });
+}
+
+
   render(){
+      const {programmeId, subjectCode, year } = this.state;
     return (
-        <Card>
+        <Container fluid>
             <Font family="Roboto">
-            <Card.Header></Card.Header>
-            <Card.Body>
-                {/* <Card.Title>Special title treatment</Card.Title>
-                <Card.Text>
-                With supporting text below as a natural lead-in to additional content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button> */}
-                <h1>Get your Paper, here</h1>
-                <br/>
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
                     <Form.Row>
                     <Col sm>
                         <Form.Group  controlId="formGroupUniversity">
@@ -30,7 +55,7 @@ class QFilter extends Component {
                     <Col sm>
                         <Form.Group controlId="formGridProgram">
                             <Form.Label>Program</Form.Label>
-                            <Form.Control as="select" defaultValue="">
+                            <Form.Control as="select" name="programmeId" defaultValue="" value={programmeId} onChange= {this.onChangeHandler}>
                                 <option>Choose...</option>
                                 <option>...</option>
                             </Form.Control>
@@ -39,7 +64,7 @@ class QFilter extends Component {
                     <Col sm>
                         <Form.Group controlId="formGridSubject">
                             <Form.Label>Subject</Form.Label>
-                            <Form.Control as="select" defaultValue="">
+                            <Form.Control as="select" name="subjectCode" defaultValue="" value={subjectCode} onChange= {this.onChangeHandler}>
                                 <option>Choose...</option>
                                 <option>...</option>
                             </Form.Control>
@@ -48,7 +73,7 @@ class QFilter extends Component {
                     <Col sm>
                         <Form.Group controlId="formGridYear">
                             <Form.Label>Year</Form.Label>
-                            <Form.Control as="select" defaultValue="">
+                            <Form.Control as="select" name="year" defaultValue="" value={year} onChange= {this.onChangeHandler}>
                                 <option>Choose...</option>
                                 <option>...</option>
                             </Form.Control>
@@ -60,9 +85,12 @@ class QFilter extends Component {
                         Get
                     </Button>
                 </Form>
-            </Card.Body>
-            </Font>
-        </Card>
+        <hr />
+
+        <QFetched pdflink='http://www.africau.edu/images/default/sample.pdf'/>
+        <br/>
+        </Font>
+        </Container>
         
     );
   }
