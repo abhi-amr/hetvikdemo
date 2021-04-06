@@ -12,8 +12,8 @@ class RequestPaper extends Component {
   render(){
     return (
         <Card>
-            <Font family="Roboto">
-            <Card.Header></Card.Header>
+            <Font family="Comfortaa">
+            <Card.Header>Didnt find what you were looking for? Request here!</Card.Header>
             <Card.Body>
                 {/* <Card.Title>Special title treatment</Card.Title>
                 <Card.Text>
@@ -24,11 +24,11 @@ class RequestPaper extends Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGroupFName">
                             <Form.Label>First Name</Form.Label>
-                            <Form.Control placeholder="Alexa" />
+                            <Form.Control placeholder="" />
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGroupLName">
                             <Form.Label>Last Name</Form.Label>
-                            <Form.Control placeholder="Brexit" />
+                            <Form.Control placeholder="" />
                         </Form.Group>
                     </Form.Row>
                     <Form.Group controlId="formGroupEmail">
@@ -49,7 +49,7 @@ class RequestPaper extends Component {
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
                         <Form.Label>Subject</Form.Label>
-                        <Form.Control placeholder="Subject Name" />
+                        <Form.Control placeholder="" />
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupYear">
                         <Form.Label>Year</Form.Label>

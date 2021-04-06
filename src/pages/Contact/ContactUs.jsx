@@ -16,15 +16,37 @@ import teamChat from '../../images/Contact/teamChat.svg';
 
 class ContactUs extends Component {
   render(){
+    const hStyle = {
+      width: '100%', 
+      textAlign: 'center', 
+      borderBottom: '1px solid #efefef',
+      lineHeight: '0.1em',
+      margin: '10px 0 20px' 
+    } 
+   
+  const hSpan = { 
+        background:'#fff',
+        padding:'0 10px' 
+  }
+
     return (
         <Container style={{padding:"1em"}} fluid>
-            <Font family= "Akaya Kanadaka">
-            <Row>
+            <Font family= "Londrina Solid">
+              <Row>
                 <Col>
-                <img src={teamChat}
+                <br /> <br />
+                <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>Contact Us</strong></span></h1></Text>
+                <br /><br />
+                </Col>
+              </Row>
+            <Row>
+                <Col sm>
+                <img className=" w-100"
+                src={teamChat}
+                alt= "We are listening"
                 />
                 </Col>
-                <Col>
+                <Col sm> <br/>
 
                     <Tabs defaultActiveKey="request" id="uncontrolled-tab-example">
 

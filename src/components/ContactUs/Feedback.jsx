@@ -12,8 +12,8 @@ class Feedback extends Component {
   render(){
     return (
         <Card>
-            <Font family="Roboto">
-            <Card.Header></Card.Header>
+            <Font family="Comfortaa">
+            <Card.Header>Help us improve. Leave a suggestion !</Card.Header>
             <Card.Body>
                 {/* <Card.Title>Special title treatment</Card.Title>
                 <Card.Text>
@@ -24,11 +24,11 @@ class Feedback extends Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGroupFName">
                             <Form.Label>First Name</Form.Label>
-                            <Form.Control placeholder="Alexa" />
+                            <Form.Control placeholder="" />
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGroupLName">
                             <Form.Label>Last Name</Form.Label>
-                            <Form.Control placeholder="Brexit" />
+                            <Form.Control placeholder="" />
                         </Form.Group>
                     </Form.Row>
                     <Form.Group controlId="formGroupEmail">
@@ -49,11 +49,11 @@ class Feedback extends Component {
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
                         <Form.Label>University Roll No.</Form.Label>
-                        <Form.Control placeholder="PU170XX" />
+                        <Form.Control placeholder="12xx" />
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupYear">
                         <Form.Label>Batch</Form.Label>
-                        <Form.Control placeholder="20XX" />
+                        <Form.Control placeholder="20xx" />
                     </Form.Group>
                     </Form.Row>
                     <Form.Group controlId="Textarea1">
