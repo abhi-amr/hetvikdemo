@@ -47,6 +47,8 @@ class Feedback extends Component {
                             <option>...</option>
                         </Form.Control>
                     </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
                         <Form.Label>University Roll No.</Form.Label>
                         <Form.Control placeholder="12xx" />

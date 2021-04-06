@@ -47,6 +47,8 @@ class RequestPaper extends Component {
                             <option>...</option>
                         </Form.Control>
                     </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
                         <Form.Label>Subject</Form.Label>
                         <Form.Control placeholder="" />

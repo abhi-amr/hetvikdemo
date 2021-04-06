@@ -12,7 +12,9 @@ class QFilter extends Component {
         
         this.state = {
           programmeId : '',
+          programmeName : '',
           subjectCode : '',
+          subjectName : '',
           year : '',
           link : '',
 
@@ -86,7 +88,9 @@ handleSubmit = (event) =>{
                     </Button>
                 </Form>
         <hr />
-
+        <Row><Col><h3>{this.state.programmeName}</h3></Col></Row>
+        <Row><Col><h3>{this.state.subjectName}</h3></Col></Row>
+        <Row><Col><h3>{this.state.year}</h3></Col></Row>
         <QFetched pdflink='http://www.africau.edu/images/default/sample.pdf'/>
         <br/>
         </Font>
