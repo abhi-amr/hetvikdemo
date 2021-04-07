@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import Qpaper from "../../components/Home/Qpaper";
 import MyOneCarousel from "../../components/MyLandingFirstSection/MyOneImgCarousel";
 import WhatWeOffer from "../../components/AboutUs/WhatWeOffer";
@@ -50,3 +50,4 @@ class Home extends Component {
 }
 
 export default Home;
+

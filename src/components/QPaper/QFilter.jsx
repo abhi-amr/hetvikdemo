@@ -100,5 +100,5 @@ handleSubmit = (event) =>{
   }
 }
 
-export default QFilter;
 
+export default QFilter;
