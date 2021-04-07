@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import "../bootstrap.min.css";
 const Login = () => {
+  //ani=animation
   const [ani, setani] = useState({
     lt: "0",
     sin: "bt-active",
@@ -83,7 +84,7 @@ const Login = () => {
   return (
     <>
       <br />
-      <div className="container main">
+      <div className="container-fluid main">
         <div className="butbox ">
           <div className="bt-bg" style={{ left: ani.lt }}></div>
           <button

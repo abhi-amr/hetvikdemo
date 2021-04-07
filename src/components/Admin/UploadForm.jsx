@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./UploadForm.css";
 import "../bootstrap.min.css";
 
@@ -13,6 +13,70 @@ const UploadForm = () => {
     fmarks: "",
     fnumber: "",
   });
+  const [key, setKey] = useState({
+    ukey: "",
+    prgkey: "",
+    subkey: "",
+  });
+
+  /*Api call for University*/
+  const [uni, setUni] = useState([]);
+  const uniGet = () => {
+    let url = "https://hetvikbackapi.azurewebsites.net/api/test/university";
+    fetch(url)
+      .then((response) => response.json())
+      .then((json) => {
+        setUni(json);
+      });
+  };
+  useEffect(() => {
+    uniGet();
+  }, []);
+
+  /*Api call for program*/
+  const [prg, setPrg] = useState([]);
+  const prgGet = (event) => {
+    const selectedIndex = event.target.options.selectedIndex;
+    let keyvalue = event.target.options[selectedIndex].getAttribute("data-key");
+
+    setKey((prevalue) => {
+      return {
+        ...prevalue,
+        ukey: keyvalue,
+      };
+    });
+    const url = "https://hetvikbackapi.azurewebsites.net/api/test/" + keyvalue;
+    fetch(url)
+      .then((response) => response.json())
+      .then((json) => {
+        setPrg(json);
+      });
+  };
+
+  /*Api call for subject*/
+  const [sub, setSub] = useState([]);
+  const subGet = (event) => {
+    const selectedIndex = event.target.options.selectedIndex;
+    let keyvalue = event.target.options[selectedIndex].getAttribute("data-key");
+    setKey((prevalue) => {
+      return {
+        ...prevalue,
+        prgkey: keyvalue,
+      };
+    });
+    const url =
+      "https://hetvikbackapi.azurewebsites.net/api/test/" +
+      key.ukey +
+      "/" +
+      keyvalue;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((json) => {
+        setSub(json);
+      });
+  };
+
   const inputChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
@@ -30,9 +94,47 @@ const UploadForm = () => {
       //   }
     });
   };
+
+  /*state for file*/
+  const [selectedFile, setSelectedFile] = useState();
+  const [isFilePicked, setIsFilePicked] = useState(false);
+
+  const inputChangeFile = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setIsFilePicked(true);
+  };
   const onSubmits = (event) => {
     event.preventDefault();
     alert("ok");
+
+    /*api call for uploading form data*/
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+    formData.append("program", "bsc");
+    formData.append("subject", "phy");
+    formData.append("year", "2018");
+    formData.append("fileNo", "123");
+    const url = "https://hetvikbackapi.azurewebsites.net/api/File/UploadPaper";
+    const params = {
+      method: "POST",
+      // headers: {
+      //   "content-type": "multipart/form-data",
+      // },
+      body: formData,
+    };
+    fetch(url, params)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+      });
+  };
+  const uniTwoCalls = (event) => {
+    inputChange(event);
+    prgGet(event);
+  };
+  const prgTwoCalls = (event) => {
+    inputChange(event);
+    subGet(event);
   };
 
   //   const handleDragEnter = (e) => {
@@ -71,7 +173,7 @@ const UploadForm = () => {
         <form onSubmit={onSubmits}>
           <div>
             <br />
-            <h1 className="head">Upload Paper</h1>
+            <h1 className="head">Upload xPaper</h1>
             <br />
           </div>
 
@@ -82,13 +184,21 @@ const UploadForm = () => {
               className="form-control"
               name="uname"
               placeholder="Choose University"
+              onChange={uniTwoCalls}
               required="true"
+              value={field.uname}
+              // onSelect={nextList}
             >
               <option selected value="">
                 Choose University
               </option>
-              <option value="pu">Patna University</option>
-              <option value="mu">Magadh University</option>
+              {uni.map((prog) => (
+                <option key={prog.Key} data-key={prog.Key} value={prog.Value}>
+                  {prog.Value}
+                </option>
+              ))}
+              {/* <option value="pu">Patna University</option>
+              <option value="mu">Magadh University</option> */}
             </select>
           </div>
 
@@ -100,12 +210,19 @@ const UploadForm = () => {
               name="pname"
               placeholder="Choose Programe"
               required="true"
+              onChange={prgTwoCalls}
+              value={field.pname}
             >
               <option selected value="">
                 Choose Programe
               </option>
-              <option value="pu">B.Sc Maths</option>
-              <option value="mu">B.sc Physics</option>
+              {prg.map((prog) => (
+                <option key={prog.Key} data-key={prog.Key} value={prog.Value}>
+                  {prog.Value}
+                </option>
+              ))}
+              {/* <option value="pu">B.Sc Maths</option>
+              <option value="mu">B.sc Physics</option> */}
             </select>
           </div>
           <div className="form-group">
@@ -116,8 +233,15 @@ const UploadForm = () => {
               name="subname"
               placeholder="Choose Subject"
               required="true"
+              onChange={inputChange}
+              value={field.subname}
             >
               <option value="">Choose Subject</option>
+              {sub.map((prog) => (
+                <option key={prog.Key} data-key={prog.Key} value={prog.Value}>
+                  {prog.Value}
+                </option>
+              ))}
               <option value="maths">Maths</option>
               <option value="physics">Physics</option>
             </select>
@@ -214,6 +338,8 @@ const UploadForm = () => {
               type="file"
               multiple="true"
               required="true"
+              name="file"
+              onChange={inputChangeFile}
             />
             <label className="custom-file-label">Choose file</label>
           </div>
