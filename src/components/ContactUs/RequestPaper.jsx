@@ -60,6 +60,14 @@ class RequestPaper extends Component {
                 responseMessage : res.data.message,
                 responseSuccess : res.data.success,
             //changing to default value//do down here
+                firstName : '',
+                lastName : '',
+                email : '',
+                university : 'Patna University',
+                programmeName : '',
+                subject : '',
+                year : '',
+                message : ''
             
             });
 
