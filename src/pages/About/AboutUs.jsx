@@ -3,47 +3,41 @@ import {Container, Col, Row, Carousel} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
 import {  } from 'react-icons/fa';
 import GoalsMission from "../../components/AboutUs/GoalsMission";
-import Team from "../../components/AboutUs/Team";
-import WhoWeAre from "../../components/AboutUs/WhoWeAre";
+import FullTeam from "../../components/AboutUs/FullTeam";
+import CoreTeam from "../../components/AboutUs/CoreTeam";
+
 
 
 
 class AboutUs extends Component {
   render(){
+    const hStyle = {
+      width: '100%', 
+      textAlign: 'center', 
+      borderBottom: '1px solid #efefef',
+      lineHeight: '0.1em',
+      margin: '10px 0 20px' 
+   } 
+   
+    const hSpan = { 
+          background:'#fff',
+          padding:'0 10px' 
+      }
+
     return (
-      <Container fluid style={{padding:"2em"}}>
-          <Row>
-              <Col>
+      <Container style={{padding:"1em"}}>
 
-                <Container>
-                    <Row>
-                        <Col><h1>About Us</h1></Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                        <GoalsMission/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                        <h1>Our Team</h1>
-                        <Team />
-                  
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                        <h1>How we can help</h1>
-                        <WhoWeAre />
-                        </Col>
-                    </Row>
-                </Container>  
+          <br /> <br />
+          <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>About Us</strong></span></h1></Text>
+          <br />
+          <GoalsMission />
+
+          <br /> <br /> <br />
+          <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>Our Team</strong></span></h1></Text>
+          <br />
+          <FullTeam />
 
 
-
-
-              </Col>
-          </Row>
       </Container>
     
     );

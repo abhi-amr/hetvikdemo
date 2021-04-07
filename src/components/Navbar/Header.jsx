@@ -38,17 +38,15 @@ class Header extends Component {
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action/3.4">Course</NavDropdown.Item>
                   </NavDropdown> */}
-            </Nav>
-            <Nav>
-              <Nav.Link className="sign">
-                <Link className="nav-link" to="/login">
-                  Sign In
-                </Link>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </div>
+
+                </Nav>
+                <Nav>
+                  <Nav.Link><Link className = "btn btn-light" to="/login">Sign In</Link></Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+            
+        </div>
     );
   }
 }
