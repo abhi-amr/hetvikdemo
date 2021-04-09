@@ -8,7 +8,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import QFilter from '../../components/QPaper/QFilter';
 import QFetched from '../../components/QPaper/QFetched';
 import GoalsMission from "../../components/AboutUs/GoalsMission";
-
+import Heading from "../../components/Utilities/Heading"
 
 
 class Question extends Component {
@@ -19,7 +19,7 @@ class Question extends Component {
             <Container fluid>
             <Row>
               <Col lg={9} md={9} sm={12}>
-                <h1>Get your paper</h1>
+                <Heading content="Get Your Paper Here !" />
                 <QFilter />
               </Col>
 

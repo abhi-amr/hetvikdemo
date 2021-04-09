@@ -10,33 +10,18 @@ import OpenedLetter from '../../images/Contact/openedLetter.svg';
 import ManOpenedLetter from '../../images/Contact/manOpeningLetter.svg';
 import WomanChat from '../../images/Contact/womanChat.svg';
 import teamChat from '../../images/Contact/teamChat.svg';
-
+import Heading from "../../components/Utilities/Heading"
 
 
 
 class ContactUs extends Component {
   render(){
-    const hStyle = {
-      width: '100%', 
-      textAlign: 'center', 
-      borderBottom: '1px solid #efefef',
-      lineHeight: '0.1em',
-      margin: '10px 0 20px' 
-    } 
-   
-  const hSpan = { 
-        background:'#fff',
-        padding:'0 10px' 
-  }
-
     return (
         <Container style={{padding:"1em"}} fluid>
             <Font family= "Londrina Solid">
               <Row>
                 <Col>
-                <br /> <br />
-                <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>Contact Us</strong></span></h1></Text>
-                <br /><br />
+                <Heading content="Contact Us" />
                 </Col>
               </Row>
             <Row>
