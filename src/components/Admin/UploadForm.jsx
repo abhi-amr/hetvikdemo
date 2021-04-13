@@ -179,7 +179,7 @@ const UploadForm = () => {
         <form onSubmit={onSubmits}>
           <div>
             <br />
-            <h1 className="head">Upload xPaper</h1>
+            <h1 className="head">Upload Paper</h1>
             <br />
           </div>
 
