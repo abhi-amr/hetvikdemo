@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Logo from "../../android-chrome-512x512.png"
 
 class Header extends Component {
   render() {
@@ -9,6 +10,13 @@ class Header extends Component {
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand>
+          {/* <img
+            src={Logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="Hetvik logo"
+          /> */}
             <Link className="navbar-brand" to="/">
               <strong>hetvik</strong>
             </Link>
@@ -40,9 +48,9 @@ class Header extends Component {
                   </NavDropdown> */}
 
                 </Nav>
-                <Nav>
+                {/* <Nav>
                   <Nav.Link><Link className = "btn btn-light" to="/login">Sign In</Link></Nav.Link>
-                </Nav>
+                </Nav> */}
               </Navbar.Collapse>
             </Navbar>
             

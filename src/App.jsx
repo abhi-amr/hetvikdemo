@@ -8,14 +8,11 @@ import ContactUs from "./pages/Contact/ContactUs";
 import Team from "./components/AboutUs/CoreTeam";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PageNotFound from "./components/Errors/PageNotFound";
-import QFilter from "./components/QPaper/QFilter";
-import Questions from "./pages/Questions/Questions";
 import Admin from "./pages/Admin/Admin";
-import AddProgramme from "./components/Admin/AddProgramme";
-import AddSubject from "./components/Admin/AddSubject";
-import UploadForm from "./components/Admin/UploadForm";
-import Question from "./pages/Questions/Questions";
-import SignIn from "./pages/LoginLogout/SignIn";
+import Privacy from "./pages/Privacy/Privacy";
+import Questions from "./pages/Questions/Questions";
+
+
 
 
 function App() {
@@ -23,18 +20,17 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        {/* <AddProgramme />
-        <AddSubject /> */}
 
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={AboutUs} />
           <Route path="/contact" exact component={ContactUs} />
           <Route path="/team" exact component={Team} />
-          <Route path="/questions" exact component={Question} />
+          <Route path="/questions" exact component={Questions} />
+          <Route path="/privacy" exact component={Privacy} />
 
           <Route path="/admin" exact component={Admin} />
-          <Route path="/upform" exact component={UploadForm} />
+          
         </Switch>
         <Footer />
       </Router>

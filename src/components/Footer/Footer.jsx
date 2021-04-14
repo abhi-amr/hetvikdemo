@@ -36,6 +36,7 @@ class Footer extends Component {
                         <Col><Link className="link" to="/">Home</Link></Col>
                         <Col><Link className="link" to="/about">About</Link></Col>
                         <Col><Link className="link" to="/team">Team</Link></Col>
+                        <Col><Link className="link" to="/privacy">Privacy</Link></Col>
                         </Text>
                       {/* <Col><Button variant="light">More Info</Button></Col> */}
                       <Col><Link className = "btn btn-light" to="/contact">Contact Us</Link></Col>
