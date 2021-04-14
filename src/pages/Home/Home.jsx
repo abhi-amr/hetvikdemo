@@ -6,40 +6,23 @@ import CoreTeam from "../../components/AboutUs/CoreTeam";
 import Font, { Text } from 'react-font';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import "../../components/bootstrap.min.css";
+import Heading from "../../components/Utilities/Heading"
 
 class Home extends Component {
     render() {
-        const hStyle = {
-                width: '100%', 
-                textAlign: 'center', 
-                borderBottom: '1px solid #efefef',
-                lineHeight: '0.1em',
-                margin: '10px 0 20px' 
-             } 
-             
-        const hSpan = { 
-                 background:'#fff',
-                 padding:'0 10px' 
-             }
-        
         return(
             <div className="home">
                 <MyOneCarousel />
-                
+
                 <Container>
-                <br /> <br /> <br />
-                <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>Quick Links</strong></span></h1></Text>
-                <br />
+                <Heading content="Quick Links" />
                 <Qpaper />
                 
-                <br /> <br /> <br />
-                <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>What We Offer</strong></span></h1></Text>
-                <br />
+                <Heading content="What We Offer" />
                 <WhatWeOffer />
                 
-                <br /> <br /> <br />
-                <Text family= "Rubik" className="text-center"><h1 style={hStyle}><span style={hSpan}><strong>Our Core Team</strong></span></h1></Text>
-                <br />
+                <Heading content="Our Core Team" />
                 <CoreTeam/>
                 </Container>
 
