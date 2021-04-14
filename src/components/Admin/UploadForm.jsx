@@ -3,72 +3,49 @@ import "./UploadForm.css";
 import "../bootstrap.min.css";
 
 const UploadForm = () => {
-  const [field, setfield] = useState({
-    uname: "",
-    pname: "",
-    subname: "",
-    scode: "",
-    yoexam: "",
-    tquestion: "",
-    fmarks: "",
-    fnumber: "",
-  });
-  const [key, setKey] = useState({
-    ukey: "",
-    prgkey: "",
-    subkey: "",
+  const [field, setField] = useState({
+    uniName: "Patna University",
+    programmeName: "",
+    programmeId: "",
+    subName: "",
+    subCode: "",
+    examYear: "",
+    totalQuestion: "",
+    fullMarks: "",
+    fileNo: "",
   });
 
-  /*Api call for University*/
-  const [uni, setUni] = useState([]);
-  const uniGet = () => {
-    let url = "https://hetvikbackapi.azurewebsites.net/api/test/university";
-    fetch(url)
-      .then((response) => response.json())
-      .then((json) => {
-        setUni(json);
-      });
-  };
-  useEffect(() => {
-    uniGet();
-  }, []);
-
-  /*Api call for program*/
+  /*Api call for Programmes*/
   const [prg, setPrg] = useState([]);
-  const prgGet = (event) => {
-    const selectedIndex = event.target.options.selectedIndex;
-    let keyvalue = event.target.options[selectedIndex].getAttribute("data-key");
-
-    setKey((prevalue) => {
-      return {
-        ...prevalue,
-        ukey: keyvalue,
-      };
-    });
-    const url = "https://hetvikbackapi.azurewebsites.net/api/test/" + keyvalue;
+  const prgGet = () => {
+    let url =
+      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/Programme";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
         setPrg(json);
       });
   };
+  useEffect(() => {
+    prgGet();
+  }, []);
 
   /*Api call for subject*/
   const [sub, setSub] = useState([]);
   const subGet = (event) => {
     const selectedIndex = event.target.options.selectedIndex;
     let keyvalue = event.target.options[selectedIndex].getAttribute("data-key");
-    setKey((prevalue) => {
+    setField((prevalue) => {
       return {
         ...prevalue,
-        prgkey: keyvalue,
+        programmeId: keyvalue,
       };
     });
+
     const url =
-      "https://hetvikbackapi.azurewebsites.net/api/test/" +
-      key.ukey +
-      "/" +
-      keyvalue;
+      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/" +
+      keyvalue +
+      "/Subject";
 
     fetch(url)
       .then((response) => response.json())
@@ -77,11 +54,52 @@ const UploadForm = () => {
       });
   };
 
+  /*Function for getting subject CODE*/
+  const subCodeGet = (event) => {
+    const selectedIndex = event.target.options.selectedIndex;
+    let keyvalue = event.target.options[selectedIndex].getAttribute("data-key");
+    setField((prevalue) => {
+      return {
+        ...prevalue,
+        subCode: keyvalue,
+      };
+    });
+  };
+
+  /*api call for uploading form data*/
+  const sendForm = () => {
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+    formData.append("program", field.programmeId);
+    formData.append("subject", field.subCode);
+    formData.append("year", field.examYear);
+    formData.append("fileNo", field.fileNo);
+    formData.append("fullMarks", field.fullMarks);
+    formData.append("totalQuestion", field.totalQuestion);
+    const url = "https://hetvikbackapi.azurewebsites.net/api/File/UploadPaper";
+    const params = {
+      method: "POST",
+      // headers: {
+      //   "content-type": "multipart/form-data",
+      // },
+      body: formData,
+    };
+    fetch(url, params)
+      .then((response) => response.json())
+      .then((json) => {
+        if (json.success) {
+          alert(json.message);
+        } else {
+          alert("Not Uploaded!!");
+        }
+      });
+  };
+
   const inputChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
 
-    setfield((prevalue) => {
+    setField((prevalue) => {
       return {
         ...prevalue,
         [name]: value,
@@ -97,44 +115,32 @@ const UploadForm = () => {
 
   /*state for file*/
   const [selectedFile, setSelectedFile] = useState();
-  const [isFilePicked, setIsFilePicked] = useState(false);
-
   const inputChangeFile = (event) => {
     setSelectedFile(event.target.files[0]);
-    setIsFilePicked(true);
   };
+
   const onSubmits = (event) => {
     event.preventDefault();
     alert("ok");
+    sendForm();
+  };
 
-    /*api call for uploading form data*/
-    const formData = new FormData();
-    formData.append("file", selectedFile);
-    formData.append("program", "bsc");
-    formData.append("subject", "phy");
-    formData.append("year", "2018");
-    formData.append("fileNo", "123");
-    const url = "https://hetvikbackapi.azurewebsites.net/api/File/UploadPaper";
-    const params = {
-      method: "POST",
-      // headers: {
-      //   "content-type": "multipart/form-data",
-      // },
-      body: formData,
-    };
-    fetch(url, params)
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-      });
-  };
-  const uniTwoCalls = (event) => {
-    inputChange(event);
-    prgGet(event);
-  };
   const prgTwoCalls = (event) => {
+    setField((prevalue) => {
+      //every time we select a program we need to sure that
+      // previous value of subject get erased.
+      return {
+        ...prevalue,
+        subCode: "",
+        subName: "",
+      };
+    });
     inputChange(event);
     subGet(event);
+  };
+  const subTwoCalls = (event) => {
+    inputChange(event);
+    subCodeGet(event);
   };
 
   //   const handleDragEnter = (e) => {
@@ -180,26 +186,17 @@ const UploadForm = () => {
           <div className="form-group">
             <label>University</label>
 
-            <select
+            <input
               className="form-control"
-              name="uname"
-              placeholder="Choose University"
-              onChange={uniTwoCalls}
+              type="text"
+              placeholder="Patna University"
+              onChange={inputChange}
+              name="subCode"
+              value={field.uniName}
+              minLength="5"
               required="true"
-              value={field.uname}
-              // onSelect={nextList}
-            >
-              <option selected value="">
-                Choose University
-              </option>
-              {uni.map((prog) => (
-                <option key={prog.Key} data-key={prog.Key} value={prog.Value}>
-                  {prog.Value}
-                </option>
-              ))}
-              {/* <option value="pu">Patna University</option>
-              <option value="mu">Magadh University</option> */}
-            </select>
+              readOnly
+            />
           </div>
 
           <div className="form-group">
@@ -207,22 +204,20 @@ const UploadForm = () => {
 
             <select
               className="form-control"
-              name="pname"
-              placeholder="Choose Programe"
+              name="programmeName"
+              placeholder="Choose Programme"
               required="true"
               onChange={prgTwoCalls}
-              value={field.pname}
+              value={field.programmeName}
             >
               <option selected value="">
                 Choose Programe
               </option>
               {prg.map((prog) => (
-                <option key={prog.Key} data-key={prog.Key} value={prog.Value}>
-                  {prog.Value}
+                <option key={prog.id} data-key={prog.id} value={prog.name}>
+                  {prog.name}
                 </option>
               ))}
-              {/* <option value="pu">B.Sc Maths</option>
-              <option value="mu">B.sc Physics</option> */}
             </select>
           </div>
           <div className="form-group">
@@ -230,20 +225,18 @@ const UploadForm = () => {
 
             <select
               className="form-control"
-              name="subname"
+              name="subName"
               placeholder="Choose Subject"
               required="true"
-              onChange={inputChange}
-              value={field.subname}
+              onChange={subTwoCalls}
+              value={field.subName}
             >
               <option value="">Choose Subject</option>
               {sub.map((prog) => (
-                <option key={prog.Key} data-key={prog.Key} value={prog.Value}>
-                  {prog.Value}
+                <option key={prog.id} data-key={prog.id} value={prog.name}>
+                  {prog.name}
                 </option>
               ))}
-              <option value="maths">Maths</option>
-              <option value="physics">Physics</option>
             </select>
           </div>
 
@@ -255,9 +248,9 @@ const UploadForm = () => {
               type="text"
               placeholder="Code"
               onChange={inputChange}
-              name="scode"
-              value={field.scode}
-              minLength="3"
+              name="subCode"
+              value={field.subCode}
+              minLength="1"
               maxLength="8"
               required="true"
               readOnly
@@ -271,8 +264,8 @@ const UploadForm = () => {
               type="number"
               placeholder="Enter examination year"
               onChange={inputChange}
-              name="yoexam"
-              value={field.yoexam}
+              name="examYear"
+              value={field.examYear}
               min="2010"
               max={new Date().getFullYear()}
               required="true"
@@ -286,8 +279,8 @@ const UploadForm = () => {
               type="number"
               placeholder="Enter total no. of questions"
               onChange={inputChange}
-              name="tquestion"
-              value={field.tquestion}
+              name="totalQuestion"
+              value={field.totalQuestion}
               minLength="1"
               maxLength="2"
               required="true"
@@ -301,8 +294,8 @@ const UploadForm = () => {
               type="number"
               placeholder="Full Marks of paper"
               onChange={inputChange}
-              name="fmarks"
-              value={field.fmarks}
+              name="fullMarks"
+              value={field.fullMarks}
               min="10"
               max="100"
               required="true"
@@ -316,7 +309,7 @@ const UploadForm = () => {
               type="number"
               placeholder="Enter file number"
               onChange={inputChange}
-              name="fnumber"
+              name="fileNo"
               value={field.number}
               min="1"
               max="1000"
@@ -343,20 +336,6 @@ const UploadForm = () => {
             />
             <label className="custom-file-label">Choose file</label>
           </div>
-
-          {/* <input
-
-          type="text"
-          placeholder="Enter your name"
-          onChange={inputChange}
-          name="fname"
-        />
-        <input
-          type="text"
-          placeholder="Enter your name"
-          onChange={inputChange}
-          name="lname"
-        /> */}
           <br />
           <br />
           <div className="subdiv">
