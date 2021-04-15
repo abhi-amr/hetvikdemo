@@ -17,7 +17,7 @@ import { createHistory } from 'history'
 
 //see if it works
 // const history = useRouterHistory(createHistory)({
-//   basename: '/hetvikdemo'
+//   basename: '/index.html'
 // })
 
 
@@ -25,7 +25,7 @@ import { createHistory } from 'history'
 function App() {
   return (
     <div className="App">
-      <Router basename="/">
+      <Router basename="/index.html">
         <Header />
 
         <Switch>
