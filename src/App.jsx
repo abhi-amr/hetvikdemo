@@ -13,19 +13,13 @@ import Privacy from "./pages/Privacy/Privacy";
 import TermsAndCondtions from "./pages/TermsAndCondtions/TermsAndCondtions";
 import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
 import Questions from "./pages/Questions/Questions";
-import { createHistory } from 'history'
-
-//see if it works
-// const history = useRouterHistory(createHistory)({
-//   basename: '/index.html'
-// })
-
+//import { createHistory } from 'history';
 
 
 function App() {
   return (
     <div className="App">
-      <Router basename="/index.html">
+      <Router >
         <Header />
 
         <Switch>
