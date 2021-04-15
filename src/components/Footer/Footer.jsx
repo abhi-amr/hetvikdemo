@@ -36,7 +36,6 @@ class Footer extends Component {
                         <Col><Link className="link" to="/">Home</Link></Col>
                         <Col><Link className="link" to="/about">About</Link></Col>
                         <Col><Link className="link" to="/team">Team</Link></Col>
-                        <Col><Link className="link" to="/privacy">Privacy</Link></Col>
                         </Text>
                       {/* <Col><Button variant="light">More Info</Button></Col> */}
                       <Col><Link className = "btn btn-light" to="/contact">Contact Us</Link></Col>
@@ -61,6 +60,12 @@ class Footer extends Component {
 
         </Col>
       </Row>
+      <Row><Col><Text family="Balsamiq Sans"><center>
+        <p>
+          <Link className="link" to="/privacy">Privacy Policy</Link>  | 
+          <Link className="link" to="/terms">  Terms and Conditions</Link>  | 
+          <Link className="link" to="/disclaimer">  Disclaimer</Link>
+        </p></center></Text></Col></Row>
       <Row><Col><Text family="Open sans"><center><p>hetvik <FaCopyright/> 2021</p></center></Text></Col></Row>
     </Container>
     

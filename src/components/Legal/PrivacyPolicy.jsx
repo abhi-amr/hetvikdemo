@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Form, Button, Card, Container, Row, Col} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
 import Heading from '../Utilities/Heading'
-
+import { Link } from "react-router-dom";
 
 
 class PrivacyPolicy extends Component {
@@ -119,7 +119,7 @@ class PrivacyPolicy extends Component {
             <div id = "consent">
             <h2>Consent</h2>
               <span>
-              By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.
+              By using our website, you hereby consent to our Privacy Policy and agree to its <Link to="/terms">Terms and Conditions</Link>.
               </span>
               <br /><br />
             </div>
