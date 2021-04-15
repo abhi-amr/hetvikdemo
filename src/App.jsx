@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PageNotFound from "./components/Errors/PageNotFound";
 import Admin from "./pages/Admin/Admin";
 import Privacy from "./pages/Privacy/Privacy";
+import TermsAndCondtions from "./pages/TermsAndCondtions/TermsAndCondtions";
+import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
 import Questions from "./pages/Questions/Questions";
 
 
@@ -28,6 +30,8 @@ function App() {
           <Route path="/team" exact component={Team} />
           <Route path="/questions" exact component={Questions} />
           <Route path="/privacy" exact component={Privacy} />
+          <Route path="/terms" exact component={TermsAndCondtions} />
+          <Route path="/disclaimer" exact component={DisclaimerPage} />
 
           <Route path="/admin" exact component={Admin} />
           
