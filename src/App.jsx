@@ -13,7 +13,7 @@ import Privacy from "./pages/Privacy/Privacy";
 import TermsAndCondtions from "./pages/TermsAndCondtions/TermsAndCondtions";
 import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
 import Questions from "./pages/Questions/Questions";
-//import { createHistory } from 'history';
+
 
 
 function App() {
@@ -33,6 +33,8 @@ function App() {
           <Route path="/disclaimer" exact component={DisclaimerPage} />
 
           <Route path="/admin" exact component={Admin} />
+
+          {/* <Route path="*" exact component={Admin} /> */}
           
         </Switch>
         <Footer />
