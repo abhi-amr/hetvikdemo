@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Button, Card, Row, Col} from 'react-bootstrap';
+import {Form, Button, Card, Row, Col, Alert} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
 import {  } from 'react-icons/im';
 import {  } from 'react-icons/bs';
@@ -26,7 +26,7 @@ class Feedback extends Component {
 
             success : false,
             disabled : false,
-            resMessage : ''
+            responseMessage : ''
 
         };
        
@@ -62,7 +62,7 @@ class Feedback extends Component {
         .then(res => {
             console.log(res.data);
             this.setState({
-                message : res.data.message,
+                responseMessage : res.data.message,
                 success : res.data.success,
                 disabled : false,
             //changing to default value//do down here
@@ -87,7 +87,7 @@ class Feedback extends Component {
 
 
   render(){
-    const {firstName, lastName, email, message, batch, university, rollNo, programmeName, resMessage, success, disabled} = this.state;
+    const {firstName, lastName, email, message, batch, university, rollNo, programmeName, responseMessage, success, disabled} = this.state;
     return (
         <Card>
             <Font family="Comfortaa">
@@ -103,18 +103,18 @@ class Feedback extends Component {
                         <Form.Group as={Col} controlId="formGroupFName">
                             <Form.Label>First Name</Form.Label>
                             <Form.Control placeholder="" 
-                            name="firstName" value= {firstName} onChange = {this.onChangeHandler}/>
+                            name="firstName" value= {firstName} onChange = {this.onChangeHandler} required/>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGroupLName">
                             <Form.Label>Last Name</Form.Label>
                             <Form.Control placeholder="" 
-                            name="lastName" value= {lastName} onChange = {this.onChangeHandler}/>
+                            name="lastName" value= {lastName} onChange = {this.onChangeHandler} required/>
                         </Form.Group>
                     </Form.Row>
                     <Form.Group controlId="formGroupEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="someone@domain.com" 
-                        name="email" value= {email} onChange = {this.onChangeHandler} />
+                        name="email" value= {email} onChange = {this.onChangeHandler} required/>
                     </Form.Group>
                     <Form.Row>
                     <Form.Group as={Col}  controlId="formGroupUniversity">
@@ -125,7 +125,7 @@ class Feedback extends Component {
                     <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Programme/Course</Form.Label>
                         <Form.Control defaultValue=""
-                        name="programmeName" value= {programmeName} onChange = {this.onChangeHandler}/>
+                        name="programmeName" value= {programmeName} onChange = {this.onChangeHandler} required />
                     </Form.Group>
                     </Form.Row>
                     <Form.Row>
@@ -150,7 +150,12 @@ class Feedback extends Component {
                         Send
                     </Button>
                 </Form>
-                {/* <CustomAlert success={responseSuccess} message={this.state.responseMessage}/> */}
+
+                {success && <Alert variant="success">
+                    {/* {this.state.responseMessage} */}
+                    Your feedback is valuable to us. Thank You.
+                    </Alert>}
+
             </Card.Body>
             </Font>
         </Card>
