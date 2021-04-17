@@ -24,8 +24,9 @@ class Feedback extends Component {
             batch : '',
             message : '',
 
-            responseSuccess : '',
-            responseMessage : ''
+            success : false,
+            disabled : false,
+            resMessage : ''
 
         };
        
@@ -40,6 +41,9 @@ class Feedback extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        this.setState({
+            disabled : true
+        });
      
         //const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
      
@@ -58,8 +62,9 @@ class Feedback extends Component {
         .then(res => {
             console.log(res.data);
             this.setState({
-                responseMessage : res.data.message,
-                responseSuccess : res.data.success,
+                message : res.data.message,
+                success : res.data.success,
+                disabled : false,
             //changing to default value//do down here
                 firstName : '',
                 lastName : '',
@@ -82,7 +87,7 @@ class Feedback extends Component {
 
 
   render(){
-    const {firstName, lastName, email, message, batch, university, rollNo, programmeName, responseMessage, responseSuccess} = this.state;
+    const {firstName, lastName, email, message, batch, university, rollNo, programmeName, resMessage, success, disabled} = this.state;
     return (
         <Card>
             <Font family="Comfortaa">
@@ -141,7 +146,7 @@ class Feedback extends Component {
                         name="message" value= {message} onChange = {this.onChangeHandler}/>
                     </Form.Group>
                     
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" disabled={disabled}>
                         Send
                     </Button>
                 </Form>

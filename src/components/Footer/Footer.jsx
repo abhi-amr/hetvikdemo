@@ -16,7 +16,7 @@ class Footer extends Component {
 
           <Container>
             <Row>
-              <Col><Text family = "Roboto"><h2><strong>HETVIK</strong></h2></Text></Col>
+              <Col><Text family = "Roboto"><h2><strong><Link className="link" to="/">HETVIK</Link></strong></h2></Text></Col>
             </Row>
             <Row>
               <Col><Text family= "Montserrat"><p>The true friend during your exams</p></Text></Col>

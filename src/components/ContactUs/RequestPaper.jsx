@@ -23,8 +23,9 @@ class RequestPaper extends Component {
             year : '',
             message : '',
 
-            responseSuccess : '',
-            responseMessage : ''
+            success : false,
+            responseMessage : '',
+            disabled : false
 
         };
        
@@ -39,7 +40,9 @@ class RequestPaper extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-     
+        this.setState({
+            disabled : true
+        });
         //const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
      
         const data = {
@@ -58,7 +61,8 @@ class RequestPaper extends Component {
             console.log(res.data);
             this.setState({
                 responseMessage : res.data.message,
-                responseSuccess : res.data.success,
+                success : res.data.success,
+                disabled : false,
             //changing to default value//do down here
                 firstName : '',
                 lastName : '',
@@ -82,7 +86,7 @@ class RequestPaper extends Component {
 
 
   render(){
-    const {firstName, lastName, email, message, subject, university, year, programmeName, responseMessage, responseSuccess} = this.state;
+    const {firstName, lastName, email, message, subject, university, year, programmeName, responseMessage, success, disabled } = this.state;
 
     return (
         <Card>
@@ -142,11 +146,11 @@ class RequestPaper extends Component {
                         name="message" value= {message} onChange = {this.onChangeHandler}/>
                     </Form.Group>
                     
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" disabled={disabled}>
                         Request
                     </Button>
                 </Form>
-                {/* <CustomAlert success={responseSuccess} message={this.state.responseMessage}/> */}
+                {/* <CustomAlert success={success} message={this.state.responseMessage}/> */}
             </Card.Body>
             </Font>
         </Card>
