@@ -25,10 +25,6 @@ function PdfView(props) {
     });
   }
 
-  const pdfDiv = {
-    width : "100%",
-    height : "610px"
-  }
 
 
   return (
@@ -61,8 +57,9 @@ function PdfView(props) {
           </div>
         </div>
         <Document file={ props.pdfLink } 
-        onLoadSuccess={onDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset} />
+        onLoadSuccess={onDocumentLoadSuccess}
+        noData="">
+          <Page pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset}  />
         </Document>
       
       </div>

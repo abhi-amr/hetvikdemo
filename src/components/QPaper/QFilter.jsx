@@ -242,8 +242,8 @@ const QFilter = () => {
               </Col>
             </Form.Row>
 
-            <Button variant="primary" type="submit">
-              Get
+            <Button variant="info" type="submit">
+              Find
             </Button>
           </Form>
           <hr />

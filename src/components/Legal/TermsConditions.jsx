@@ -19,7 +19,7 @@ class TermsConditions extends Component {
               </span>
               <br /><br />
               <span>
-              These terms and conditions outline the rules and regulations for the use of Hetvik's Website, located at https://zealous-river-0573aaf00.azurestaticapps.net/.
+              These terms and conditions outline the rules and regulations for the use of Hetvik's Website, located at https://hetvik.in/.
               </span>
               <br /><br />
               <span>
