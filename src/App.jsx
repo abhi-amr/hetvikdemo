@@ -15,12 +15,12 @@ import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
 import Questions from "./pages/Questions/Questions";
 
 
-
 function App() {
   return (
     <div className="App">
       <Router >
         <Header />
+        
 
         <Switch>
           <Route path="/" exact component={Home} />
@@ -35,7 +35,7 @@ function App() {
           <Route path="/admin" exact component={Admin} />
 
           {/* <Route path="*" exact component={Admin} /> */}
-          
+
         </Switch>
         <Footer />
       </Router>

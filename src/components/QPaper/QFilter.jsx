@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button, Card, Row, Col, Container } from "react-bootstrap";
 import Font, { Text } from "react-font";
-import QFetched from "../../components/QPaper/QFetched";
+import QFetched from "./QFetched";
+import PdfView from "./PdfView";
+
 
 const QFilter = () => {
   const [field, setField] = useState({
@@ -260,7 +262,8 @@ const QFilter = () => {
               <h3>{field.year}</h3>
             </Col>
           </Row>
-          <QFetched pdflink={field.link} />
+          {/* <QFetched pdflink={field.link} /> */}
+          <PdfView pdfLink={field.link} />
           <br />
         </Font>
       </Container>
