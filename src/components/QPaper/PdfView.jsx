@@ -1,11 +1,11 @@
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import { useState } from 'react';
+import "./PdfView.css";
 
 function PdfView(props) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const [file, setFile] = useState("http://www.africau.edu/images/default/sample.pdf");
 
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -56,12 +56,16 @@ function PdfView(props) {
           
           </div>
         </div>
-        <Document file={ props.pdfLink } 
-        onLoadSuccess={onDocumentLoadSuccess}
-        noData="">
-          <Page pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset}  />
-        </Document>
-      
+          
+        <div id="PdfContainer">
+          <Document file={ props.pdfLink } 
+            onLoadSuccess={onDocumentLoadSuccess}
+            noData=""
+            className="PDFDocument">
+              <Page pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset}  className="PDFPage"/>
+          </Document>
+        </div>
+
       </div>
     </div>
   );
