@@ -7,13 +7,21 @@ import Font, { Text } from 'react-font';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import "../../components/bootstrap.min.css";
-import Heading from "../../components/Utilities/Heading"
+import Heading from "../../components/Utilities/Heading";
 import JumbotronDiv from "../../components/MyLandingFirstSection/JumbotronDiv";
+import {Helmet} from "react-helmet";
 
 class Home extends Component {
     render() {
         return(
             <div className="home">
+                <Helmet>
+                    <title>Hetvik | Homepage</title>
+                    <meta name="description" content="Hetvik is a platform build for the student by the student" />
+                    <meta name="keyword" content="Hetvik" />
+                    
+                </Helmet>
+                
                 <JumbotronDiv />
                 {/* <MyOneCarousel /> */}
 
