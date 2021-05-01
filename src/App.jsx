@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Navbar/Header";
 import Footer from "./components/Footer/Footer";
@@ -8,14 +8,34 @@ import ContactUs from "./pages/Contact/ContactUs";
 import Team from "./components/AboutUs/CoreTeam";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PageNotFound from "./components/Errors/PageNotFound";
-import Admin from "./pages/Admin/Admin";
+// import Admin from "./pages/Admin/Admin";
 import Privacy from "./pages/Privacy/Privacy";
 import TermsAndCondtions from "./pages/TermsAndCondtions/TermsAndCondtions";
 import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
 import Questions from "./pages/Questions/Questions";
+import ReactGA from "react-ga";
+//import InitializeReactGA from "./components/InitializeReactGA";
 
+
+// function usePageViews() {
+// 	//const location = useLocation();
+// 	useEffect(() => {
+// 		InitializeReactGA(ReactGA);
+// 		ReactGA.set({ page: window.location.pathname });
+// 		ReactGA.pageview(window.location.pathname);
+// 	}, [window.location]);
+// }
 
 function App() {
+  useEffect(()=>{
+    ReactGA.initialize('UA-196096069-1');
+    
+    //to report pageView
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
+
+  // usePageViews();
+
   return (
     <div className="App">
       <Router >
@@ -32,9 +52,8 @@ function App() {
           <Route path="/terms" exact component={TermsAndCondtions} />
           <Route path="/disclaimer" exact component={DisclaimerPage} />
 
-          <Route path="/admin" exact component={Admin} />
 
-          {/* <Route path="*" exact component={Admin} /> */}
+          <Route path="*" exact component={PageNotFound} />
 
         </Switch>
         <Footer />
