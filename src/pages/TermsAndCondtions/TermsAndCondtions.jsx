@@ -12,7 +12,8 @@ class TermsAndCondtions extends Component {
 
         <Helmet>
             <title>Terms and Conditions | Hetvik</title>
-            <meta name="description" content="Terms and Conditions" />
+            <meta name="description" content="These terms and conditions outline the rules and regulations for the use of Hetvik's Website, located at https://hetvik.in/. By accessing this website we assume you accept these terms and conditions. Do not continue to use Hetvik if you do not agree to take all of the terms and conditions stated on this page." />
+            <link rel="canonical" href="https://hetvik.in/terms" />
         </Helmet>
             
         <TermsConditions />

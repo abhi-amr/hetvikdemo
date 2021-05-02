@@ -21,6 +21,7 @@ class Question extends Component {
           <Helmet>
             <title>Questions | Hetvik</title>
             <meta name="description" content="Find Your Paper here" />
+            <link rel="canonical" href="https://hetvik.in/questions" />
           </Helmet>
 
             <Router>

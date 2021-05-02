@@ -21,6 +21,7 @@ class ContactUs extends Component {
           <Helmet>
               <title>Contact Us | Hetvik</title>
               <meta name="description" content="Leave a feedback or request a paper" />
+              <link rel="canonical" href="https://hetvik.in/contact" />
           </Helmet>
 
             <Font family= "Londrina Solid">

@@ -4,10 +4,10 @@ import Font, { Text } from 'react-font';
 import {  } from 'react-icons/fa';
 // import anand from '../../images/Avatar/avatar2.jpg';
 // import narayan from '../../images/Avatar/avatar3.jpg';
-// import kumar from '../../images/Avatar/avatar1.jpg';
+import kumar from '../../images/Avatar/avatar1.jpg';
 import anand from '../../images/Avatar/abhishekAd.svg';
 import narayan from '../../images/Avatar/rupesh.svg';
-import kumar from '../../images/Avatar/abhishekKr.svg';
+// import kumar from '../../images/Avatar/abhishekKr.svg';
 
 
 

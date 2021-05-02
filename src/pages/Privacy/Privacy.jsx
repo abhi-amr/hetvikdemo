@@ -12,7 +12,8 @@ class Privacy extends Component {
         
         <Helmet>
             <title>Privacy | Hetvik</title>
-            <meta name="description" content="Privacy" />
+            <meta name="description" content="At Hetvik, accessible from https://hetvik.in/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Hetvik and how we use it." />
+            <link rel="canonical" href="https://hetvik.in/privacy" />
         </Helmet>
             
         <PrivacyPolicy />

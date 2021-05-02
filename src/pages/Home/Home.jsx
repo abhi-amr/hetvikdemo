@@ -19,6 +19,7 @@ class Home extends Component {
                     <title>Hetvik | Homepage</title>
                     <meta name="description" content="Hetvik is a platform build for the student by the student" />
                     <meta name="keyword" content="Hetvik" />
+                    <link rel="canonical" href="https://hetvik.in/" />
                     
                 </Helmet>
                 

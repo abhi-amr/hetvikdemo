@@ -16,6 +16,7 @@ class AboutUs extends Component {
           <Helmet>
               <title>About Us | Hetvik</title>
               <meta name="description" content="We are group of enthusiast who dont want students to suffer things that we did" />
+              <link rel="canonical" href="https://hetvik.in/about" />
           </Helmet>
           
           <Heading content="About Us" />
