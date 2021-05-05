@@ -25,7 +25,7 @@ class PrivacyPolicy extends Component {
             <div id="our-disclaimer">
               <h2>Disclaimer</h2>
               <span>
-              All the information on this website - https://zealous-river-0573aaf00.azurestaticapps.net/ - is published in good faith and for general information purpose only. Hetvik does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (Hetvik), is strictly at your own risk. Hetvik will not be liable for any losses and/or damages in connection with the use of our website.
+              All the information on this website - https://hetvik.in/ - is published in good faith and for general information purpose only. Hetvik does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (Hetvik), is strictly at your own risk. Hetvik will not be liable for any losses and/or damages in connection with the use of our website.
               </span>
               <br /><br />
               <span>

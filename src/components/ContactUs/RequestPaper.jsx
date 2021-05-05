@@ -131,8 +131,8 @@ class RequestPaper extends Component {
                     <Form.Row>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
                         <Form.Label>Subject</Form.Label>
-                        <Form.Control placeholder="" 
-                        name="subject" value= {subject} onChange = {this.onChangeHandler} required/>
+                        <Form.Control placeholder=""  
+                        name="subject" value= {subject} onChange = {this.onChangeHandler} />
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupYear">
                         <Form.Label>Year</Form.Label>

@@ -8,13 +8,22 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import QFilter from '../../components/QPaper/QFilter';
 import QFetched from '../../components/QPaper/QFetched';
 import GoalsMission from "../../components/AboutUs/GoalsMission";
-import Heading from "../../components/Utilities/Heading"
+import Heading from "../../components/Utilities/Heading";
+import {Helmet} from "react-helmet";
+
 
 
 class Question extends Component {
   render(){
     return (
         <Font family="Roboto">
+          
+          <Helmet>
+            <title>Questions | Hetvik</title>
+            <meta name="description" content="Find Your Paper here" />
+            <link rel="canonical" href="https://hetvik.in/questions" />
+          </Helmet>
+
             <Router>
             <Container fluid>
             <Row>

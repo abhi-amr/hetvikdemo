@@ -46,8 +46,8 @@ class Footer extends Component {
                         <Col><Text family = "Roboto"><h4>Newsletter</h4></Text></Col>
                       </Row>
                       <Row>
-                        <Col><a className="link"><FaInstagram /></a></Col>
-                        <Col><a  className="link"><FaFacebook /></a></Col>
+                        <Col><a href="https://www.instagram.com/hetvik.in/" className="link"><FaInstagram /></a></Col>
+                        <Col><a href="https://www.facebook.com/hetvik.in" className="link"><FaFacebook /></a></Col>
                         <Col><a  className="link"><FaTwitter /></a></Col>
                       </Row>
                     </Container>

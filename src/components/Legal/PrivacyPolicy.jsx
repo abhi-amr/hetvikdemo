@@ -13,7 +13,7 @@ class PrivacyPolicy extends Component {
             <Heading content="Privacy Policy for Hetvik" />
             <div id="our-privacy-policy">
               <span>
-              At Hetvik, accessible from https://zealous-river-0573aaf00.azurestaticapps.net/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Hetvik and how we use it.
+              At Hetvik, accessible from https://hetvik.in/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Hetvik and how we use it.
               </span>
               <br /><br />
               <span>

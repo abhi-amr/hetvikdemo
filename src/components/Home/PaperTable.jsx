@@ -1,23 +1,67 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../bootstrap.min.css";
 
 const PaperTable = (props) => {
   return (
     <>
       <div className="table-responsive">
-        <table className="table table-bordered">
+        <table
+          style={{ marginBottom: "0px" }}
+          className="table table-bordered table-striped table-dark "
+        >
           <tbody>
             {props.course.map((val) => {
               return (
                 <tr>
-                  <th scope="row">{val.pname}</th>
+                  <th scope="row">{val.subName}</th>
                   <td>
-                    <a href={val.one}>1st</a>
+                    <Link
+                      to={{
+                        pathname: "/questions",
+                        state: {
+                          programmeName: val.programmeName,
+                          programmeId: val.programmeId,
+                          subName: val.subName,
+                          subCode: val.subCode,
+                          year: val.one,
+                        },
+                      }}
+                    >
+                      2012
+                    </Link>
                   </td>
                   <td>
-                    <a href={val.two}>2nd</a>
+                    <Link
+                      to={{
+                        pathname: "/questions",
+                        state: {
+                          programmeName: val.programmeName,
+                          programmeId: val.programmeId,
+                          subName: val.subName,
+                          subCode: val.subCode,
+                          year: val.two,
+                        },
+                      }}
+                    >
+                      2013
+                    </Link>
                   </td>
                   <td>
-                    <a href={val.three}>3rd</a>
+                    <Link
+                      to={{
+                        pathname: "/questions",
+                        state: {
+                          programmeName: val.programmeName,
+                          programmeId: val.programmeId,
+                          subName: val.subName,
+                          subCode: val.subCode,
+                          year: val.three,
+                        },
+                      }}
+                    >
+                      2014
+                    </Link>
                   </td>
                 </tr>
               );
