@@ -1,14 +1,30 @@
 import React from "react";
 import "./Qpaper.css";
 import "../bootstrap.min.css";
-import BscData, { BcaData } from "./PaperData";
+import bscData, {
+  baData,
+  bcomData,
+  bcaData,
+  biotechData,
+  mscData,
+  maData,
+  mcomData,
+  mcaData,
+} from "./PaperData";
 import PaperTable from "./PaperTable";
 
 const Qpaper = () => {
+  const mystyle = {
+    padding: "10px",
+  };
   return (
     <React.Fragment>
       <br />
-      <div className="container  shadow-lg qpmain">
+      <div
+        style={mystyle}
+        className="shadow-lg bg-dark qpmain container-fluid font-weight-bold"
+      >
+        {/* Undergraduate or Postgraduate */}
         <ul className="nav nav-tabs" id="myTab" role="tablist">
           <li className="nav-item" role="presentation">
             <a
@@ -38,12 +54,14 @@ const Qpaper = () => {
           </li>
         </ul>
         <div className="tab-content" id="myTabContent">
+          {/* The div below is for Undergraduate courses */}
           <div
             className="tab-pane fade show active"
             id="ug"
             role="tabpanel"
             aria-labelledby="ug-tab"
           >
+            {/* The list of Undergraduate courses starts */}
             <ul className="nav nav-tabs" id="coursTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <a
@@ -97,15 +115,30 @@ const Qpaper = () => {
                   BCA
                 </a>
               </li>
+              <li className="nav-item" role="presentation">
+                <a
+                  className="nav-link"
+                  id="biotech-tab"
+                  data-toggle="tab"
+                  href="#biotech"
+                  role="tab"
+                  aria-controls="biotech"
+                  aria-selected="false"
+                >
+                  B.Sc (Biotechnology)
+                </a>
+              </li>
+              {/* The list of Undergraduate courses ends */}
             </ul>
             <div className="tab-content" id="ugcoursTabContent">
+              {/*This div is for question paper data of ug courses listed above.*/}
               <div
                 className="tab-pane fade show active"
                 id="bsc"
                 role="tabpanel"
                 aria-labelledby="bsc-tab"
               >
-                <PaperTable course={BscData} />
+                <PaperTable course={bscData} />
               </div>
               <div
                 className="tab-pane fade"
@@ -113,7 +146,7 @@ const Qpaper = () => {
                 role="tabpanel"
                 aria-labelledby="ba-tab"
               >
-                paper Ba
+                <PaperTable course={baData} />
               </div>
               <div
                 className="tab-pane fade"
@@ -121,7 +154,7 @@ const Qpaper = () => {
                 role="tabpanel"
                 aria-labelledby="bcom-tab"
               >
-                paper Bcom
+                <PaperTable course={bcomData} />
               </div>
 
               <div
@@ -130,16 +163,27 @@ const Qpaper = () => {
                 role="tabpanel"
                 aria-labelledby="bca-tab"
               >
-                <PaperTable course={BcaData} />
+                <PaperTable course={bcaData} />
+              </div>
+              <div
+                className="tab-pane fade"
+                id="biotech"
+                role="tabpanel"
+                aria-labelledby="biotech-tab"
+              >
+                <PaperTable course={biotechData} />
               </div>
             </div>
+            {/* Undergraduate div ends. */}
           </div>
+          {/* The div below is for Postgraduate courses */}
           <div
             className="tab-pane fade"
             id="pg"
             role="tabpanel"
             aria-labelledby="pg-tab"
           >
+            {/* The list of Postgraduate courses starts */}
             <ul className="nav nav-tabs" id="coursTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <a
@@ -193,15 +237,17 @@ const Qpaper = () => {
                   MCA
                 </a>
               </li>
+              {/* The list of Posgraduate courses ends */}
             </ul>
             <div className="tab-content" id="ugcoursTabContent">
+              {/*This div is for question paper data of pg courses listed above.*/}
               <div
                 className="tab-pane fade show active"
                 id="msc"
                 role="tabpanel"
                 aria-labelledby="msc-tab"
               >
-                <PaperTable course={BscData} />
+                <PaperTable course={mscData} />
               </div>
               <div
                 className="tab-pane fade"
@@ -209,7 +255,7 @@ const Qpaper = () => {
                 role="tabpanel"
                 aria-labelledby="ma-tab"
               >
-                paper Ba
+                <PaperTable course={maData} />
               </div>
               <div
                 className="tab-pane fade"
@@ -217,7 +263,7 @@ const Qpaper = () => {
                 role="tabpanel"
                 aria-labelledby="mcom-tab"
               >
-                paper Bcom
+                <PaperTable course={mcomData} />
               </div>
 
               <div
@@ -226,9 +272,10 @@ const Qpaper = () => {
                 role="tabpanel"
                 aria-labelledby="mca-tab"
               >
-                <PaperTable course={BcaData} />
+                <PaperTable course={mcaData} />
               </div>
             </div>
+            {/* Postgraduate div ends. */}
           </div>
         </div>
       </div>

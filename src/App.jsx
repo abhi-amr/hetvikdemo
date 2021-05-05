@@ -17,6 +17,8 @@ import ReactGA from "react-ga";
 //import InitializeReactGA from "./components/InitializeReactGA";
 
 
+
+
 // function usePageViews() {
 // 	//const location = useLocation();
 // 	useEffect(() => {
@@ -25,6 +27,7 @@ import ReactGA from "react-ga";
 // 		ReactGA.pageview(window.location.pathname);
 // 	}, [window.location]);
 // }
+
 
 function App() {
   useEffect(()=>{
@@ -54,6 +57,7 @@ function App() {
 
 
           <Route path="*" exact component={PageNotFound} />
+
 
         </Switch>
         <Footer />
