@@ -1,8 +1,11 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Form, Button, Card, Row, Col, Container } from "react-bootstrap";
-import QFetched from "../../components/QPaper/QFetched";
 import Font, { Text } from "react-font";
+import QFetched from "./QFetched";
+import PdfView from "./PdfView";
 import { useLocation } from "react-router";
+
+
 
 const QFilter = () => {
   const location = useLocation();
@@ -309,8 +312,8 @@ const QFilter = () => {
               </Col>
             </Form.Row>
 
-            <Button variant="primary" type="submit">
-              Get
+            <Button variant="info" type="submit">
+              Find
             </Button>
           </Form>
           <hr />
@@ -338,8 +341,9 @@ const QFilter = () => {
               </h3>
             </Col>
           </Row>
-          {console.log(field.link)}
-          <QFetched pdflink={quickLinkField.link + field.link} />
+
+          <PdfView pdfLink={quickLinkField.link + field.link} />
+
           <br />
         </Font>
       </Container>

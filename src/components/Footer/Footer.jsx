@@ -16,7 +16,7 @@ class Footer extends Component {
 
           <Container>
             <Row>
-              <Col><Text family = "Roboto"><h2><strong>HETVIK</strong></h2></Text></Col>
+              <Col><Text family = "Roboto"><h2><strong><Link className="link" to="/">HETVIK</Link></strong></h2></Text></Col>
             </Row>
             <Row>
               <Col><Text family= "Montserrat"><p>The true friend during your exams</p></Text></Col>
@@ -46,8 +46,8 @@ class Footer extends Component {
                         <Col><Text family = "Roboto"><h4>Newsletter</h4></Text></Col>
                       </Row>
                       <Row>
-                        <Col><a className="link"><FaInstagram /></a></Col>
-                        <Col><a  className="link"><FaFacebook /></a></Col>
+                        <Col><a href="https://www.instagram.com/hetvik.in/" className="link"><FaInstagram /></a></Col>
+                        <Col><a href="https://www.facebook.com/hetvik.in" className="link"><FaFacebook /></a></Col>
                         <Col><a  className="link"><FaTwitter /></a></Col>
                       </Row>
                     </Container>
@@ -60,6 +60,12 @@ class Footer extends Component {
 
         </Col>
       </Row>
+      <Row><Col><Text family="Balsamiq Sans"><center>
+        <p>
+          <Link className="link" to="/privacy">Privacy Policy</Link>  | 
+          <Link className="link" to="/terms">  Terms and Conditions</Link>  | 
+          <Link className="link" to="/disclaimer">  Disclaimer</Link>
+        </p></center></Text></Col></Row>
       <Row><Col><Text family="Open sans"><center><p>hetvik <FaCopyright/> 2021</p></center></Text></Col></Row>
     </Container>
     

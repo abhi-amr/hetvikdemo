@@ -11,13 +11,19 @@ import ManOpenedLetter from '../../images/Contact/manOpeningLetter.svg';
 import WomanChat from '../../images/Contact/womanChat.svg';
 import teamChat from '../../images/Contact/teamChat.svg';
 import Heading from "../../components/Utilities/Heading"
-
+import {Helmet} from "react-helmet";
 
 
 class ContactUs extends Component {
   render(){
     return (
         <Container style={{padding:"1em"}} fluid>
+          <Helmet>
+              <title>Contact Us | Hetvik</title>
+              <meta name="description" content="Leave a feedback or request a paper" />
+              <link rel="canonical" href="https://hetvik.in/contact" />
+          </Helmet>
+
             <Font family= "Londrina Solid">
               <Row>
                 <Col>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Button, Card, Row, Col} from 'react-bootstrap';
+import {Form, Button, Card, Row, Col, Alert} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
 import {  } from 'react-icons/im';
 import {  } from 'react-icons/bs';
@@ -23,8 +23,9 @@ class RequestPaper extends Component {
             year : '',
             message : '',
 
-            responseSuccess : '',
-            responseMessage : ''
+            success : false,
+            responseMessage : '',
+            disabled : false
 
         };
        
@@ -39,7 +40,9 @@ class RequestPaper extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-     
+        this.setState({
+            disabled : true
+        });
         //const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
      
         const data = {
@@ -58,7 +61,8 @@ class RequestPaper extends Component {
             console.log(res.data);
             this.setState({
                 responseMessage : res.data.message,
-                responseSuccess : res.data.success,
+                success : res.data.success,
+                disabled : false,
             //changing to default value//do down here
                 firstName : '',
                 lastName : '',
@@ -82,7 +86,7 @@ class RequestPaper extends Component {
 
 
   render(){
-    const {firstName, lastName, email, message, subject, university, year, programmeName, responseMessage, responseSuccess} = this.state;
+    const {firstName, lastName, email, message, subject, university, year, programmeName, responseMessage, success, disabled } = this.state;
 
     return (
         <Card>
@@ -99,18 +103,18 @@ class RequestPaper extends Component {
                         <Form.Group as={Col} controlId="formGroupFName">
                             <Form.Label>First Name</Form.Label>
                             <Form.Control placeholder="" 
-                            name="firstName" value= {firstName} onChange = {this.onChangeHandler} />
+                            name="firstName" value= {firstName} onChange = {this.onChangeHandler} required/>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGroupLName">
                             <Form.Label>Last Name</Form.Label>
                             <Form.Control placeholder="" 
-                            name="lastName" value= {lastName} onChange = {this.onChangeHandler} />
+                            name="lastName" value= {lastName} onChange = {this.onChangeHandler} required/>
                         </Form.Group>
                     </Form.Row>
                     <Form.Group controlId="formGroupEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="someone@domain.com" 
-                        name="email" value= {email} onChange = {this.onChangeHandler}/>
+                        name="email" value= {email} onChange = {this.onChangeHandler} required/>
                     </Form.Group>
                     <Form.Row>
                     <Form.Group as={Col}  controlId="formGroupUniversity">
@@ -121,14 +125,14 @@ class RequestPaper extends Component {
                     <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Programme/Course</Form.Label>
                         <Form.Control  defaultValue="" 
-                        name="programmeName" value= {programmeName} onChange = {this.onChangeHandler} />
+                        name="programmeName" value= {programmeName} onChange = {this.onChangeHandler} required/>
                     </Form.Group>
                     </Form.Row>
                     <Form.Row>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
                         <Form.Label>Subject</Form.Label>
-                        <Form.Control placeholder="" 
-                        name="subject" value= {subject} onChange = {this.onChangeHandler}/>
+                        <Form.Control placeholder=""  
+                        name="subject" value= {subject} onChange = {this.onChangeHandler} />
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupYear">
                         <Form.Label>Year</Form.Label>
@@ -142,11 +146,14 @@ class RequestPaper extends Component {
                         name="message" value= {message} onChange = {this.onChangeHandler}/>
                     </Form.Group>
                     
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" disabled={disabled}>
                         Request
                     </Button>
                 </Form>
-                {/* <CustomAlert success={responseSuccess} message={this.state.responseMessage}/> */}
+                {success && <Alert variant="success">
+                    {/* {this.state.responseMessage} */}
+                    Request recieved. Thank You.
+                    </Alert>}
             </Card.Body>
             </Font>
         </Card>

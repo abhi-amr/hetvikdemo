@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Navbar/Header";
 import Footer from "./components/Footer/Footer";
@@ -8,32 +8,57 @@ import ContactUs from "./pages/Contact/ContactUs";
 import Team from "./components/AboutUs/CoreTeam";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PageNotFound from "./components/Errors/PageNotFound";
-import QFilter from "./components/QPaper/QFilter";
+// import Admin from "./pages/Admin/Admin";
+import Privacy from "./pages/Privacy/Privacy";
+import TermsAndCondtions from "./pages/TermsAndCondtions/TermsAndCondtions";
+import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
 import Questions from "./pages/Questions/Questions";
-import Admin from "./pages/Admin/Admin";
-import AddProgramme from "./components/Admin/AddProgramme";
-import AddSubject from "./components/Admin/AddSubject";
-import UploadForm from "./components/Admin/UploadForm";
-import Question from "./pages/Questions/Questions";
-import SignIn from "./pages/LoginLogout/SignIn";
+import ReactGA from "react-ga";
+//import InitializeReactGA from "./components/InitializeReactGA";
+
+
+
+
+// function usePageViews() {
+// 	//const location = useLocation();
+// 	useEffect(() => {
+// 		InitializeReactGA(ReactGA);
+// 		ReactGA.set({ page: window.location.pathname });
+// 		ReactGA.pageview(window.location.pathname);
+// 	}, [window.location]);
+// }
+
 
 function App() {
+  useEffect(()=>{
+    ReactGA.initialize('UA-196096069-1');
+    
+    //to report pageView
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
+
+  // usePageViews();
+
   return (
     <div className="App">
-      <Router>
+      <Router >
         <Header />
-        {/* <AddProgramme />
-        <AddSubject /> */}
+        
 
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={AboutUs} />
           <Route path="/contact" exact component={ContactUs} />
           <Route path="/team" exact component={Team} />
-          <Route path="/questions" exact render={() => <Question />} />
+          <Route path="/questions" exact component={Questions} />
+          <Route path="/privacy" exact component={Privacy} />
+          <Route path="/terms" exact component={TermsAndCondtions} />
+          <Route path="/disclaimer" exact component={DisclaimerPage} />
 
-          <Route path="/admin" exact component={Admin} />
-          <Route path="/upform" exact component={UploadForm} />
+
+          <Route path="*" exact component={PageNotFound} />
+
+
         </Switch>
         <Footer />
       </Router>
