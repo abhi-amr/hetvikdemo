@@ -1,9 +1,69 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Form, Button, Card, Row, Col, Container } from "react-bootstrap";
-import Font, { Text } from "react-font";
 import QFetched from "../../components/QPaper/QFetched";
+import Font, { Text } from "react-font";
+import { useLocation } from "react-router";
 
 const QFilter = () => {
+  const location = useLocation();
+  const quickLinkData = location.state;
+  const [quickLinkField, setQLField] = useState({
+    programmeId: "",
+    programmeName: "",
+    subjectCode: "",
+    subjectName: "",
+    year: "",
+    link: "",
+  });
+
+  const quickLinkCall = () => {
+    if (quickLinkData == undefined) {
+      console.log("quickLinkData is undefined");
+    } else {
+      setQLField((prevalue) => {
+        return {
+          ...prevalue,
+          programmeName: quickLinkData.programmeName,
+          programmeId: quickLinkData.programmeId,
+          subjectCode: quickLinkData.subCode,
+          subjectName: quickLinkData.subName,
+          year: quickLinkData.year,
+        };
+      });
+      getQuickLinkPaper();
+    }
+  };
+
+  /* API call for question paper from quick link. */
+  const getQuickLinkPaper = () => {
+    const url = "https://hetvikbackapi.azurewebsites.net/api/File/GetPaper";
+    const data = {
+      programmeId: quickLinkData.programmeId,
+      subjectCode: quickLinkData.subCode,
+      year: Number(quickLinkData.year),
+    };
+    const params = {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    fetch(url, params)
+      .then((response) => response.json())
+      .then((json) => {
+        if (json.urlWithSasToken == null) {
+          alert("Question Paper Not Found");
+        } else {
+          setQLField((prevalue) => {
+            return {
+              ...prevalue,
+              link: json.urlWithSasToken[0],
+            };
+          });
+        }
+      });
+  };
   const [field, setField] = useState({
     programmeId: "",
     programmeName: "",
@@ -11,10 +71,6 @@ const QFilter = () => {
     subjectName: "",
     year: "",
     link: "",
-
-    responseMessage: "",
-    responseSuccess: false,
-    responseError: "",
   });
   /*api call for programs*/
   const [prg, setPrg] = useState([]);
@@ -27,12 +83,11 @@ const QFilter = () => {
         setPrg(json);
       });
   };
-
   useEffect(() => {
     prgGet();
+    quickLinkCall();
   }, []);
-
-  /*Api call for subject*/
+  /*Api call for subjects*/
   const [sub, setSub] = useState([]);
   const subGet = (event) => {
     const selectedIndex = event.target.options.selectedIndex;
@@ -80,15 +135,7 @@ const QFilter = () => {
       });
   };
 
-  const onChangeHandler = (event) => {
-    setField((prevalue) => {
-      return {
-        ...prevalue,
-        [event.target.name]: event.target.value,
-      };
-    });
-  };
-
+  /* API call for question paper. */
   const getPaper = () => {
     const url = "https://hetvikbackapi.azurewebsites.net/api/File/GetPaper";
     const data = {
@@ -103,6 +150,8 @@ const QFilter = () => {
       },
       body: JSON.stringify(data),
     };
+    console.log("%cQFilter.jsx line:161 data", "color: #007acc;", data);
+    console.log("%cQFilter.jsx line:162 field", "color: #007acc;", field);
     fetch(url, params)
       .then((response) => response.json())
       .then((json) => {
@@ -118,11 +167,20 @@ const QFilter = () => {
           setField((prevalue) => {
             return {
               ...prevalue,
-              link: json.urlWithSasToken[0] + "#toolbar=0&view=Fit",
+              link: json.urlWithSasToken[0],
             };
           });
         }
       });
+  };
+
+  const onChangeHandler = (event) => {
+    setField((prevalue) => {
+      return {
+        ...prevalue,
+        [event.target.name]: event.target.value,
+      };
+    });
   };
 
   const handleSubmit = (event) => {
@@ -130,6 +188,18 @@ const QFilter = () => {
     getPaper();
   };
   const prgTwoCalls = (event) => {
+    setQLField((prevalue) => {
+      //every time we select a program we need to sure that
+      // previous value of quickLinkField get erased.
+      return {
+        programmeId: "",
+        programmeName: "",
+        subjectCode: "",
+        subjectName: "",
+        year: "",
+        link: "",
+      };
+    });
     setField((prevalue) => {
       //every time we select a program we need to sure that
       // previous value of subject and year get erased.
@@ -138,6 +208,7 @@ const QFilter = () => {
         subjectCode: "",
         subjectName: "",
         year: "",
+        link: "",
       };
     });
     onChangeHandler(event);
@@ -156,8 +227,6 @@ const QFilter = () => {
     yearGet(event);
   };
 
-  //   render() {
-  //     const { programmeId, subjectCode, year } = this.state;
   return (
     <>
       <Container fluid>
@@ -181,7 +250,7 @@ const QFilter = () => {
                     onChange={prgTwoCalls}
                     required="true"
                   >
-                    <option>Choose Program</option>
+                    <option selected>Choose Program</option>
                     {prg.map((prog) => (
                       <option
                         key={prog.id}
@@ -247,20 +316,30 @@ const QFilter = () => {
           <hr />
           <Row>
             <Col>
-              <h3>{field.programmeName}</h3>
+              <h3>
+                {field.programmeName}
+                {quickLinkField.programmeName}
+              </h3>
             </Col>
           </Row>
           <Row>
             <Col>
-              <h3>{field.subjectName}</h3>
+              <h3>
+                {field.subjectName}
+                {quickLinkField.subjectName}
+              </h3>
             </Col>
           </Row>
           <Row>
             <Col>
-              <h3>{field.year}</h3>
+              <h3>
+                {field.year}
+                {quickLinkField.year}
+              </h3>
             </Col>
           </Row>
-          <QFetched pdflink={field.link} />
+          {console.log(field.link)}
+          <QFetched pdflink={quickLinkField.link + field.link} />
           <br />
         </Font>
       </Container>
@@ -268,4 +347,4 @@ const QFilter = () => {
   );
 };
 
-export default QFilter;
+export default React.memo(QFilter);

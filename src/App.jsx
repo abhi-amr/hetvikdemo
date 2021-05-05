@@ -17,7 +17,6 @@ import UploadForm from "./components/Admin/UploadForm";
 import Question from "./pages/Questions/Questions";
 import SignIn from "./pages/LoginLogout/SignIn";
 
-
 function App() {
   return (
     <div className="App">
@@ -31,7 +30,7 @@ function App() {
           <Route path="/about" exact component={AboutUs} />
           <Route path="/contact" exact component={ContactUs} />
           <Route path="/team" exact component={Team} />
-          <Route path="/questions" exact component={Question} />
+          <Route path="/questions" exact render={() => <Question />} />
 
           <Route path="/admin" exact component={Admin} />
           <Route path="/upform" exact component={UploadForm} />
