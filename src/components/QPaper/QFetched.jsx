@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Alert from "react-bootstrap/Alert";
-import MyPdf from "../../images/pag19.pdf";
+
+
 
 class QFetched extends Component {
   // state = {
