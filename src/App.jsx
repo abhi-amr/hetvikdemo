@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import AboutUs from "./pages/About/AboutUs";
 import ContactUs from "./pages/Contact/ContactUs";
-import Team from "./components/AboutUs/CoreTeam";
+import Team from "./pages/Team/Team";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PageNotFound from "./components/Errors/PageNotFound";
 // import Admin from "./pages/Admin/Admin";

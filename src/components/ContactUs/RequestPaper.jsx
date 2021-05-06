@@ -146,7 +146,7 @@ class RequestPaper extends Component {
                         name="message" value= {message} onChange = {this.onChangeHandler}/>
                     </Form.Group>
                     
-                    <Button variant="primary" type="submit" disabled={disabled}>
+                    <Button variant="info" type="submit" disabled={disabled}>
                         Request
                     </Button>
                 </Form>

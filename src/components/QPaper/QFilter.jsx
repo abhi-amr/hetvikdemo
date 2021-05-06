@@ -344,7 +344,7 @@ const QFilter = () => {
 
           <PdfView pdfLink={quickLinkField.link + field.link} />
 
-          <br />
+          <br /><br />
         </Font>
       </Container>
     </>
