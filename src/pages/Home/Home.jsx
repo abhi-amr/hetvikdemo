@@ -16,7 +16,7 @@ class Home extends Component {
         return(
             <div className="home">
                 <Helmet>
-                    <title>Hetvik | Homepage</title>
+                    <title>University Papers | Hetvik</title>
                     <meta name="description" content="Hetvik is a platform build for the students by the students" />
                     <meta name="keyword" content="Hetvik" />
                     <link rel="canonical" href="https://hetvik.in/" />
