@@ -1,22 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../bootstrap.min.css";
 
 const PaperTable = (props) => {
+  const mystyle = {
+    marginBottom: "0px",
+    textDecoration: "none",
+  };
+  const mystyleLink = {
+    textDecoration: "none",
+    color: "black",
+  };
+  const mystyleTd = {
+    padding: "0.5rem 0.75rem 0.5rem 0.75rem",
+  };
   return (
     <>
       <div className="table-responsive">
         <table
-          style={{ marginBottom: "0px" }}
-          className="table table-bordered table-striped table-dark "
+          style={mystyle}
+          className="table table-bordered table-striped table-secondary "
         >
           <tbody>
             {props.course.map((val) => {
               return (
                 <tr>
                   <th scope="row">{val.subName}</th>
-                  <td>
-                    <Link
+                  <td style={mystyleTd}>
+                    <NavLink
+                      style={mystyleLink}
+                      className=" nav nav-pills nav-fill nav-link "
                       to={{
                         pathname: "/questions",
                         state: {
@@ -28,11 +41,13 @@ const PaperTable = (props) => {
                         },
                       }}
                     >
-                      2012
-                    </Link>
+                      <em>{val.one}</em>
+                    </NavLink>
                   </td>
-                  <td>
+                  <td style={mystyleTd}>
                     <Link
+                      style={mystyleLink}
+                      className=" nav nav-pills nav-fill nav-link "
                       to={{
                         pathname: "/questions",
                         state: {
@@ -44,11 +59,13 @@ const PaperTable = (props) => {
                         },
                       }}
                     >
-                      2013
+                      <em>{val.two}</em>
                     </Link>
                   </td>
-                  <td>
+                  <td style={mystyleTd}>
                     <Link
+                      style={mystyleLink}
+                      className=" nav nav-pills nav-fill nav-link "
                       to={{
                         pathname: "/questions",
                         state: {
@@ -60,7 +77,7 @@ const PaperTable = (props) => {
                         },
                       }}
                     >
-                      2014
+                      <em>{val.three}</em>
                     </Link>
                   </td>
                 </tr>
