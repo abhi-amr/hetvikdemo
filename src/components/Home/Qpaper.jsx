@@ -16,18 +16,24 @@ import PaperTable from "./PaperTable";
 const Qpaper = () => {
   const mystyle = {
     padding: "10px",
+    backgroundColor: "#d6d8db",
+    color: "black",
+  };
+  const mystyleAnchor = {
+    color: "black",
   };
   return (
     <React.Fragment>
       <br />
       <div
         style={mystyle}
-        className="shadow-lg bg-dark qpmain container-fluid font-weight-bold"
+        className="shadow-lg qpmain container-fluid font-weight-bold"
       >
         {/* Undergraduate or Postgraduate */}
         <ul className="nav nav-tabs" id="myTab" role="tablist">
           <li className="nav-item" role="presentation">
             <a
+              style={mystyleAnchor}
               className="nav-link active"
               id="ug-tab"
               data-toggle="tab"
@@ -41,6 +47,7 @@ const Qpaper = () => {
           </li>
           <li className="nav-item" role="presentation">
             <a
+              style={mystyleAnchor}
               className="nav-link"
               id="pg-tab"
               data-toggle="tab"
@@ -65,6 +72,7 @@ const Qpaper = () => {
             <ul className="nav nav-tabs" id="coursTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link active"
                   id="bsc-tab"
                   data-toggle="tab"
@@ -78,6 +86,7 @@ const Qpaper = () => {
               </li>
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link"
                   id="ba-tab"
                   data-toggle="tab"
@@ -91,6 +100,7 @@ const Qpaper = () => {
               </li>
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link"
                   id="bcom-tab"
                   data-toggle="tab"
@@ -104,6 +114,7 @@ const Qpaper = () => {
               </li>
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link"
                   id="bca-tab"
                   data-toggle="tab"
@@ -117,6 +128,7 @@ const Qpaper = () => {
               </li>
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link"
                   id="biotech-tab"
                   data-toggle="tab"
@@ -187,6 +199,7 @@ const Qpaper = () => {
             <ul className="nav nav-tabs" id="coursTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link active"
                   id="msc-tab"
                   data-toggle="tab"
@@ -200,6 +213,7 @@ const Qpaper = () => {
               </li>
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link"
                   id="ma-tab"
                   data-toggle="tab"
@@ -213,6 +227,7 @@ const Qpaper = () => {
               </li>
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link"
                   id="mcom-tab"
                   data-toggle="tab"
@@ -226,6 +241,7 @@ const Qpaper = () => {
               </li>
               <li className="nav-item" role="presentation">
                 <a
+                  style={mystyleAnchor}
                   className="nav-link"
                   id="mca-tab"
                   data-toggle="tab"
