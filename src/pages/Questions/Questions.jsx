@@ -56,7 +56,7 @@ const Question = () => {
                         ) : (
                           <i class="fas fa-caret-right"></i>
                         )}
-                        &nbsp; Acadmic Exam Question Paper
+                        &nbsp; Academic Exam Question Paper
                       </button>
                     </h2>
                   </div>
