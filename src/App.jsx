@@ -16,9 +16,6 @@ import Questions from "./pages/Questions/Questions";
 import ReactGA from "react-ga";
 //import InitializeReactGA from "./components/InitializeReactGA";
 
-
-
-
 // function usePageViews() {
 // 	//const location = useLocation();
 // 	useEffect(() => {
@@ -28,22 +25,20 @@ import ReactGA from "react-ga";
 // 	}, [window.location]);
 // }
 
-
 function App() {
-  useEffect(()=>{
-    ReactGA.initialize('UA-196096069-1');
-    
+  useEffect(() => {
+    ReactGA.initialize("UA-196096069-1");
+
     //to report pageView
     ReactGA.pageview(window.location.pathname + window.location.search);
-  }, [])
+  }, []);
 
   // usePageViews();
 
   return (
     <div className="App">
-      <Router >
+      <Router>
         <Header />
-        
 
         <Switch>
           <Route path="/" exact component={Home} />
@@ -55,10 +50,7 @@ function App() {
           <Route path="/terms" exact component={TermsAndCondtions} />
           <Route path="/disclaimer" exact component={DisclaimerPage} />
 
-
-          <Route path="*" exact component={PageNotFound} />
-
-
+          <Route path="*" exact component={Home} />
         </Switch>
         <Footer />
       </Router>

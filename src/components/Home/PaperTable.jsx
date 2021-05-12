@@ -27,9 +27,9 @@ const PaperTable = (props) => {
                 <tr>
                   <th scope="row">{val.subName}</th>
                   <td style={mystyleTd}>
-                    <NavLink
+                    <Link
                       style={mystyleLink}
-                      className=" nav nav-pills nav-fill nav-link "
+                      className=" nav nav-pills nav-fill nav-link  "
                       to={{
                         pathname: "/questions",
                         state: {
@@ -42,7 +42,7 @@ const PaperTable = (props) => {
                       }}
                     >
                       <em>{val.one}</em>
-                    </NavLink>
+                    </Link>
                   </td>
                   <td style={mystyleTd}>
                     <Link
