@@ -48,7 +48,7 @@ class Footer extends Component {
                       <Row>
                         <Col><a href="https://www.instagram.com/hetvik.in/" className="link"><FaInstagram /></a></Col>
                         <Col><a href="https://www.facebook.com/hetvik.in" className="link"><FaFacebook /></a></Col>
-                        <Col><a  className="link"><FaTwitter /></a></Col>
+                        <Col><a href="https://twitter.com/HetvikTeam" className="link"><FaTwitter /></a></Col>
                       </Row>
                     </Container>
                     </Col>

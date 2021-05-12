@@ -1,13 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Form, Button, Card, Row, Col, Container } from "react-bootstrap";
 import Font, { Text } from "react-font";
-import QFetched from "./QFetched";
 import PdfView from "./PdfView";
 import { useLocation } from "react-router";
 
-
-
-const QFilter = () => {
+const QFilter = (props) => {
   const location = useLocation();
   const quickLinkData = location.state;
   const [quickLinkField, setQLField] = useState({
@@ -20,9 +17,8 @@ const QFilter = () => {
   });
 
   const quickLinkCall = () => {
-    if (quickLinkData == undefined) {
-      console.log("quickLinkData is undefined");
-    } else {
+    // console.log("%cQFilter.jsx line:21 props", "color: #007acc;", props);
+    if (quickLinkData != undefined) {
       setQLField((prevalue) => {
         return {
           ...prevalue,
@@ -153,8 +149,6 @@ const QFilter = () => {
       },
       body: JSON.stringify(data),
     };
-    console.log("%cQFilter.jsx line:161 data", "color: #007acc;", data);
-    console.log("%cQFilter.jsx line:162 field", "color: #007acc;", field);
     fetch(url, params)
       .then((response) => response.json())
       .then((json) => {
@@ -204,7 +198,7 @@ const QFilter = () => {
       };
     });
     setField((prevalue) => {
-      //every time we select a program we need to sure that
+      //every time we select a new program we need to sure that
       // previous value of subject and year get erased.
       return {
         ...prevalue,
@@ -344,6 +338,7 @@ const QFilter = () => {
 
           <PdfView pdfLink={quickLinkField.link + field.link} />
 
+          <br />
           <br />
         </Font>
       </Container>
