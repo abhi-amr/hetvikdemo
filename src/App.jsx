@@ -25,6 +25,11 @@ import ReactGA from "react-ga";
 // }
 
 function App() {
+  const prgGet = () => {
+    let url =
+      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/Programme";
+    fetch(url).then((response) => response.json());
+  };
   useEffect(() => {
     //in production copy this to initialize
     //UA-196096069-1
@@ -32,6 +37,7 @@ function App() {
 
     //to report pageView
     ReactGA.pageview(window.location.pathname + window.location.search);
+    prgGet();
   }, []);
 
   // usePageViews();
