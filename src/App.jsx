@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Navbar/Header";
 import Footer from "./components/Footer/Footer";
@@ -13,6 +13,8 @@ import TermsAndCondtions from "./pages/TermsAndCondtions/TermsAndCondtions";
 import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
 import Questions from "./pages/Questions/Questions";
 import ReactGA from "react-ga";
+import endpoint from "./components/axios";
+import * as Constants from "./components/Utilities/Constants";
 //import InitializeReactGA from "./components/InitializeReactGA";
 
 // function usePageViews() {
@@ -25,10 +27,11 @@ import ReactGA from "react-ga";
 // }
 
 function App() {
-  const prgGet = () => {
-    let url =
-      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/Programme";
-    fetch(url).then((response) => response.json());
+  const [hiddenDiv, setHiddenDiv] = useState("");
+  const sayHello = async () => {
+    let response  = await endpoint.get("PatnaUniversity");
+    const info = response.data;
+    setHiddenDiv(info);
   };
   useEffect(() => {
     //in production copy this to initialize
@@ -37,13 +40,16 @@ function App() {
 
     //to report pageView
     ReactGA.pageview(window.location.pathname + window.location.search);
-    prgGet();
+    sayHello();
   }, []);
 
   // usePageViews();
 
   return (
+    
     <div className="App">
+      <div hidden={true}>{hiddenDiv}</div>
+      <div hidden={true}>{Constants.HIDDEN_DIV_KEYWORD}</div>
       <Router>
         <Header />
 

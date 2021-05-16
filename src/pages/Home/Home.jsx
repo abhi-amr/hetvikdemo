@@ -22,7 +22,7 @@ class Home extends Component {
                     <link rel="canonical" href="https://hetvik.in/" />
                     
                 </Helmet>
-                
+
                 <JumbotronDiv />
                 {/* <MyOneCarousel /> */}
 
