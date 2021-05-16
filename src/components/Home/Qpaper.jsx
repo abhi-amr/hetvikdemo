@@ -45,7 +45,7 @@ const Qpaper = () => {
               Undergraduate
             </a>
           </li>
-          <li className="nav-item" role="presentation">
+          {/* <li className="nav-item" role="presentation">
             <a
               style={mystyleAnchor}
               className="nav-link"
@@ -58,7 +58,7 @@ const Qpaper = () => {
             >
               Postgraduate
             </a>
-          </li>
+          </li> */}
         </ul>
         <div className="tab-content" id="myTabContent">
           {/* The div below is for Undergraduate courses */}
@@ -189,13 +189,13 @@ const Qpaper = () => {
             {/* Undergraduate div ends. */}
           </div>
           {/* The div below is for Postgraduate courses */}
-          <div
+          {/* <div
             className="tab-pane fade"
             id="pg"
             role="tabpanel"
             aria-labelledby="pg-tab"
           >
-            {/* The list of Postgraduate courses starts */}
+            The list of Postgraduate courses starts
             <ul className="nav nav-tabs" id="coursTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <a
@@ -253,10 +253,10 @@ const Qpaper = () => {
                   MCA
                 </a>
               </li>
-              {/* The list of Posgraduate courses ends */}
+              The list of Posgraduate courses ends
             </ul>
             <div className="tab-content" id="ugcoursTabContent">
-              {/*This div is for question paper data of pg courses listed above.*/}
+              This div is for question paper data of pg courses listed above.
               <div
                 className="tab-pane fade show active"
                 id="msc"
@@ -291,8 +291,8 @@ const Qpaper = () => {
                 <PaperTable course={mcaData} />
               </div>
             </div>
-            {/* Postgraduate div ends. */}
-          </div>
+            
+          </div>Postgraduate div ends. */}
         </div>
       </div>
       <br />
