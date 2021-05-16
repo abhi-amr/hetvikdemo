@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     //in production copy this to initialize
     //UA-196096069-1
-    ReactGA.initialize("");
+    ReactGA.initialize("UA-196096069-1");
 
     //to report pageView
     ReactGA.pageview(window.location.pathname + window.location.search);
