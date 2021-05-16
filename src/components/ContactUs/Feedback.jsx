@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
-import {Form, Button, Card, Row, Col, Alert} from 'react-bootstrap';
-import Font, { Text } from 'react-font';
-import {  } from 'react-icons/im';
-import {  } from 'react-icons/bs';
-import {  } from 'react-icons/gr';
+import {Form, Button, Card, Col, Alert} from 'react-bootstrap';
+import Font from 'react-font';
 import endpoint from "../axios";
-import CustomAlert from "../CustomAlert";
+
 
 
 

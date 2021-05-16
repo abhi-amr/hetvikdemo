@@ -13,7 +13,7 @@ export default class JumbotronDiv extends Component {
                     <Container fluid>
                         <br/><br/><br/>
                         <Text family="Comfortaa" weight="600" style={{fontSize: "60px"}}>HETVIK</Text>
-                        <Text italic={true} style={{fontSize: "20px"}}>
+                        <Text family="Balsamiq Sans" italic={true} style={{fontSize: "20px"}}>
                         Platform designed for the students by the students.
                         </Text>
                         <br/><br/><br/><br/>
@@ -24,10 +24,10 @@ export default class JumbotronDiv extends Component {
                                     <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">50+</span><br/>Papers</center></Text>
                                 </Col>
                                 <Col>
-                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">1000+</span><br/>Questions</center></Text>
+                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">20+</span><br/>Program</center></Text>
                                 </Col>
                                 <Col>
-                                    <Text family="Comfortaa" style={{fontSize: "35px"}}><center><span className="stats">200+</span><br/>Pages</center></Text>
+                                    <Text family="Comfortaa" style={{fontSize: "35px"}}><center><span className="stats">24/7</span><br/>Query</center></Text>
                                 </Col>
                             </Row>
                             <br/><br/><br/>

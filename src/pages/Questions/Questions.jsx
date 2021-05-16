@@ -1,12 +1,7 @@
-import React, { Component, useState } from "react";
-import { Form, Button, Card, Container, Row, Col } from "react-bootstrap";
-import Font, { Text } from "react-font";
-import {} from "react-icons/im";
-import {} from "react-icons/bs";
-import {} from "react-icons/gr";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import Font from "react-font";
 import QFilter from "../../components/QPaper/QFilter";
-import GoalsMission from "../../components/AboutUs/GoalsMission";
 import Heading from "../../components/Utilities/Heading";
 import { Helmet } from "react-helmet";
 import EntrancePaper from "../../components/QPaper/EntrancePaper";
@@ -56,7 +51,7 @@ const Question = () => {
                         ) : (
                           <i class="fas fa-caret-right"></i>
                         )}
-                        &nbsp; Acadmic Exam Question Paper
+                        &nbsp; Academic Question Paper
                       </button>
                     </h2>
                   </div>
@@ -93,7 +88,7 @@ const Question = () => {
                         ) : (
                           <i class="fas fa-caret-right"></i>
                         )}
-                        &nbsp; Entrance Exam Question Paper
+                        &nbsp; Entrance Question Paper
                       </button>
                     </h2>
                   </div>
@@ -114,6 +109,7 @@ const Question = () => {
             {/* For Google Adsense */}
             {/* <Col></Col> */}
           </Row>
+          <br/><br/><br/><br/>
         </Container>
       </Font>
     </>
