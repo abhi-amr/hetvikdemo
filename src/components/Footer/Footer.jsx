@@ -20,7 +20,7 @@ class Footer extends Component {
               <Col><Text family = "Roboto"><h2><strong><Link className="link" to="/">HETVIK</Link></strong></h2></Text></Col>
             </Row>
             <Row>
-              <Col><Text family= "Montserrat"><p>The true friend during your exams</p></Text></Col>
+              <Col><Text family= "Montserrat"><p>Platform designed for the students by the students</p></Text></Col>
             </Row>
           </Container>
 
@@ -45,7 +45,7 @@ class Footer extends Component {
                     <Col>
                     <Container>
                       <Row>
-                        <Col><Text family = "Roboto"><h4>Newsletter</h4></Text></Col>
+                        <Col ><Text family = "Roboto" ><h4 style={{textAlign:"jutify"}}>Connect on Social Media</h4></Text></Col>
                       </Row>
                       <Row>
                         <Col><a href="https://www.instagram.com/hetvik.in/" target="_blank" className="link"><FaInstagram /></a></Col>

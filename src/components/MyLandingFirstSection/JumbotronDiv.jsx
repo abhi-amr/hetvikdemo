@@ -11,20 +11,20 @@ export default class JumbotronDiv extends Component {
                 <Font family="Comfortaa">
                 <Jumbotron fluid className="jumbotron-image text-white">
                     <Container fluid>
-                        <br/><br/><br/>
-                        <Text family="Comfortaa" weight="600" style={{fontSize: "60px"}}>HETVIK</Text>
-                        <Text family="Balsamiq Sans" italic={true} style={{fontSize: "20px"}}>
-                        Platform designed for the students by the students.
-                        </Text>
+                        <br/><br/>
+                        <Text family="Comfortaa" weight="600" style={{fontSize: "60px"}}>Patna University Previous Year Papers</Text>
+                        {/* <Text family="Balsamiq Sans" style={{fontSize: "20px"}}>
+                        Hetvik | <em>Platform designed for the students by the students.</em>
+                        </Text> */}
                         <br/><br/><br/><br/>
                     </Container>
                     <Container>
                             <Row>
                                 <Col>
-                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">50+</span><br/>Papers</center></Text>
+                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">20+</span><br/>Program</center></Text>
                                 </Col>
                                 <Col>
-                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">20+</span><br/>Program</center></Text>
+                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">50+</span><br/>Papers</center></Text>
                                 </Col>
                                 <Col>
                                     <Text family="Comfortaa" style={{fontSize: "35px"}}><center><span className="stats">24/7</span><br/>Query</center></Text>
