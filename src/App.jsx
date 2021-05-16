@@ -7,8 +7,7 @@ import AboutUs from "./pages/About/AboutUs";
 import ContactUs from "./pages/Contact/ContactUs";
 import Team from "./pages/Team/Team";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PageNotFound from "./components/Errors/PageNotFound";
-// import Admin from "./pages/Admin/Admin";
+//import PageNotFound from "./components/Errors/PageNotFound";
 import Privacy from "./pages/Privacy/Privacy";
 import TermsAndCondtions from "./pages/TermsAndCondtions/TermsAndCondtions";
 import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
@@ -27,7 +26,9 @@ import ReactGA from "react-ga";
 
 function App() {
   useEffect(() => {
-    ReactGA.initialize("UA-196096069-1");
+    //in production copy this to initialize
+    //UA-196096069-1
+    ReactGA.initialize("");
 
     //to report pageView
     ReactGA.pageview(window.location.pathname + window.location.search);

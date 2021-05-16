@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Container, Col, Row, Button} from 'react-bootstrap';
+import {Container, Col, Row} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
 import { FaInstagram, FaFacebook, FaTwitter, FaCopyright } from 'react-icons/fa';
 import './Footer.css';
 import {Link} from 'react-router-dom';
+import Attribution from "../Attribution/Attribution";
 
 
 class Footer extends Component {
@@ -36,6 +37,7 @@ class Footer extends Component {
                         <Col><Link className="link" to="/">Home</Link></Col>
                         <Col><Link className="link" to="/about">About</Link></Col>
                         <Col><Link className="link" to="/team">Team</Link></Col>
+                        <Col><Attribution /></Col>
                         </Text>
                       {/* <Col><Button variant="light">More Info</Button></Col> */}
                       <Col><Link className = "btn btn-light" to="/contact">Contact Us</Link></Col>
@@ -46,9 +48,9 @@ class Footer extends Component {
                         <Col><Text family = "Roboto"><h4>Newsletter</h4></Text></Col>
                       </Row>
                       <Row>
-                        <Col><a href="https://www.instagram.com/hetvik.in/" className="link"><FaInstagram /></a></Col>
-                        <Col><a href="https://www.facebook.com/hetvik.in" className="link"><FaFacebook /></a></Col>
-                        <Col><a href="https://twitter.com/HetvikTeam" className="link"><FaTwitter /></a></Col>
+                        <Col><a href="https://www.instagram.com/hetvik.in/" target="_blank" className="link"><FaInstagram /></a></Col>
+                        <Col><a href="https://www.facebook.com/hetvik.in" target="_blank" className="link"><FaFacebook /></a></Col>
+                        <Col><a href="https://twitter.com/HetvikTeam" target="_blank" className="link"><FaTwitter /></a></Col>
                       </Row>
                     </Container>
                     </Col>

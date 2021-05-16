@@ -16,9 +16,9 @@ class Home extends Component {
         return(
             <div className="home">
                 <Helmet>
-                    <title>University Papers | Hetvik</title>
-                    <meta name="description" content="Hetvik is a platform build for the students by the students" />
-                    <meta name="keyword" content="Hetvik" />
+                    <title>Patna University Previous Year Papers | Hetvik</title>
+                    <meta name="description" content="Hetvik is a platform build for the students by the students. We are providing Patna University Entrance and Academic previous year question papers to assist the student in their curriculars." />
+                    
                     <link rel="canonical" href="https://hetvik.in/" />
                     
                 </Helmet>

@@ -27,7 +27,7 @@ const Qpaper = () => {
       <br />
       <div
         style={mystyle}
-        className="shadow-lg qpmain container-fluid font-weight-bold"
+        className="shadow-lg qpmain container font-weight-bold"
       >
         {/* Undergraduate or Postgraduate */}
         <ul className="nav nav-tabs" id="myTab" role="tablist">
