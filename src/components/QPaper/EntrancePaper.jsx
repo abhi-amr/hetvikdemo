@@ -11,7 +11,6 @@ const EntrancePaper = () => {
   /*api call for programs*/
   const [prg, setPrg] = useState([]);
   const prgGet = () => {
-    console.log("%cEntrancePaper.jsx line:13 ", "color: #007acc;");
     let url =
       "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/ProgrammeListForEntrance";
     fetch(url)
