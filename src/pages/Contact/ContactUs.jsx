@@ -27,7 +27,7 @@ class ContactUs extends Component {
             <Font family= "Londrina Solid">
               <Row>
                 <Col>
-                <Heading content="Contact Us" />
+                <Heading content="Get In Touch" />
                 </Col>
               </Row>
             <Row>
