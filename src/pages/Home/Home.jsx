@@ -22,7 +22,6 @@ class Home extends Component {
                     <link rel="canonical" href="https://hetvik.in/" />
                     
                 </Helmet>
-                <div hidden={true}>Patna University, Patna University Admission, Patna University Previous Year Paper</div>
 
                 <JumbotronDiv />
                 {/* <MyOneCarousel /> */}

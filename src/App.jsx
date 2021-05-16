@@ -14,6 +14,7 @@ import DisclaimerPage from "./pages/Disclaimer/DisclaimerPage";
 import Questions from "./pages/Questions/Questions";
 import ReactGA from "react-ga";
 import endpoint from "./components/axios";
+import * as Constants from "./components/Utilities/Constants";
 //import InitializeReactGA from "./components/InitializeReactGA";
 
 // function usePageViews() {
@@ -45,8 +46,10 @@ function App() {
   // usePageViews();
 
   return (
+    
     <div className="App">
       <div hidden={true}>{hiddenDiv}</div>
+      <div hidden={true}>{Constants.HIDDEN_DIV_KEYWORD}</div>
       <Router>
         <Header />
 
