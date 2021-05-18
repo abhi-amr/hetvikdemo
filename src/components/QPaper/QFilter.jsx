@@ -75,7 +75,7 @@ const QFilter = (props) => {
   const [prg, setPrg] = useState([]);
   const prgGet = () => {
     let url =
-      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/Programme";
+      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/ProgrammeListForQpaper";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
