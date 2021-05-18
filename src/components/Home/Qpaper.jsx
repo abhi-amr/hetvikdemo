@@ -81,7 +81,7 @@ const Qpaper = () => {
                   aria-controls="bsc"
                   aria-selected="true"
                 >
-                  B.Sc
+                  B.Sc (Physics)
                 </a>
               </li>
               <li className="nav-item" role="presentation">
@@ -95,7 +95,7 @@ const Qpaper = () => {
                   aria-controls="ba"
                   aria-selected="false"
                 >
-                  B.A
+                  B.Sc (Chemistry)
                 </a>
               </li>
               <li className="nav-item" role="presentation">
@@ -109,7 +109,7 @@ const Qpaper = () => {
                   aria-controls="bcom"
                   aria-selected="false"
                 >
-                  B.Com
+                  B.Sc (Statistics)
                 </a>
               </li>
               <li className="nav-item" role="presentation">
@@ -123,7 +123,7 @@ const Qpaper = () => {
                   aria-controls="bca"
                   aria-selected="false"
                 >
-                  BCA
+                  B.A (History)
                 </a>
               </li>
               <li className="nav-item" role="presentation">
@@ -137,7 +137,7 @@ const Qpaper = () => {
                   aria-controls="biotech"
                   aria-selected="false"
                 >
-                  B.Sc (Biotechnology)
+                  B.A (Psychology)
                 </a>
               </li>
               {/* The list of Undergraduate courses ends */}

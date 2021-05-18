@@ -25,7 +25,7 @@ class CoreTeam extends Component {
                         <Card.Body>
                         <Card.Title>Abhishek Anand</Card.Title>
                         <Card.Text>
-                            "Marked"
+                            <Text family="Caveat"><em>2019 Batch<br/> Patna Science College</em></Text>
                         </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -37,7 +37,7 @@ class CoreTeam extends Component {
                         <Card.Body>
                         <Card.Title>Rupesh Narayan</Card.Title>
                         <Card.Text>
-                            "Work is worship"
+                            <Text family="Caveat"><em>2019 Batch<br/> Patna Science College</em></Text>
                         </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -49,7 +49,7 @@ class CoreTeam extends Component {
                         <Card.Body>
                         <Card.Title>Abhishek Kumar</Card.Title>
                         <Card.Text>
-                            "Men agitat molem"
+                            <Text family="Caveat"><em>2019 Batch<br/> Patna Science College</em></Text> 
                         </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -61,7 +61,7 @@ class CoreTeam extends Component {
                         <Card.Body>
                         <Card.Title>Rahul Raj</Card.Title>
                         <Card.Text>
-                            "Zoravar"
+                            <Text family="Caveat"><em>2019 Batch<br/> Patna Science College</em></Text>
                         </Card.Text>
                         </Card.Body>
                         <Card.Footer>
