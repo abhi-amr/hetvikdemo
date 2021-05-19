@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Button, Card, Col, Alert} from 'react-bootstrap';
+import {Form, Button, Card, Col, Alert, Spinner} from 'react-bootstrap';
 import Font from 'react-font';
 import endpoint from "../axios";
 
@@ -17,12 +17,13 @@ class Feedback extends Component {
             email : '',
             university : 'Patna University',
             programmeName : '',
-            rollNo : '',
+            mobileNo : '',
             batch : '',
             message : '',
 
             success : false,
             disabled : false,
+            loading : false,
             responseMessage : ''
 
         };
@@ -39,7 +40,8 @@ class Feedback extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.setState({
-            disabled : true
+            disabled : true,
+            loading : true
         });
      
         //const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
@@ -51,7 +53,7 @@ class Feedback extends Component {
             "message" : this.state.message,
             "university" : this.state.university,
             "programmeName" : this.state.programmeName,
-            "rollNo" : this.state.rollNo,
+            "mobileNo" : this.state.mobileNo,
             "batch" : Number(this.state.batch)
        }
      
@@ -62,13 +64,14 @@ class Feedback extends Component {
                 responseMessage : res.data.message,
                 success : res.data.success,
                 disabled : false,
+                loading : false,
             //changing to default value//do down here
                 firstName : '',
                 lastName : '',
                 email : '',
                 university : 'Patna University',
                 programmeName : '',
-                rollNo : '',
+                mobileNo : '',
                 batch : '',
                 message : ''
             
@@ -84,7 +87,7 @@ class Feedback extends Component {
 
 
   render(){
-    const {firstName, lastName, email, message, batch, university, rollNo, programmeName, responseMessage, success, disabled} = this.state;
+    const {firstName, lastName, email, message, batch, university, mobileNo, programmeName, responseMessage, success, disabled, loading} = this.state;
     return (
         <Card>
             <Font family="Comfortaa">
@@ -120,16 +123,16 @@ class Feedback extends Component {
                         name="university" value= {university} onChange = {this.onChangeHandler} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>Programme/Course</Form.Label>
-                        <Form.Control defaultValue=""
-                        name="programmeName" value= {programmeName} onChange = {this.onChangeHandler} required />
+                        <Form.Label>Course Enrolled In</Form.Label>
+                        <Form.Control defaultValue="" placeholder="(Optional)"
+                        name="programmeName" value= {programmeName} onChange = {this.onChangeHandler} />
                     </Form.Group>
                     </Form.Row>
                     <Form.Row>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
-                        <Form.Label>Your Roll No.</Form.Label>
+                        <Form.Label>Mobile No</Form.Label>
                         <Form.Control placeholder="(Optional)" 
-                        name="rollNo" value= {rollNo} onChange = {this.onChangeHandler}/>
+                        name="mobileNo" value= {mobileNo} onChange = {this.onChangeHandler}/>
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupYear">
                         <Form.Label>Batch</Form.Label>
@@ -146,6 +149,7 @@ class Feedback extends Component {
                     <Button variant="info" type="submit" disabled={disabled}>
                         Send
                     </Button>
+                    {loading && <Spinner/>}
                 </Form>
 
                 {success && <Alert variant="success">

@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
-import {Form, Button, Card, Row, Col, Alert} from 'react-bootstrap';
-import Font, { Text } from 'react-font';
-import {  } from 'react-icons/im';
-import {  } from 'react-icons/bs';
-import {  } from 'react-icons/gr';
+import {Form, Button, Card, Col, Alert, Spinner} from 'react-bootstrap';
+import Font from 'react-font';
 import endpoint from "../axios";
-import CustomAlert from "../CustomAlert";
+
 
 
 
@@ -20,12 +17,13 @@ class RequestPaper extends Component {
             university : 'Patna University',
             programmeName : '',
             subject : '',
-            year : '',
+            mobileNo : '',
             message : '',
 
             success : false,
             responseMessage : '',
-            disabled : false
+            disabled : false,
+            loding : false
 
         };
        
@@ -41,7 +39,8 @@ class RequestPaper extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.setState({
-            disabled : true
+            disabled : true,
+            loading : true
         });
         //const API_ENDPOINT = "https://hetvikbackapi.azurewebsites.net/api/";
      
@@ -53,7 +52,7 @@ class RequestPaper extends Component {
             "university" : this.state.university,
             "programmeName" : this.state.programmeName,
             "subject" : this.state.subject,
-            "year" : Number(this.state.year)
+            "mobileNo" : this.state.mobilNo
        }
      
         endpoint.post("Mail/RequestPaperResponse", data)
@@ -63,6 +62,7 @@ class RequestPaper extends Component {
                 responseMessage : res.data.message,
                 success : res.data.success,
                 disabled : false,
+                loading : false,
             //changing to default value//do down here
                 firstName : '',
                 lastName : '',
@@ -70,12 +70,12 @@ class RequestPaper extends Component {
                 university : 'Patna University',
                 programmeName : '',
                 subject : '',
-                year : '',
+                mobileNo : '',
                 message : ''
             
             });
 
-            console.log(this.state);
+            //console.log(this.state);
         
         })
      
@@ -86,7 +86,7 @@ class RequestPaper extends Component {
 
 
   render(){
-    const {firstName, lastName, email, message, subject, university, year, programmeName, responseMessage, success, disabled } = this.state;
+    const {firstName, lastName, email, message, subject, university, mobileNo, programmeName, responseMessage, success, disabled, loading } = this.state;
 
     return (
         <Card>
@@ -131,13 +131,13 @@ class RequestPaper extends Component {
                     <Form.Row>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
                         <Form.Label>Subject</Form.Label>
-                        <Form.Control placeholder=""  
+                        <Form.Control placeholder="(Optional)"  
                         name="subject" value= {subject} onChange = {this.onChangeHandler} />
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupYear">
-                        <Form.Label>Year</Form.Label>
-                        <Form.Control placeholder="20xx" 
-                        name="year" value= {year} onChange = {this.onChangeHandler}/>
+                        <Form.Label>MobileNo</Form.Label>
+                        <Form.Control placeholder=""  pattern=".{0}|.{10,10}"
+                        name="mobileNo" value= {mobileNo} onChange = {this.onChangeHandler}/>
                     </Form.Group>
                     </Form.Row>
                     <Form.Group controlId="Textarea1">
@@ -149,7 +149,14 @@ class RequestPaper extends Component {
                     <Button variant="info" type="submit" disabled={disabled}>
                         Request
                     </Button>
+                    &nbsp;
+                    {loading && <div
+                        className="spinner-border ml-auto text-info"
+                        role="status"
+                        aria-hidden="true"
+                        ></div> }
                 </Form>
+                
                 {success && <Alert variant="success">
                     {/* {this.state.responseMessage} */}
                     Request recieved. Thank You.
