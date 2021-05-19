@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Button, Card, Col, Alert, Spinner} from 'react-bootstrap';
+import {Form, Button, Card, Col, Alert } from 'react-bootstrap';
 import Font from 'react-font';
 import endpoint from "../axios";
 
@@ -57,7 +57,7 @@ class RequestPaper extends Component {
      
         endpoint.post("Mail/RequestPaperResponse", data)
         .then(res => {
-            console.log(res.data);
+            //console.log(res.data);
             this.setState({
                 responseMessage : res.data.message,
                 success : res.data.success,

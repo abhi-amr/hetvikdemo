@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Button, Card, Col, Alert, Spinner} from 'react-bootstrap';
+import {Form, Button, Card, Col, Alert} from 'react-bootstrap';
 import Font from 'react-font';
 import endpoint from "../axios";
 
@@ -57,7 +57,7 @@ class Feedback extends Component {
             "batch" : Number(this.state.batch)
        }
      
-        endpoint.post("Mail/FeedbacKResponse", data)
+        endpoint.post("Mail/FeedbackResponse", data)
         .then(res => {
             console.log(res.data);
             this.setState({
@@ -131,7 +131,7 @@ class Feedback extends Component {
                     <Form.Row>
                     <Form.Group  as={Col}  controlId="formGroupSubject">
                         <Form.Label>Mobile No</Form.Label>
-                        <Form.Control placeholder="(Optional)" 
+                        <Form.Control placeholder="(Optional)" pattern=".{0}|.{10,10}"
                         name="mobileNo" value= {mobileNo} onChange = {this.onChangeHandler}/>
                     </Form.Group>
                     <Form.Group  as={Col}  controlId="formGroupYear">
@@ -149,7 +149,12 @@ class Feedback extends Component {
                     <Button variant="info" type="submit" disabled={disabled}>
                         Send
                     </Button>
-                    {loading && <Spinner/>}
+                    &nbsp;
+                    {loading && <div
+                        className="spinner-border ml-auto text-info"
+                        role="status"
+                        aria-hidden="true"
+                        ></div> }
                 </Form>
 
                 {success && <Alert variant="success">
