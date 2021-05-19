@@ -5,6 +5,7 @@ import QFilter from "../../components/QPaper/QFilter";
 import Heading from "../../components/Utilities/Heading";
 import { Helmet } from "react-helmet";
 import EntrancePaper from "../../components/QPaper/EntrancePaper";
+import { Link } from "react-router-dom";
 
 const Question = () => {
   const [arrowOne, setArrowOne] = useState(true);
@@ -29,6 +30,10 @@ const Question = () => {
           <Row>
             <Col>
               <Heading content="Get Your Paper Here !" />
+              
+              <span className="d-flex justify-content-end">Didn&apos;t find your paper.&nbsp;<Link to="/contact">Request here</Link></span>
+              <br/>
+
               <div className="accordion " id="accordionExample">
                 <div className="card">
                   <div className="card-header" id="headingOne">
