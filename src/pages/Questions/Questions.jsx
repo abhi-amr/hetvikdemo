@@ -31,7 +31,7 @@ const Question = () => {
             <Col>
               <Heading content="Get Your Paper Here !" />
               
-              <span className="d-flex justify-content-end">Didn&apos;t find your paper.&nbsp;<Link to="/contact">Request here</Link></span>
+              <span className="d-flex justify-content-end">Didn&apos;t find your paper?&nbsp;<Link to="/contact">Request here</Link></span>
               <br/>
 
               <div className="accordion " id="accordionExample">
