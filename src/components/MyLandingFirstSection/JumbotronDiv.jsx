@@ -21,13 +21,13 @@ export default class JumbotronDiv extends Component {
                     <Container>
                             <Row>
                                 <Col>
-                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">20+</span><br/>Program</center></Text>
+                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">20+</span><br/><span className="make-it-small">Course</span></center></Text>
                                 </Col>
                                 <Col>
-                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">50+</span><br/>Papers</center></Text>
+                                    <Text family="Comfortaa"  style={{fontSize: "35px"}}><center><span className="stats">50+</span><br/><span className="make-it-small">Paper</span></center></Text>
                                 </Col>
                                 <Col>
-                                    <Text family="Comfortaa" style={{fontSize: "35px"}}><center><span className="stats">24/7</span><br/>Query</center></Text>
+                                    <Text family="Comfortaa" style={{fontSize: "35px"}}><center><span className="stats">24/7</span><br/><span className="make-it-small">Query</span></center></Text>
                                 </Col>
                             </Row>
                             <br/><br/><br/>
