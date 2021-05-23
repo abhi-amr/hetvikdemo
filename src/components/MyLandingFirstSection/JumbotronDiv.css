@@ -11,3 +11,9 @@
   color: #efad19;
   font-weight: 0;
 }
+
+@media screen and (max-device-width: 320px) {
+  .make-it-small {
+    font-size: 30px;
+  }
+}

@@ -20,7 +20,7 @@ class ContactUs extends Component {
         <Container style={{padding:"1em"}} fluid>
           <Helmet>
               <title>Contact Us | Hetvik</title>
-              <meta name="description" content="Leave a feedback or request a paper" />
+              <meta name="description" content="Leave a feedback or request a paper. Hetvik is a platform build for the students by the students. We are providing Patna University Entrance and Academic previous year question papers to assist the student in their curriculars." />
               <link rel="canonical" href="https://hetvik.in/contact" />
           </Helmet>
 
