@@ -46,7 +46,7 @@ class RequestPaper extends Component {
       university: this.state.university,
       programmeName: this.state.programmeName,
       subject: this.state.subject,
-      mobileNo: this.state.mobilNo,
+      mobileNo: this.state.mobileNo,
     };
 
     endpoint.post("Mail/RequestPaperResponse", data).then((res) => {

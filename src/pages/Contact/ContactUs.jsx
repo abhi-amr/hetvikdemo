@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import {CardGroup, CardDeck, Card, Container, Row, Col, Tab, Tabs} from 'react-bootstrap';
+import { Container, Row, Col, Tab, Tabs} from 'react-bootstrap';
 import Font, { Text } from 'react-font';
 import {  } from 'react-icons/im';
 import {  } from 'react-icons/bs';
 import {  } from 'react-icons/gr';
 import RequestPaper from '../../components/ContactUs/RequestPaper';
 import Feedback from '../../components/ContactUs/Feedback';
-import OpenedLetter from '../../images/Contact/openedLetter.svg';
-import ManOpenedLetter from '../../images/Contact/manOpeningLetter.svg';
-import WomanChat from '../../images/Contact/womanChat.svg';
+// import OpenedLetter from '../../images/Contact/openedLetter.svg';
+// import ManOpenedLetter from '../../images/Contact/manOpeningLetter.svg';
+// import WomanChat from '../../images/Contact/womanChat.svg';
 import teamChat from '../../images/Contact/teamChat.svg';
 import Heading from "../../components/Utilities/Heading"
 import {Helmet} from "react-helmet";
