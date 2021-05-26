@@ -15,6 +15,7 @@ import Questions from "./pages/Questions/Questions";
 import ReactGA from "react-ga";
 import endpoint from "./components/axios";
 import * as Constants from "./components/Utilities/Constants";
+import ActualBlog from "./pages/Blog/ActualBlog";
 //import InitializeReactGA from "./components/InitializeReactGA";
 
 // function usePageViews() {
@@ -52,7 +53,7 @@ function App() {
       <div hidden={true}>{Constants.HIDDEN_DIV_KEYWORD}</div>
       <Router>
         <Header />
-
+        
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={AboutUs} />
@@ -62,6 +63,8 @@ function App() {
           <Route path="/privacy" exact component={Privacy} />
           <Route path="/terms" exact component={TermsAndCondtions} />
           <Route path="/disclaimer" exact component={DisclaimerPage} />
+          <Route path="/blog" exact component={ActualBlog} />
+
 
           <Route path="*" exact component={Home} />
         </Switch>
