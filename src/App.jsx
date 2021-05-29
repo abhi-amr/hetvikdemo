@@ -63,7 +63,7 @@ function App() {
           <Route path="/privacy" exact component={Privacy} />
           <Route path="/terms" exact component={TermsAndCondtions} />
           <Route path="/disclaimer" exact component={DisclaimerPage} />
-          <Route path="/blog" exact component={ActualBlog} />
+          <Route path="/blog1" exact component={ActualBlog} />
 
 
           <Route path="*" exact component={Home} />
