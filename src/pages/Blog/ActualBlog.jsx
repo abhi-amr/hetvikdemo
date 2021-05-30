@@ -5,6 +5,7 @@ import SubHeading from '../../components/Blog/SubHeading';
 import Paragraph from '../../components/Blog/Paragraph';
 import BlogAuthor from '../../components/Blog/BlogAuthor';
 import Tag from '../../components/Blog/Tag';
+import TopBlogs from '../../components/Blog/TopBlogs';
 // import Tile from '../../components/Blog/StretchedTile';
 
 export default function ActualBlog(props) {
@@ -14,6 +15,7 @@ export default function ActualBlog(props) {
                 <Row>
                     <Col>
                         <br/>
+                        <TopBlogs />
                         {/* <Tile /> */}
                         <BlogTitle title="How to make most use of our website - Hetvik"/>
                         <SubHeading content="" />
