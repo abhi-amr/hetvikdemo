@@ -22,14 +22,14 @@ const Question = () => {
       <Font family="Roboto">
         <Helmet>
           <title>Questions | Hetvik</title>
-          <meta name="description" content="Find Your Paper here" />
+          <meta name="description" content="Find Patna University Previous Year Papers here. Filter your request on basis of Programme, Subject and Year" />
           <link rel="canonical" href="https://hetvik.in/questions" />
         </Helmet>
 
         <Container>
           <Row>
             <Col>
-              <Heading content="Get Your Paper Here !" />
+              <Heading content="Patna University Previous Year Papers" />
               
               <span className="d-flex justify-content-end">Didn&apos;t find your paper?&nbsp;<Link to="/contact">Request here</Link></span>
               <br/>

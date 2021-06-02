@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import TopBlogs from '../../components/Blog/TopBlogs';
+import Heading from "../../components/Utilities/Heading";
 
-export default function Home() {
+function Home() {
     return (
-        <div>
-            
-        </div>
+        <>
+            <TopBlogs/>
+            <Heading content="Category1"/>
+            <Heading content="Category2"/>
+        </>
     )
 }
+
+export default Home
