@@ -8,7 +8,7 @@ function TopBlogs(props) {
         <>
             {/* <Container fluid> */}
             <Link >
-                <Carousel fade>
+                <Carousel fade className="shadow">
                     <Carousel.Item interval={1500}>
                         <img
                         className="img-carousel w-100"

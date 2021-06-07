@@ -1,0 +1,21 @@
+.blog-intro-section {
+  position: relative;
+  height: 100vh;
+}
+
+.blog-intro-img {
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../../images/Blog/kumtanom.jpg);
+}
+
+.overlap-div {
+  position: absolute;
+  top: 340px;
+  left: 30px;
+  right: 30px;
+
+  padding: 10px;
+  background-color: white;
+}
