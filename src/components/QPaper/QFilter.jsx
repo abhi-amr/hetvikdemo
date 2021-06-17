@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Button, Card, Row, Col, Container } from "react-bootstrap";
 import Font, { Text } from "react-font";
 import PdfView from "./PdfView";
@@ -17,7 +17,6 @@ const QFilter = (props) => {
   });
 
   const quickLinkCall = () => {
-    // console.log("%cQFilter.jsx line:21 props", "color: #007acc;", props);
     if (quickLinkData != undefined) {
       setQLField((prevalue) => {
         return {
