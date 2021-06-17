@@ -3,7 +3,7 @@ import BlogCard from "./BlogCard";
 import imageSrc from "./sop.jpg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-//import "./CardSlider.css";
+
 const CardSlider = (props) => {
   const myStyleCard = {
     backgroundColor: "#e7e9eb",
