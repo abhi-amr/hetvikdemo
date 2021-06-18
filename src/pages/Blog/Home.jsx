@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import TopBlogs from "../../components/Blog/TopBlogs";
 import CardSlider from "../../components/Blog/CardSlider";
 import Heading from "../../components/Utilities/Heading";
+import baseUrl from "../../components/CommanUrl";
 import { Helmet } from "react-helmet";
 
 function Home() {
   /*api call for Recent Blogs*/
   const [recentCard, setRecentCard] = useState([]);
   const recentCardGet = () => {
-    let url = "https://hetvikbackapi.azurewebsites.net/api/Blog/Recent";
+    let url = baseUrl + "Blog/Recent";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
@@ -18,7 +19,7 @@ function Home() {
   /*api call for Popular Blogs*/
   const [popularCard, setPopularCard] = useState([]);
   const popularCardGet = () => {
-    let url = "https://hetvikbackapi.azurewebsites.net/api/Blog/Popular";
+    let url = baseUrl + "Blog/Popular";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {

@@ -3,6 +3,7 @@ import { Form, Button, Card, Row, Col, Container } from "react-bootstrap";
 import Font, { Text } from "react-font";
 import PdfView from "./PdfView";
 import { useLocation } from "react-router";
+import baseUrl from "../CommanUrl";
 
 const QFilter = (props) => {
   const location = useLocation();
@@ -34,7 +35,7 @@ const QFilter = (props) => {
 
   /* API call for question paper from quick link. */
   const getQuickLinkPaper = () => {
-    const url = "https://hetvikbackapi.azurewebsites.net/api/File/GetPaper";
+    const url = baseUrl + "File/GetPaper";
     const data = {
       programmeId: quickLinkData.programmeId,
       subjectCode: quickLinkData.subCode,
@@ -73,8 +74,7 @@ const QFilter = (props) => {
   /*api call for programs*/
   const [prg, setPrg] = useState([]);
   const prgGet = () => {
-    let url =
-      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/ProgrammeListForQpaper";
+    let url = baseUrl + "PatnaUniversity/ProgrammeListForQpaper";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
@@ -97,10 +97,7 @@ const QFilter = (props) => {
       };
     });
 
-    const url =
-      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/" +
-      keyvalue +
-      "/Subject";
+    const url = baseUrl + "PatnaUniversity/" + keyvalue + "/Subject";
 
     fetch(url)
       .then((response) => response.json())
@@ -121,10 +118,7 @@ const QFilter = (props) => {
         subjectCode: keyvalue,
       };
     });
-    const url =
-      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/" +
-      keyvalue +
-      "/Year";
+    const url = baseUrl + "PatnaUniversity/" + keyvalue + "/Year";
 
     fetch(url)
       .then((response) => response.json())
@@ -135,7 +129,7 @@ const QFilter = (props) => {
 
   /* API call for question paper. */
   const getPaper = () => {
-    const url = "https://hetvikbackapi.azurewebsites.net/api/File/GetPaper";
+    const url = baseUrl + "File/GetPaper";
     const data = {
       programmeId: field.programmeId,
       subjectCode: field.subjectCode,

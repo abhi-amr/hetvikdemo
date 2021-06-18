@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PdfView from "./PdfView";
+import baseUrl from "../CommanUrl";
 
 const EntrancePaper = () => {
   const [entranceField, setEField] = useState({
@@ -11,8 +12,7 @@ const EntrancePaper = () => {
   /*api call for programs*/
   const [prg, setPrg] = useState([]);
   const prgGet = () => {
-    let url =
-      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/ProgrammeListForEntrance";
+    let url = baseUrl + "PatnaUniversity/ProgrammeListForEntrance";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
@@ -33,10 +33,7 @@ const EntrancePaper = () => {
         programmeId: keyvalue,
       };
     });
-    const url =
-      "https://hetvikbackapi.azurewebsites.net/api/PatnaUniversity/" +
-      keyvalue +
-      "/EntranceYear";
+    const url = baseUrl + "PatnaUniversity/" + keyvalue + "/EntranceYear";
 
     fetch(url)
       .then((response) => response.json())
@@ -45,7 +42,7 @@ const EntrancePaper = () => {
       });
   };
   const getPaper = () => {
-    const url = "https://hetvikbackapi.azurewebsites.net/api/File/GetPaper";
+    const url = baseUrl + "File/GetPaper";
     const data = {
       programmeId: entranceField.programmeId,
 

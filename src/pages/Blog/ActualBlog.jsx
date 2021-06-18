@@ -11,6 +11,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import endpoint from "../../components/axios";
 import { Helmet } from "react-helmet";
 // import Tile from '../../components/Blog/StretchedTile';
+import baseUrl from "../../components/CommanUrl";
 
 export default function ActualBlog({ match }) {
   const [blogData, setBlogData] = useState({
@@ -29,8 +30,7 @@ export default function ActualBlog({ match }) {
   const history = useHistory();
 
   const recentCardGet = async () => {
-    let url =
-      "https://hetvikbackapi.azurewebsites.net/api//Blog/" + match.params.id;
+    let url = baseUrl + "Blog/" + match.params.id;
     fetch(url)
       .then((response) => {
         if (response.status === 204) {
