@@ -66,8 +66,6 @@ function App() {
           <Route path="/terms" exact component={TermsAndCondtions} />
           <Route path="/disclaimer" exact component={DisclaimerPage} />
           <Route path="/blog" exact component={BlogHome} />
-          <Route path="/see" exact component={SeeAll} />
-          <Route path="/actual" exact component={ActualBlog} />
 
 
           <Route path="*" exact component={Home} />
