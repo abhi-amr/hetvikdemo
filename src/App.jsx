@@ -23,7 +23,6 @@ import * as Constants from "./components/Utilities/Constants";
 import BlogHome from "./pages/Blog/Home";
 import ActualBlog from "./pages/Blog/ActualBlog";
 import SeeAll from "./pages/Blog/SeeAll";
-import ActualBlog from "./pages/Blog/ActualBlog";
 //import InitializeReactGA from "./components/InitializeReactGA";
 
 // function usePageViews() {

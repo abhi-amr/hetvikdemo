@@ -40,7 +40,7 @@ function Home() {
         <meta name="description" content="Patna University Blog Page" />
         <link rel="canonical" href="https://hetvik.in/blog/" />
       </Helmet>
-      <TopBlogs />
+      <IntroSection />
       <Heading content="Recent" />
       <CardSlider cardData={recentCard} />
       <Heading content="Popular" />
