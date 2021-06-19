@@ -10,7 +10,6 @@ import { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import endpoint from "../../components/axios";
 import { Helmet } from "react-helmet";
-// import Tile from '../../components/Blog/StretchedTile';
 import baseUrl from "../../components/CommanUrl";
 
 export default function ActualBlog({ match }) {

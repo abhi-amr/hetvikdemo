@@ -15,6 +15,7 @@ export default class Attribution extends Component {
                         <Popover.Content>
                         <span><strong>Online Vector Avatars Generator for Your Site</strong> <em>https://face.co/embed.html</em></span>
                         {/* <iframe sandbox="allow-scripts allow-forms allow-same-origin" src="https://face.co/embed.html" width="100%" height="auto" title="Online Vector Avatars Generator for Your Site" frameborder="0" marginwidth="0" marginheight="0" scrolling="yes"></iframe> */}
+                        {/* Photo by Tirachard Kumtanom from Pexels */}
                         </Popover.Content>
                         </Popover>
                     }

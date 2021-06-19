@@ -23,6 +23,7 @@ import * as Constants from "./components/Utilities/Constants";
 import BlogHome from "./pages/Blog/Home";
 import ActualBlog from "./pages/Blog/ActualBlog";
 import SeeAll from "./pages/Blog/SeeAll";
+import ActualBlog from "./pages/Blog/ActualBlog";
 //import InitializeReactGA from "./components/InitializeReactGA";
 
 // function usePageViews() {
@@ -71,10 +72,12 @@ function App() {
           <Route path="/disclaimer" exact component={DisclaimerPage} />
           <Route path="/blog" exact component={BlogHome} />
           <Route path="/blog/:id" exact component={ActualBlog} />
-          <Route path="/see" exact component={SeeAll} />
-
+          
           <Route path="*" exact component={Home} />
-          {/* <Redirect to="/blog" /> */}
+          {/*
+          <Route path="/see" exact component={SeeAll} />
+          <Redirect to="/blog" /> 
+          */}
         </Switch>
         <Footer />
       </Router>

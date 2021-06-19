@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import TopBlogs from "../../components/Blog/TopBlogs";
 import CardSlider from "../../components/Blog/CardSlider";
+import IntroSection from '../../components/Blog/IntroSection';
 import Heading from "../../components/Utilities/Heading";
 import baseUrl from "../../components/CommanUrl";
 import { Helmet } from "react-helmet";
+
 
 function Home() {
   /*api call for Recent Blogs*/
