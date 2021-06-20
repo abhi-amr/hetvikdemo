@@ -72,7 +72,7 @@ function App() {
           <Route path="/blog" exact component={BlogHome} />
           <Route path="/blog/:id" exact component={ActualBlog} />
 
-          {/* <Route path="/category/:id" exact component={SeeMore} /> */}
+          <Route path="blog/category/:id" exact component={SeeMore} />
 
           <Route path="*" exact component={Home} />
 

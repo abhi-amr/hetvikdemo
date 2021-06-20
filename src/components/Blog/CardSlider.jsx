@@ -5,8 +5,8 @@ import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
 
 const CardSlider = (props) => {
-  let firstBlog = props.cardData[0];
-  const category = firstBlog.category;
+  // let firstBlog = props.cardData[0];
+  // const category = firstBlog.category;
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
