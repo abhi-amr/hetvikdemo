@@ -1,37 +1,28 @@
 import React from 'react';
-import {Container, Row} from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import './StretchedTile.css';
+// import DefaultBlogImg from '../../images/Blog/DefaultBlogImg.jpg'
 
 function StretchedTile(props) {
-    const imgStyle = {
-        borderRadius : "4px",
-        height : "auto",
-        width : "85%",
-        display: "inline-block",
-        // marginLeft: "auto",
-        // marginRight: "auto",
-        // horizontalAlign: "middle"
-        alignSelf: "center"
-        // width: "50%"
-    }
-
-    const tileStyle = {
-        backgroundImage: `url("https://images.unsplash.com/photo-1552152974-19b9caf99137?")`,
-        // backgroundImage: `url("${Background}")`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        // margin : "10px",
-        minHeight: '6rem',
-        color: 'white'
-    }
+    // const imgStyle = {
+    //     borderRadius: "4px",
+    //     height: "auto",
+    //     width: "85%",
+    //     display: "inline-block",
+    //     // marginLeft: "auto",
+    //     // marginRight: "auto",
+    //     // horizontalAlign: "middle"
+    //     alignSelf: "center",
+    //     // width: "50%"
+    // }
 
     return (
         <>
-            <Container className="shadow p-3 mb-5 bg-white rounded">
+            <Container className="shadow p-3 mb-5 bg-white rounded toCheck">
                 <Row>
-                    <div className="col-3" style={{display:"grid"}}>
-                        <img src="https://images.unsplash.com/photo-1552152974-19b9caf99137?" style={imgStyle} />
+                    <div className="col-3" style={{ display: "grid" }}>
+                        <img src={props.blog.imageUrl} id="tileImg" />
                     </div>
                     <div className="col-9">
                         <h4>{props.blog.title}</h4>

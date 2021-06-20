@@ -2,14 +2,13 @@ import React from "react";
 import BlogCard from "./BlogCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { CardGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const CardSlider = (props) => {
-  const myStyleCard = {
-    backgroundColor: "#e7e9eb",
-  };
+  let firstBlog = props.cardData[0];
+  const category = firstBlog.category;
   const responsive = {
-    superLargeDesktop: {    
+    superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
       items: 6
     },
@@ -36,14 +35,15 @@ const CardSlider = (props) => {
   return (
     <>
       <div
-        // style={{ backgroundColor: "#e7e9eb" }}
-        // className="my-own-custom-container"
+      // style={{ backgroundColor: "#e7e9eb" }}
+      // className="my-own-custom-container"
       >
         <Carousel partialVisible={true} responsive={responsive}>
           {props.cardData.map((data) => {
-              return <BlogCard blogData={data} />;
+            return <BlogCard blogData={data} />;
           })}
         </Carousel>
+
       </div>
     </>
   );

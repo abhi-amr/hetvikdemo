@@ -45,9 +45,19 @@ function Home() {
       <IntroSection />
       <Heading content="Recent Posts" />
       <CardSlider cardData={recentCard} />
+      {/* <br />
+      <div className="container-fluid">
+        <div className="d-flex justify-content-end">
+          <Link
+            to={`/category/${category}`}
+          >
+            <strong>See More&gt;&gt;</strong>
+          </Link>
+        </div>
+      </div> */}
       <Heading content="Popular Posts" />
       <CardSlider cardData={popularCard} />
-      <br/><br/><br/>
+      <br /><br /><br />
     </>
   );
 }

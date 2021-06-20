@@ -68,6 +68,7 @@ export default function ActualBlog({ match }) {
             {/* <Tile /> */}
             <BlogTitle title={blogData.title} />
             <SubHeading content={blogData.subHeading} />
+            <br />
             <img
               src={blogData.imageUrl}
               alt={blogData.title}
@@ -95,7 +96,7 @@ export default function ActualBlog({ match }) {
       </Container>
       <br />
       <br />
-      <Heading content="You may also like"/>
+      <Heading content="You may also like" />
       <YouMayAlsoRead />
       <br />
       <br />

@@ -1,12 +1,13 @@
 import React from 'react';
+import Heading from '../../components/Utilities/Heading';
 import { useState, useEffect } from 'react';
-import endpoint from "../axios";
-import StretchedTile from './StretchedTile';
+import endpoint from "../../components/axios";
+import StretchedTile from '../../components/Blog/StretchedTile';
 
-function YouMayAlsoRead() {
+function SeeMore({ match }) {
     const [blogs, setBlogs] = useState([]);
     const getBlogs = async () => {
-        let response = await endpoint.get("Blog/Popular"); //change api call to YouMayAlsoRead
+        let response = await endpoint.get("Blog/" + match.params.id);
         setBlogs(response.data);
     }
 
@@ -14,9 +15,9 @@ function YouMayAlsoRead() {
         getBlogs();
     }, []);
 
-
     return (
         <>
+            <Heading content={match.params.id} />
             {blogs.map((blog) => {
                 return <StretchedTile blog={blog} />
             })}
@@ -24,4 +25,4 @@ function YouMayAlsoRead() {
     )
 }
 
-export default YouMayAlsoRead
+export default SeeMore
