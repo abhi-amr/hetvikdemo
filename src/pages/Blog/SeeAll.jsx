@@ -9,10 +9,8 @@ function SeeAll(props) {
             <Container>
                 <Heading content="Category name here"/>
                 <br/>
-                <StretchedTile />
-                <StretchedTile />
-                <StretchedTile />
-                <StretchedTile />
+                {/* <StretchedTile blog={props.blog}/> */}
+                
             </Container>
         </>
     )

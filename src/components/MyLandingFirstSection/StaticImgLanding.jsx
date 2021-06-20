@@ -9,7 +9,7 @@ class Home extends Component {
         const myStyle = {
             backgroundImage: `url("${Background}")`,
             backgroundRepeat: 'no-repeat',
-            backgroundPsition: 'center',
+            backgroundPosition: 'center',
             backgroundSize: 'cover',
             width:'100%',
             height: '100vh',

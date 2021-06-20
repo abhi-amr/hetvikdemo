@@ -72,11 +72,10 @@ function App() {
           <Route path="/blog" exact component={BlogHome} />
           <Route path="/blog/:id" exact component={ActualBlog} />
           
-          <Route path="*" exact component={Home} />
-          {/*
           <Route path="/see" exact component={SeeAll} />
-          <Redirect to="/blog" /> 
-          */}
+
+          <Route path="*" exact component={Home} />
+
         </Switch>
         <Footer />
       </Router>

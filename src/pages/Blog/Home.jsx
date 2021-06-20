@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TopBlogs from "../../components/Blog/TopBlogs";
 import CardSlider from "../../components/Blog/CardSlider";
 import IntroSection from '../../components/Blog/IntroSection';
+// import YouMayAlsoRead from '../../components/Blog/YouMayAlsoRead';
 import Heading from "../../components/Utilities/Heading";
 import baseUrl from "../../components/CommanUrl";
 import { Helmet } from "react-helmet";
@@ -40,11 +41,13 @@ function Home() {
         <meta name="description" content="Patna University Blog Page" />
         <link rel="canonical" href="https://hetvik.in/blog" />
       </Helmet>
+      {/* <YouMayAlsoRead /> */}
       <IntroSection />
-      <Heading content="Recent" />
+      <Heading content="Recent Posts" />
       <CardSlider cardData={recentCard} />
-      <Heading content="Popular" />
+      <Heading content="Popular Posts" />
       <CardSlider cardData={popularCard} />
+      <br/><br/><br/>
     </>
   );
 }
