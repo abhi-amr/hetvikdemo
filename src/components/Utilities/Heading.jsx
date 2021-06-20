@@ -30,7 +30,7 @@ class Heading extends Component {
             <Row>
 
               <Col>
-                <br /> <br /> <br />
+                <br /> <br />
                 {/* <h1 style={h1}><span style={h1Span}><strong><center>THIS IS A TEST</center></strong></span></h1> */}
                 <h1 className="separator"><strong>{this.props.content}</strong></h1>
                 <br /><br />

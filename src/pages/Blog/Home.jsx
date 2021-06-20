@@ -38,7 +38,7 @@ function Home() {
       <Helmet>
         <title>Blog | Hetvik</title>
         <meta name="description" content="Patna University Blog Page" />
-        <link rel="canonical" href="https://hetvik.in/blog/" />
+        <link rel="canonical" href="https://hetvik.in/blog" />
       </Helmet>
       <IntroSection />
       <Heading content="Recent" />
