@@ -1,3 +1,8 @@
+#blogCard {
+  max-height: 23rem;
+  min-height: 24rem;
+}
+
 #blogCard :hover {
   background-color: #343a40;
   color: whitesmoke;

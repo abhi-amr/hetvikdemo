@@ -8,7 +8,7 @@ const BlogCard = (props) => {
   const mySliderCard = {
       paddingLeft : "10px",
       paddingRight : "10px",
-      textDecoration : "none",
+      textDecoration : "none"
   };
 
 
@@ -29,7 +29,8 @@ const BlogCard = (props) => {
           <Card id="blogCard">
             <Card.Img variant="top" src={props.blogData.imageUrl} alt={props.blogData.title} style={{maxHeight:'14rem'}}/>
               <Card.Body>
-              <Card.Title className="d-block text-truncate" style={{maxWidth: "400px"}}>{props.blogData.title}</Card.Title>
+              {/* <Card.Title className="d-block text-truncate" style={{maxWidth: "400px"}}>{props.blogData.title}</Card.Title> */}
+              <Card.Title>{props.blogData.title}</Card.Title>
               <Card.Text>
                 <strong>~</strong>
                 <em>
