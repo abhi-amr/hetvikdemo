@@ -1,27 +1,36 @@
 import React from 'react';
-import {Container, Row} from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import './StretchedTile.css';
+// import DefaultBlogImg from '../../images/Blog/DefaultBlogImg.jpg'
 
 function StretchedTile(props) {
-    const imgStyle = {
-        borderRadius : "4px"
-    }
+    // const imgStyle = {
+    //     borderRadius: "4px",
+    //     height: "auto",
+    //     width: "85%",
+    //     display: "inline-block",
+    //     // marginLeft: "auto",
+    //     // marginRight: "auto",
+    //     // horizontalAlign: "middle"
+    //     alignSelf: "center",
+    //     // width: "50%"
+    // }
+
     return (
         <>
-            <div class="shadow p-3 mb-5 bg-white rounded">
-                <Container fluid>
-                    <Row>
-                        <div className="col-3">
-                            <img src="https://images.unsplash.com/photo-1552152974-19b9caf99137?" style={imgStyle} height="125px" width="100%"/>
-                        </div>
-                        <div className="col-9">
-                            <h4 >Hetvik - Platform designed for the students by the students</h4>
-                            <span className="text-muted">As the dates of Patna University exams are announced, the commotion among students begin. Students rush to toppers and seniors for their help. Some get both...</span>
-                            <span className="d-flex justify-content-end"><Link>Read more &gt;&gt;</Link></span>
-                        </div>
-                    </Row>
-                </Container>
-            </div>
+            <Container className="shadow p-3 mb-5 bg-white rounded toCheck">
+                <Row>
+                    <div className="col-3" style={{ display: "grid" }}>
+                        <img src={props.blog.imageUrl} id="tileImg" />
+                    </div>
+                    <div className="col-9">
+                        <h4>{props.blog.title}</h4>
+                        <span className="text-muted d-block text-truncate">{props.blog.paragraph[0]}</span>
+                        <span className="d-flex justify-content-end"><Link to={`/blog/${props.blog.id}`}>Read more &gt;&gt;</Link></span>
+                    </div>
+                </Row>
+            </Container>
         </>
     )
 }

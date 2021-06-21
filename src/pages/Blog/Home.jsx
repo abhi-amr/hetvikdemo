@@ -2,9 +2,18 @@ import React, { useEffect, useState } from "react";
 import TopBlogs from "../../components/Blog/TopBlogs";
 import CardSlider from "../../components/Blog/CardSlider";
 import IntroSection from '../../components/Blog/IntroSection';
+// import YouMayAlsoRead from '../../components/Blog/YouMayAlsoRead';
 import Heading from "../../components/Utilities/Heading";
 import baseUrl from "../../components/CommanUrl";
 import { Helmet } from "react-helmet";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useRouteMatch,
+  Link
+} from "react-router-dom";
+import SeeMore from "./SeeMore";
 
 
 function Home() {
@@ -33,18 +42,47 @@ function Home() {
     popularCardGet();
   }, []);
 
+
+  // let { path, url } = useRouteMatch();
+
   return (
     <>
       <Helmet>
         <title>Blog | Hetvik</title>
         <meta name="description" content="Patna University Blog Page" />
-        <link rel="canonical" href="https://hetvik.in/blog/" />
+        <link rel="canonical" href="https://hetvik.in/blog" />
       </Helmet>
-      <TopBlogs />
-      <Heading content="Recent" />
+      {/* <YouMayAlsoRead /> */}
+      <IntroSection />
+
+
+      <Heading content="Recent Posts" />
       <CardSlider cardData={recentCard} />
-      <Heading content="Popular" />
+      <br />
+      <div className="container-fluid">
+        <div className="d-flex justify-content-end">
+
+          <Link to="blog/category/recent">
+            <strong>See More&gt;&gt;</strong>
+          </Link>
+
+        </div>
+      </div>
+
+
+      <Heading content="Popular Posts" />
       <CardSlider cardData={popularCard} />
+      <br />
+      <div className="container-fluid">
+        <div className="d-flex justify-content-end">
+          <Link to="blog/category/popular">
+            <strong>See More&gt;&gt;</strong>
+          </Link>
+        </div>
+      </div>
+
+
+      <br /><br /><br />
     </>
   );
 }

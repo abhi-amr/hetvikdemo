@@ -11,6 +11,8 @@ import { Redirect, useHistory } from "react-router-dom";
 import endpoint from "../../components/axios";
 import { Helmet } from "react-helmet";
 import baseUrl from "../../components/CommanUrl";
+import YouMayAlsoRead from "../../components/Blog/YouMayAlsoRead";
+import Heading from "../../components/Utilities/Heading";
 
 export default function ActualBlog({ match }) {
   const [blogData, setBlogData] = useState({
@@ -66,6 +68,7 @@ export default function ActualBlog({ match }) {
             {/* <Tile /> */}
             <BlogTitle title={blogData.title} />
             <SubHeading content={blogData.subHeading} />
+            <br />
             <img
               src={blogData.imageUrl}
               alt={blogData.title}
@@ -91,6 +94,10 @@ export default function ActualBlog({ match }) {
           </Col>
         </Row>
       </Container>
+      <br />
+      <br />
+      <Heading content="You may also like" />
+      <YouMayAlsoRead />
       <br />
       <br />
     </>

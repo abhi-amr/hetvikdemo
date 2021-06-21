@@ -39,6 +39,11 @@ class Header extends Component {
                   About
                 </Link>
               </Nav.Link>
+              <Nav.Link>
+                <Link className="nav-link" to="/blog">
+                  Blog
+                </Link>
+              </Nav.Link>
               {/* <NavDropdown title="Years" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">2020</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">2019</NavDropdown.Item>
