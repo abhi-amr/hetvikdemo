@@ -1,18 +1,22 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
+
 import BlogTitle from "../../components/Blog/BlogTitle";
 import SubHeading from "../../components/Blog/SubHeading";
 import Paragraph from "../../components/Blog/Paragraph";
 import BlogAuthor from "../../components/Blog/BlogAuthor";
 import Tag from "../../components/Blog/Tag";
-import TopBlogs from "../../components/Blog/TopBlogs";
-import { useState, useEffect } from "react";
-import { Redirect, useHistory } from "react-router-dom";
-import endpoint from "../../components/axios";
-import { Helmet } from "react-helmet";
+// import TopBlogs from "../../components/Blog/TopBlogs";
 import baseUrl from "../../components/CommanUrl";
 import YouMayAlsoRead from "../../components/Blog/YouMayAlsoRead";
 import Heading from "../../components/Utilities/Heading";
+// import endpoint from "../../components/axios";
+
+
 
 export default function ActualBlog({ match }) {
   const [blogData, setBlogData] = useState({
@@ -28,6 +32,8 @@ export default function ActualBlog({ match }) {
     timeStamp: "",
     title: "",
   });
+
+
   const history = useHistory();
 
   const recentCardGet = () => {
@@ -50,7 +56,22 @@ export default function ActualBlog({ match }) {
   };
   useEffect(() => {
     recentCardGet();
+    window.scrollTo(0, 0);  //scroll to top
   }, [match.params.id]);
+
+
+  const blogImgBackgroundStyle = {
+    backgroundImage: `url("${blogData.imageUrl}")`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    width: '100%',
+    maxHeight: "310px",
+    minHeight: "300px",
+    borderRadius: "6px",
+  }
+
+
   return (
     <>
       <Helmet>
@@ -61,6 +82,7 @@ export default function ActualBlog({ match }) {
           href={"https://hetvik.in/blog/" + match.params.id}
         />
       </Helmet>
+
       <Container>
         <Row>
           <Col>
@@ -69,7 +91,8 @@ export default function ActualBlog({ match }) {
             <BlogTitle title={blogData.title} />
             <SubHeading content={blogData.subHeading} />
             <br />
-            <img
+            <div style={blogImgBackgroundStyle}></div>
+            {/* <img
               src={blogData.imageUrl}
               alt={blogData.title}
               width="100%"
@@ -78,7 +101,7 @@ export default function ActualBlog({ match }) {
                 overflow: "hidden",
                 borderRadius: "6px",
               }}
-            />
+            /> */}
             <br />
             <BlogAuthor author={blogData.author} date={blogData.date} />
             <br />
