@@ -2,15 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Text } from "react-font";
 import { Card } from "react-bootstrap";
-import './BlogCard.css';
+import "./BlogCard.css";
 
 const BlogCard = (props) => {
   const mySliderCard = {
-      paddingLeft : "10px",
-      paddingRight : "10px",
-      textDecoration : "none"
+    paddingLeft: "10px",
+    paddingRight: "10px",
+    textDecoration: "none",
   };
-
 
   let [day, month, year] = props.blogData.date.split("-");
   let dateString = new Date(year, month - 1, day).toLocaleString("en-us", {
@@ -23,12 +22,17 @@ const BlogCard = (props) => {
       <div style={mySliderCard}>
         <Link
           // target="_blank"
-          style= {{textDecoration:"none", color:"#212529"}}
-          to={`/blog/${props.blogData.id}`}          
+          style={{ textDecoration: "none", color: "#212529" }}
+          to={`/blog/${props.blogData.id}`}
         >
           <Card id="blogCard">
-            <Card.Img variant="top" src={props.blogData.imageUrl} alt={props.blogData.title} style={{maxHeight:'14rem'}}/>
-              <Card.Body>
+            <Card.Img
+              variant="top"
+              src={props.blogData.imageUrl}
+              alt={props.blogData.title}
+              style={{ maxHeight: "14rem" }}
+            />
+            <Card.Body>
               {/* <Card.Title className="d-block text-truncate" style={{maxWidth: "400px"}}>{props.blogData.title}</Card.Title> */}
               <Card.Title>{props.blogData.title}</Card.Title>
               <Card.Text>
@@ -39,11 +43,9 @@ const BlogCard = (props) => {
                 </em>
               </Card.Text>
               <Card.Text>
-                <small class="text-muted">                  
-                  Last Updated on {dateString}
-                </small>
+                <small class="text-muted">Last Updated on {dateString}</small>
               </Card.Text>
-              </Card.Body>
+            </Card.Body>
           </Card>
 
           {/* <div class="card" >
@@ -68,7 +70,6 @@ const BlogCard = (props) => {
               </p>
             </div>
           </div> */}
-
         </Link>
       </div>
     </>
