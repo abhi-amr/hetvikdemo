@@ -30,7 +30,7 @@ export default function ActualBlog({ match }) {
   });
   const history = useHistory();
 
-  const recentCardGet = async () => {
+  const recentCardGet = () => {
     let url = baseUrl + "Blog/" + match.params.id;
     fetch(url)
       .then((response) => {
@@ -50,7 +50,7 @@ export default function ActualBlog({ match }) {
   };
   useEffect(() => {
     recentCardGet();
-  }, []);
+  }, [match.params.id]);
   return (
     <>
       <Helmet>

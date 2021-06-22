@@ -70,12 +70,10 @@ function App() {
           <Route path="/terms" exact component={TermsAndCondtions} />
           <Route path="/disclaimer" exact component={DisclaimerPage} />
           <Route path="/blog" exact component={BlogHome} />
+          <Route path="/blog/category/:id" exact component={SeeMore} />
           <Route path="/blog/:id" exact component={ActualBlog} />
 
-          <Route path="blog/category/:id" exact component={SeeMore} />
-
           <Route path="*" exact component={Home} />
-
         </Switch>
         <Footer />
       </Router>

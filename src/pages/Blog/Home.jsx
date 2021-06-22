@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TopBlogs from "../../components/Blog/TopBlogs";
 import CardSlider from "../../components/Blog/CardSlider";
-import IntroSection from '../../components/Blog/IntroSection';
+import IntroSection from "../../components/Blog/IntroSection";
 // import YouMayAlsoRead from '../../components/Blog/YouMayAlsoRead';
 import Heading from "../../components/Utilities/Heading";
 import baseUrl from "../../components/CommanUrl";
@@ -11,10 +11,9 @@ import {
   Switch,
   Route,
   useRouteMatch,
-  Link
+  Link,
 } from "react-router-dom";
 import SeeMore from "./SeeMore";
-
 
 function Home() {
   /*api call for Recent Blogs*/
@@ -42,7 +41,6 @@ function Home() {
     popularCardGet();
   }, []);
 
-
   // let { path, url } = useRouteMatch();
 
   return (
@@ -55,20 +53,16 @@ function Home() {
       {/* <YouMayAlsoRead /> */}
       <IntroSection />
 
-
       <Heading content="Recent Posts" />
       <CardSlider cardData={recentCard} />
       <br />
       <div className="container-fluid">
         <div className="d-flex justify-content-end">
-
           <Link to="blog/category/recent">
             <strong>See More&gt;&gt;</strong>
           </Link>
-
         </div>
       </div>
-
 
       <Heading content="Popular Posts" />
       <CardSlider cardData={popularCard} />
@@ -81,8 +75,9 @@ function Home() {
         </div>
       </div>
 
-
-      <br /><br /><br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }
