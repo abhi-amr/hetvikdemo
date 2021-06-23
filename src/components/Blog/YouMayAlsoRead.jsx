@@ -10,7 +10,7 @@ function YouMayAlsoRead() {
   const [blogs, setBlogs] = useState([]);
   // const history = useHistory();
   const getBlogs = async () => {
-    let response = await endpoint.get("Blog/Popular"); //change api call to YouMayAlsoRead
+    let response = await endpoint.get("Blog/YouMayAlsoLike");
     // if (response.data.length === 0) {
     //   history.push("/blog");
     // }

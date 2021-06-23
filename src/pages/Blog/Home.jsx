@@ -9,13 +9,10 @@ import {
 } from "react-router-dom";
 
 
-// import TopBlogs from "../../components/Blog/TopBlogs";
 import CardSlider from "../../components/Blog/CardSlider";
 import IntroSection from "../../components/Blog/IntroSection";
-// import YouMayAlsoRead from '../../components/Blog/YouMayAlsoRead';
 import Heading from "../../components/Utilities/Heading";
 import baseUrl from "../../components/CommanUrl";
-// import SeeMore from "./SeeMore";
 
 
 
@@ -54,7 +51,7 @@ function Home() {
         <meta name="description" content="Patna University Blog Page" />
         <link rel="canonical" href="https://hetvik.in/blog" />
       </Helmet>
-      {/* <YouMayAlsoRead /> */}
+
       <IntroSection />
 
       <Heading content="Recent Posts" />
