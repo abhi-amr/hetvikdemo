@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Table } from 'react-bootstrap';
 import { Text } from 'react-font';
 import { Link } from 'react-router-dom';
 
-import AboutBlogImgBackground from '../../images/Blog/blogIntro.png'
+import AboutBlogImgBackground from '../../images/Blog/blogIntro.png';
+import './AboutBlog.css';
 
 
 const aboutBlogImgBackgroundStyle = {
@@ -45,30 +46,32 @@ function AboutBlog() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
+                    <Col className="d-flex justify-content-center">
                         <span style={{}}>
-                            <Text family="Staatliches" className="d-flex justify-content-center" >
-                                Patna University Updates&nbsp;&nbsp;|&nbsp;&nbsp;City News&nbsp;&nbsp;|&nbsp;&nbsp;Entrepreneurship
+                            <Text family="Staatliches"  >
+                                Get Patna University Updates, City News, Sports and much more
                             </Text>
                         </span>
                     </Col>
                 </Row>
+                <br />
                 <Row>
-                    <Col>
+                    <Col className="d-flex justify-content-center">
                         <span style={{}}>
-                            <Text family="Ubuntu" className="d-flex justify-content-center">
+                            <Text family="Ubuntu">
                                 Read by Category :
                             </Text>
                         </span>
                     </Col>
                 </Row>
-                <Row>
-                    <Col>
+                <Row >
+                    <Col style={{ overflowX: "auto", whiteSpace: "nowrap" }} className=" category-container">
                         {/* <span style={{}}> */}
                         <Text family="Ubuntu" className="d-flex justify-content-center">
-                            {/* <em>Read by category :&nbsp;&nbsp;</em> */}
+
                             {/* to={`/blog/${props.blogData.id}`} */}
-                            &nbsp;| &nbsp;
+
+                            | &nbsp;
                             {category.map((name, index) => {
                                 return <span><Link key={index++} to="/blog">{name}</Link>&nbsp;| &nbsp;</span>;
                             })}
