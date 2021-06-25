@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Table } from 'react-bootstrap';
 import { Text } from 'react-font';
 import { Link } from 'react-router-dom';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 import AboutBlogImgBackground from '../../images/Blog/blogIntro.png';
 import './AboutBlog.css';
@@ -65,6 +66,7 @@ function AboutBlog() {
                     </Col>
                 </Row>
                 <Row >
+                    <MdKeyboardArrowLeft />
                     <Col style={{ overflowX: "auto", whiteSpace: "nowrap" }} className=" category-container">
                         {/* <span style={{}}> */}
                         <Text family="Ubuntu" className="d-flex justify-content-center">
@@ -78,6 +80,7 @@ function AboutBlog() {
                         </Text>
                         {/* </span> */}
                     </Col>
+                    <MdKeyboardArrowRight />
                 </Row>
             </Container>
         </>
