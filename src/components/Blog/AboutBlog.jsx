@@ -68,18 +68,16 @@ function AboutBlog() {
                 </Row>
                 <Row >
                     <MdKeyboardArrowLeft />
-                    <Col style={{ overflowX: "auto", whiteSpace: "nowrap" }} className=" category-container">
-                        {/* <span style={{}}> */}
-                        <Text family="Ubuntu" className="d-flex justify-content-center">
-
-                            {/* to={`/blog/${props.blogData.id}`} */}
-
+                    <Col style={{ overflowX: "auto", whiteSpace: "nowrap", textAlign: "center" }} className="category-container">
+                        {/* <p className="d-flex justify-content-center"> */}
+                        <Text family="Ubuntu" className="">
                             | &nbsp;
                             {category.map((name, index) => {
                                 return <span><Link key={index++} to="/blog">{name}</Link>&nbsp;| &nbsp;</span>;
                             })}
                         </Text>
-                        {/* </span> */}
+                        {/* </p> */}
+
                     </Col>
                     <MdKeyboardArrowRight />
                 </Row>
