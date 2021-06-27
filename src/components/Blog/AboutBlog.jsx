@@ -83,6 +83,7 @@ function AboutBlog() {
                     </Col>
                     <MdKeyboardArrowRight />
                 </Row>
+                <br />
             </Container>
         </>
     )
