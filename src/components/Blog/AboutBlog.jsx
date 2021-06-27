@@ -37,6 +37,7 @@ function AboutBlog() {
     return (
         <>
             <Container fluid style={aboutBlogImgBackgroundStyle}>
+                <br />
                 <Row>
                     <Col>
                         <h1 style={{}} className="d-flex justify-content-center">

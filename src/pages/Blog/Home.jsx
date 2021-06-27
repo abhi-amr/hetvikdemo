@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useRouteMatch,
-  Link,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 import CardSlider from "../../components/Blog/CardSlider";
@@ -42,7 +36,6 @@ function Home() {
     popularCardGet();
   }, []);
 
-  // let { path, url } = useRouteMatch();
 
   return (
     <>
