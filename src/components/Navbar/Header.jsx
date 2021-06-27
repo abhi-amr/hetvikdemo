@@ -10,7 +10,7 @@ class Header extends Component {
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand>
-          {/* <img
+            {/* <img
             src={Logo}
             width="30"
             height="30"
@@ -30,6 +30,11 @@ class Header extends Component {
                 </Link>
               </Nav.Link>
               <Nav.Link>
+                <Link className="nav-link" to="/blog">
+                  Blog
+                </Link>
+              </Nav.Link>
+              <Nav.Link>
                 <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
@@ -39,11 +44,7 @@ class Header extends Component {
                   About
                 </Link>
               </Nav.Link>
-              <Nav.Link>
-                <Link className="nav-link" to="/blog">
-                  Blog
-                </Link>
-              </Nav.Link>
+
               {/* <NavDropdown title="Years" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">2020</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">2019</NavDropdown.Item>
@@ -52,14 +53,14 @@ class Header extends Component {
                     <NavDropdown.Item href="#action/3.4">Course</NavDropdown.Item>
                   </NavDropdown> */}
 
-                </Nav>
-                {/* <Nav>
+            </Nav>
+            {/* <Nav>
                   <Nav.Link><Link className = "btn btn-light" to="/login">Sign In</Link></Nav.Link>
                 </Nav> */}
-              </Navbar.Collapse>
-            </Navbar>
-            
-        </div>
+          </Navbar.Collapse>
+        </Navbar>
+
+      </div>
     );
   }
 }

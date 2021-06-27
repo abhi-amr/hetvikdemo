@@ -23,7 +23,7 @@ function AboutBlog() {
     const [category, setCategory] = useState(["Achievements",
         "Announcements",
         // "Careers",
-        "City",
+        "City News",
         "Education",
         // "Entertainment",
         "Food and Lifestyle",
@@ -73,7 +73,7 @@ function AboutBlog() {
                         <Text family="Ubuntu" className="">
                             | &nbsp;
                             {category.map((name, index) => {
-                                return <span><Link key={index++} to="/blog">{name}</Link>&nbsp;| &nbsp;</span>;
+                                return <span><Link key={index++} to="/blog/category/education">{name}</Link>&nbsp;| &nbsp;</span>;
                             })}
                         </Text>
                         {/* </p> */}

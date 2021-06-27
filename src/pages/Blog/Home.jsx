@@ -21,6 +21,7 @@ function Home() {
         setRecentCard(json);
       });
   };
+
   /*api call for Popular Blogs*/
   const [popularCard, setPopularCard] = useState([]);
   const popularCardGet = () => {
@@ -31,9 +32,22 @@ function Home() {
         setPopularCard(json);
       });
   };
+
+  /*api call for Education Blogs*/
+  const [educationCard, setEducationCard] = useState([]);
+  const educationCardGet = () => {
+    let url = baseUrl + "Blog/GetBlogsByCategory/education";
+    fetch(url)
+      .then((response) => response.json())
+      .then((json) => {
+        setEducationCard(json);
+      });
+  };
+
   useEffect(() => {
     recentCardGet();
     popularCardGet();
+    educationCardGet();
   }, []);
 
 
@@ -52,7 +66,7 @@ function Home() {
       <br />
       <div className="container-fluid">
         <div className="d-flex justify-content-end">
-          <Link to="blog/category/recent">
+          <Link to="blog/recent">
             <strong>See More&gt;&gt;</strong>
           </Link>
         </div>
@@ -63,12 +77,28 @@ function Home() {
       <br />
       <div className="container-fluid">
         <div className="d-flex justify-content-end">
-          <Link to="blog/category/popular">
+          <Link to="blog/popular">
             <strong>See More&gt;&gt;</strong>
           </Link>
         </div>
       </div>
 
+      <Heading content="Education" />
+      <CardSlider cardData={educationCard} />
+      <br />
+      <div className="container-fluid">
+        <div className="d-flex justify-content-end">
+          <Link to="blog/category/education">
+            <strong>See More&gt;&gt;</strong>
+          </Link>
+        </div>
+      </div>
+
+      <br />
+
+      <div className="container-fluid">
+        <span className="d-flex justify-content-end">Contribute to your article.&nbsp;<a target="_blank" href="https://forms.gle/spTrbXYqMtusKf26A">Click here</a>&nbsp;to share.</span>
+      </div>
       <br />
       <br />
       <br />

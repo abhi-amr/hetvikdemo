@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+
 import Header from "./components/Navbar/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import AboutUs from "./pages/About/AboutUs";
 import ContactUs from "./pages/Contact/ContactUs";
 import Team from "./pages/Team/Team";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
 //import PageNotFound from "./components/Errors/PageNotFound";
 import Privacy from "./pages/Privacy/Privacy";
 import TermsAndCondtions from "./pages/TermsAndCondtions/TermsAndCondtions";
@@ -23,6 +24,7 @@ import * as Constants from "./components/Utilities/Constants";
 import BlogHome from "./pages/Blog/Home";
 import ActualBlog from "./pages/Blog/ActualBlog";
 import SeeMore from "./pages/Blog/SeeMore";
+import PopularNRecentSeeMore from "./pages/Blog/PopularNRecentSeeMore";
 //import InitializeReactGA from "./components/InitializeReactGA";
 
 // function usePageViews() {
@@ -70,6 +72,10 @@ function App() {
           <Route path="/terms" exact component={TermsAndCondtions} />
           <Route path="/disclaimer" exact component={DisclaimerPage} />
           <Route path="/blog" exact component={BlogHome} />
+
+          <Route path="/blog/popular" exact render={() => <PopularNRecentSeeMore name="Popular" />} />
+          <Route path="/blog/recent" exact render={() => <PopularNRecentSeeMore name="Recent" />} />
+
           <Route path="/blog/category/:id" exact component={SeeMore} />
           <Route path="/blog/:id" exact component={ActualBlog} />
 

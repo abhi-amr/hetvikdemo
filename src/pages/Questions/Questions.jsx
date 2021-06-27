@@ -22,7 +22,7 @@ const Question = () => {
       <Font family="Roboto">
         <Helmet>
           <title>Questions | Hetvik</title>
-          <meta name="description" content="Find Patna University Previous Year Papers here. Filter your request on basis of Programme, Subject and Year" />
+          <meta name="description" content="Find Patna University Previous Year Papers of Academic and the Entrance Exams. Programmes Like Bsc Maths, Bsc Phys, BA, all are here. Filter your request on basis of Programme, Subject and Year" />
           <link rel="canonical" href="https://hetvik.in/questions" />
         </Helmet>
 
@@ -30,9 +30,9 @@ const Question = () => {
           <Row>
             <Col>
               <Heading content="Patna University Previous Year Papers" />
-              
+
               <span className="d-flex justify-content-end">Didn&apos;t find your paper?&nbsp;<Link to="/contact">Request here</Link></span>
-              <br/>
+              <br />
 
               <div className="accordion " id="accordionExample">
                 <div className="card">
@@ -109,12 +109,15 @@ const Question = () => {
                   </div>
                 </div>
               </div>
+              <br />
+              <span className="d-flex justify-content-end">Contribute to our cause.&nbsp;<a target="_blank" href="https://forms.gle/spTrbXYqMtusKf26A">Click here</a>&nbsp;to share.</span>
+
             </Col>
 
             {/* For Google Adsense */}
             {/* <Col></Col> */}
           </Row>
-          <br/><br/><br/><br/>
+          <br /><br /><br /><br />
         </Container>
       </Font>
     </>
