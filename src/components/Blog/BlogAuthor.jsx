@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Font from "react-font";
-import commonAvatar from "../../images/Avatar/common.png";
+// import commonAvatar from "../../images/Avatar/common.png";
 
 function BlogAuthor(props) {
   return (
@@ -15,7 +15,7 @@ function BlogAuthor(props) {
                 width="50px"
                 align="left"
                 style={{ borderRadius: "50%" }}
-                src={commonAvatar}
+                src={props.author.avatarImageLink}
               />
               {/* "https://image.freepik.com/free-vector/vector-avatar-smiling-man-facial-expression_102172-203.jpg" */}
 

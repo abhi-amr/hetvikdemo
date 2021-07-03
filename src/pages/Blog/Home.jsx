@@ -13,34 +13,40 @@ import baseUrl from "../../components/CommanUrl";
 function Home() {
   /*api call for Recent Blogs*/
   const [recentCard, setRecentCard] = useState([]);
+  const [loadingRecent, setLoadingRecent] = useState(true);
   const recentCardGet = () => {
     let url = baseUrl + "Blog/Recent";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
         setRecentCard(json);
+        setLoadingRecent(false);
       });
   };
 
   /*api call for Popular Blogs*/
   const [popularCard, setPopularCard] = useState([]);
+  const [loadingPopular, setLoadingPopular] = useState(true);
   const popularCardGet = () => {
     let url = baseUrl + "Blog/Popular";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
         setPopularCard(json);
+        setLoadingPopular(false);
       });
   };
 
   /*api call for Education Blogs*/
   const [educationCard, setEducationCard] = useState([]);
+  const [loadingEducation, setLoadingEducation] = useState(true);
   const educationCardGet = () => {
     let url = baseUrl + "Blog/GetBlogsByCategory/education";
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
         setEducationCard(json);
+        setLoadingEducation(false);
       });
   };
 
@@ -61,7 +67,9 @@ function Home() {
 
       <IntroSection />
 
+
       <Heading content="Recent Posts" />
+      {loadingRecent && <div className="d-flex justify-content-center"><span className="spinner-border" role="status" style={{ width: "4rem", height: "4rem" }}></span></div>}
       <CardSlider cardData={recentCard} />
       <br />
       <div className="container-fluid">
@@ -72,7 +80,11 @@ function Home() {
         </div>
       </div>
 
+
+
+
       <Heading content="Popular Posts" />
+      {loadingPopular && <div className="d-flex justify-content-center"><span className="spinner-border" role="status" style={{ width: "4rem", height: "4rem" }}></span></div>}
       <CardSlider cardData={popularCard} />
       <br />
       <div className="container-fluid">
@@ -83,7 +95,11 @@ function Home() {
         </div>
       </div>
 
+
+
+
       <Heading content="Education" />
+      {loadingEducation && <div className="d-flex justify-content-center"><span className="spinner-border" role="status" style={{ width: "4rem", height: "4rem" }}></span></div>}
       <CardSlider cardData={educationCard} />
       <br />
       <div className="container-fluid">
@@ -93,6 +109,9 @@ function Home() {
           </Link>
         </div>
       </div>
+
+
+
 
       <br />
 
