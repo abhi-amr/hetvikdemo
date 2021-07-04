@@ -116,7 +116,7 @@ function Home() {
       <br />
 
       <div className="container-fluid">
-        <span className="d-flex justify-content-end">Contribute to your article.&nbsp;<a target="_blank" href="https://forms.gle/spTrbXYqMtusKf26A">Click here</a>&nbsp;to share.</span>
+        <span className="d-flex justify-content-start">Contribute your article.&nbsp;<a target="_blank" href="https://forms.gle/spTrbXYqMtusKf26A">Click here</a>&nbsp;to know more.</span>
       </div>
       <br />
       <br />

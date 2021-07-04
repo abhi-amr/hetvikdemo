@@ -9,37 +9,39 @@ import { Container } from 'react-bootstrap';
 import "../../components/bootstrap.min.css";
 import Heading from "../../components/Utilities/Heading";
 import JumbotronDiv from "../../components/MyLandingFirstSection/JumbotronDiv";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 class Home extends Component {
     render() {
-        return(
+        return (
             <div className="home">
                 <Helmet>
                     <title>Patna University Previous Year Papers | Hetvik</title>
                     <meta name="description" content="Hetvik is a platform build for the students by the students. We are providing Patna University Entrance and Academic previous year question papers to assist the student in their curriculars." />
-                    
+
                     <link rel="canonical" href="https://hetvik.in/" />
-                    
+
                 </Helmet>
 
                 <JumbotronDiv />
                 {/* <MyOneCarousel /> */}
 
                 <Container>
-                <Heading content="Quick Links" />
-                <Qpaper />
-                
-                <Heading content="What We Offer" />
-                <WhatWeOffer />
-                
-                <Heading content="Our Core Team" />
-                <CoreTeam/>
-                </Container>
+                    <Heading content="Quick Links" />
+                    <Qpaper />
 
+                    <Heading content="What We Offer" />
+                    <WhatWeOffer />
+
+                    <Heading content="Our Core Team" />
+                    <CoreTeam />
+                </Container>
+                <div className="fixed-bottom d-flex justify-content-end">
+                    <a className="btn btn-info" target='_blank' href='https://forms.gle/spTrbXYqMtusKf26A' style={{ fontSize: "0.8em" }}>Contribute</a>
+                </div>
                 <br /> <br /> <br />
             </div>
-            )
+        )
     }
 }
 

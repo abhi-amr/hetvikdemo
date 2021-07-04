@@ -110,7 +110,7 @@ const Question = () => {
                 </div>
               </div>
               <br />
-              <span className="d-flex justify-content-end">Contribute to our cause.&nbsp;<a target="_blank" href="https://forms.gle/spTrbXYqMtusKf26A">Click here</a>&nbsp;to share.</span>
+              <span className="d-flex justify-content-end">Contribute Question Paper.&nbsp;<a target="_blank" href="https://forms.gle/spTrbXYqMtusKf26A">Click here</a>&nbsp;to know more.</span>
 
             </Col>
 
