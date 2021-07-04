@@ -7,7 +7,9 @@
   height: 400px;
   background-position: center;
   background-size: cover;
-  background-image: url(../../images/Blog/kumtanom.jpg);
+  /* background-image: url(../../images/Blog/kumtanom.jpg); */
+  background-image: url(https://hetvikstorageaccount.blob.core.windows.net/images/Blog/introBlog.jpg);
+  
 }
 
 .overlap-div {
