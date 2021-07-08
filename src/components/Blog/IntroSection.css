@@ -1,18 +1,20 @@
 .blog-intro-section {
   position: relative;
-  height: 500px;
+  height: 88vh;
 }
 
 .blog-intro-img {
   height: 400px;
   background-position: center;
   background-size: cover;
-  background-image: url(../../images/Blog/kumtanom.jpg);
+  /* background-image: url(../../images/Blog/kumtanom.jpg); */
+  background-image: url(https://hetvikstorageaccount.blob.core.windows.net/images/Blog/introBlog.jpg);
+  
 }
 
 .overlap-div {
   position: absolute;
-  top: 300px;
+  top: 40vh;
   left: 30px;
   right: 30px;
 

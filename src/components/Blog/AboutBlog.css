@@ -1,0 +1,3 @@
+.category-container::-webkit-scrollbar {
+    display: none;
+}
