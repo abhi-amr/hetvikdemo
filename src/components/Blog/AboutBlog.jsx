@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Table } from 'react-bootstrap';
 import { Text } from 'react-font';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 import AboutBlogImgBackground from '../../images/Blog/blogIntro.png';
+import endpoint from '../axios';
 import './AboutBlog.css';
 
 
@@ -16,7 +17,7 @@ const aboutBlogImgBackgroundStyle = {
     width: '100%',
     borderRadius: "6px",
 }
-
+//Blog/GetCategoryList
 
 
 function AboutBlog() {
@@ -33,6 +34,16 @@ function AboutBlog() {
         "Random Noise",
         "Sports",
         "University"]);
+
+    const getCategoryList = async () => {
+        let response = await endpoint.get("Blog/GetCategoryList");
+        const info = response.data;
+        setCategory(info);
+    }
+
+    useEffect(() => {
+        getCategoryList();
+    }, []);
 
     return (
         <>
@@ -73,7 +84,7 @@ function AboutBlog() {
                         <Text family="Ubuntu" className="">
                             | &nbsp;
                             {category.map((name, index) => {
-                                return <span><Link key={index++} to="/blog/category/education">{name}</Link>&nbsp;| &nbsp;</span>;
+                                return <span><Link key={index++} to={"/blog/category/" + name}>{name}</Link>&nbsp;| &nbsp;</span>;
                             })}
                         </Text>
                         {/* </p> */}
