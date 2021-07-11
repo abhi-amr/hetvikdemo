@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Table } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Text } from 'react-font';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 import AboutBlogImgBackground from '../../images/Blog/blogIntro.png';
-import endpoint from '../axios';
+//import endpoint from '../axios';
 import './AboutBlog.css';
 
 
@@ -22,28 +22,30 @@ const aboutBlogImgBackgroundStyle = {
 
 function AboutBlog() {
     const [category, setCategory] = useState(["Achievements",
-        "Announcements",
+        //"Announcements",
         // "Careers",
-        "City News",
+        "City",
         "Education",
         // "Entertainment",
-        "Food and Lifestyle",
+        //"Food and Lifestyle",
         // "Fiction",
-        "How to",
+        //"How to",
         // "News And Notices",
         "Random Noise",
-        "Sports",
-        "University"]);
+        //"Sports",
+        //"University"
+    ]);
 
-    const getCategoryList = async () => {
-        let response = await endpoint.get("Blog/GetCategoryList");
-        const info = response.data;
-        setCategory(info);
-    }
+    //uncomment if every category has a blog
+    // const getCategoryList = async () => {
+    //     let response = await endpoint.get("Blog/GetCategoryList");
+    //     const info = response.data;
+    //     setCategory(info);
+    // }
 
-    useEffect(() => {
-        getCategoryList();
-    }, []);
+    // useEffect(() => {
+    //     getCategoryList();
+    // }, []);
 
     return (
         <>
