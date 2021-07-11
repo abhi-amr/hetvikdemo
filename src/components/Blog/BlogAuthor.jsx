@@ -4,6 +4,12 @@ import Font from "react-font";
 // import commonAvatar from "../../images/Avatar/common.png";
 
 function BlogAuthor(props) {
+  let [day, month, year] = props.date.split("-");
+  let dateString = new Date(year, month - 1, day).toLocaleString("en-us", {
+    month: "long",
+    year: "numeric",
+    day: "numeric",
+  });
   return (
     <>
       <Font family="Nunito">
@@ -23,7 +29,7 @@ function BlogAuthor(props) {
                 &nbsp;{props.author.firstName + " " + props.author.lastName}
               </span>
               <br />
-              <span className="text-muted">&nbsp;Edited {props.date}</span>
+              <span className="text-muted">&nbsp;Edited {dateString}</span>
             </Col>
           </Row>
         </Container>
