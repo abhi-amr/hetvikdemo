@@ -7,6 +7,7 @@ import CardSlider from "../../components/Blog/CardSlider";
 import IntroSection from "../../components/Blog/IntroSection";
 import Heading from "../../components/Utilities/Heading";
 import baseUrl from "../../components/CommanUrl";
+import endpoint from "../../components/axios";
 
 
 
@@ -14,14 +15,18 @@ function Home() {
   /*api call for Recent Blogs*/
   const [recentCard, setRecentCard] = useState([]);
   const [loadingRecent, setLoadingRecent] = useState(true);
-  const recentCardGet = () => {
-    let url = baseUrl + "Blog/Recent";
-    fetch(url)
-      .then((response) => response.json())
-      .then((json) => {
-        setRecentCard(json);
-        setLoadingRecent(false);
-      });
+  const recentCardGet = async () => {
+    let response = await endpoint.get("Blog/Recent");
+    const info = response.data;
+    setRecentCard(info);
+    setLoadingRecent(false);
+    // let url = baseUrl + "Blog/Recent";
+    // fetch(url)
+    //   .then((response) => response.json())
+    //   .then((json) => {
+    //     setRecentCard(json);
+    //     setLoadingRecent(false);
+    //   });
   };
 
   /*api call for Popular Blogs*/
@@ -50,10 +55,21 @@ function Home() {
       });
   };
 
+  /*api call for Achievements Blogs*/
+  const [achievementCard, setAchievementCard] = useState([]);
+  const [loadingAchievement, setLoadingAchievement] = useState(true);
+  const achievementCardGet = async () => {
+    let response = await endpoint.get("Blog/GetBlogsByCategory/achievements");
+    const info = response.data;
+    setAchievementCard(info);
+    setLoadingAchievement(false);
+  };
+
   useEffect(() => {
     recentCardGet();
     popularCardGet();
     educationCardGet();
+    achievementCardGet();
   }, []);
 
 
@@ -105,6 +121,21 @@ function Home() {
       <div className="container-fluid">
         <div className="d-flex justify-content-end">
           <Link to="blog/category/education">
+            <strong>See More&gt;&gt;</strong>
+          </Link>
+        </div>
+      </div>
+
+
+
+
+      <Heading content="Pride of Bihar" />
+      {loadingAchievement && <div className="d-flex justify-content-center"><span className="spinner-border" role="status" style={{ width: "4rem", height: "4rem" }}></span></div>}
+      <CardSlider cardData={achievementCard} />
+      <br />
+      <div className="container-fluid">
+        <div className="d-flex justify-content-end">
+          <Link to="blog/category/achievements">
             <strong>See More&gt;&gt;</strong>
           </Link>
         </div>
