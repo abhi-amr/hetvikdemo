@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Table } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Text } from 'react-font';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 import AboutBlogImgBackground from '../../images/Blog/blogIntro.png';
+//import endpoint from '../axios';
 import './AboutBlog.css';
+import CategorySlider from "../../components/Blog/CategorySlider";
 
 
 const aboutBlogImgBackgroundStyle = {
@@ -16,23 +18,35 @@ const aboutBlogImgBackgroundStyle = {
     width: '100%',
     borderRadius: "6px",
 }
-
+//Blog/GetCategoryList
 
 
 function AboutBlog() {
     const [category, setCategory] = useState(["Achievements",
-        "Announcements",
+        //"Announcements",
         // "Careers",
-        "City News",
+        "City",
         "Education",
         // "Entertainment",
-        "Food and Lifestyle",
+        //"Food and Lifestyle",
         // "Fiction",
-        "How to",
+        //"How to",
         // "News And Notices",
         "Random Noise",
-        "Sports",
-        "University"]);
+        //"Sports",
+        //"University"
+    ]);
+
+    //uncomment if every category has a blog
+    // const getCategoryList = async () => {
+    //     let response = await endpoint.get("Blog/GetCategoryList");
+    //     const info = response.data;
+    //     setCategory(info);
+    // }
+
+    // useEffect(() => {
+    //     getCategoryList();
+    // }, []);
 
     return (
         <>
@@ -68,18 +82,21 @@ function AboutBlog() {
                 </Row>
                 <Row >
                     <MdKeyboardArrowLeft />
-                    <Col style={{ overflowX: "auto", whiteSpace: "nowrap", textAlign: "center" }} className="category-container">
+                    <Col style={{ overflowX: "scroll", whiteSpace: "nowrap", textAlign: "center" }} className="category-container">
                         {/* <p className="d-flex justify-content-center"> */}
                         <Text family="Ubuntu" className="">
                             | &nbsp;
                             {category.map((name, index) => {
-                                return <span><Link key={index++} to="/blog/category/education">{name}</Link>&nbsp;| &nbsp;</span>;
+                                return <span><Link key={index++} to={"/blog/category/" + name}>{name}</Link>&nbsp;| &nbsp;</span>;
                             })}
                         </Text>
                         {/* </p> */}
 
                     </Col>
                     <MdKeyboardArrowRight />
+                </Row>
+                <Row>
+                    <CategorySlider />
                 </Row>
                 <br />
             </Container>

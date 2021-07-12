@@ -1,8 +1,10 @@
 import React from "react";
-import BlogCard from "./BlogCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Link } from "react-router-dom";
+
+import BlogCard from "./BlogCard";
+
+
 
 const CardSlider = (props) => {
   // let firstBlog = props.cardData[0];
