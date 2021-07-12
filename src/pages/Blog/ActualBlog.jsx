@@ -33,6 +33,8 @@ export default function ActualBlog({ match }) {
     title: "",
   });
 
+  const [loading, setLoading] = useState(true);
+
 
   const history = useHistory();
 
@@ -51,7 +53,10 @@ export default function ActualBlog({ match }) {
           history.push("/blog");
           // window.location.href = "/blog";
           // return <Redirect to="/blog" />;
-        } else setBlogData(json);
+        } else {
+          setBlogData(json);
+          setLoading(false);
+        }
       });
   };
   useEffect(() => {
@@ -82,7 +87,8 @@ export default function ActualBlog({ match }) {
           href={"https://hetvik.in/blog/" + match.params.id}
         />
       </Helmet>
-
+      {/* spinner-grow and spinner-border */}
+      {loading && <div className="d-flex justify-content-center"><br /><br /><span className="spinner-grow" role="status" style={{ width: "7rem", height: "7rem" }}></span></div>}
       <Container>
         <Row>
           <Col>
@@ -103,17 +109,18 @@ export default function ActualBlog({ match }) {
               }}
             /> */}
             <br />
-            <BlogAuthor author={blogData.author} date={blogData.date} />
+            {!loading && <BlogAuthor author={blogData.author} date={blogData.date} />}
+
             <br />
             {blogData.paragraph.map((data) => {
               return <Paragraph content={data} />;
             })}
-            <span>
+            {!loading && <span>
               Tagged with
               {blogData.tags.map((data) => {
                 return <Tag tag={data} />;
               })}
-            </span>
+            </span>}
           </Col>
         </Row>
       </Container>
