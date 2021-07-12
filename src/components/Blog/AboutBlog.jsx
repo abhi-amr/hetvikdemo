@@ -82,7 +82,7 @@ function AboutBlog() {
                 </Row>
                 <Row >
                     <MdKeyboardArrowLeft />
-                    <Col style={{ overflowX: "auto", whiteSpace: "nowrap", textAlign: "center" }} className="category-container">
+                    <Col style={{ overflowX: "scroll", whiteSpace: "nowrap", textAlign: "center" }} className="category-container">
                         {/* <p className="d-flex justify-content-center"> */}
                         <Text family="Ubuntu" className="">
                             | &nbsp;

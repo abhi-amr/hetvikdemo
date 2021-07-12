@@ -24,26 +24,48 @@ function CategorySlider(props) {
         //"University"
     ]);
 
+    const responsive = {
+        superLargeDesktop: {
+            breakpoint: { max: 4000, min: 3000 },
+            items: 4
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4,
+            // slidesToSlide: 4,
+            // partialVisibilityGutter: 40, // this is needed to tell the amount of px that should be visible.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 4,
+            // slidesToSlide: 2,
+            // partialVisibilityGutter: 30, // this is needed to tell the amount of px that should be visible.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 3,
+            // slidesToSlide: 1,
+            // partialVisibilityGutter: 30, // this is needed to tell the amount of px that should be visible.
+        },
+    };
+
 
 
     return (
         <>
-            <div id="container">
-                <div id="modules">
-                    <Text family="Ubuntu" className="module">
-                        | &nbsp;
-                        {category.map((name, index) => {
-                            return <span><Link key={index++} to={"/blog/category/" + name}>{name}</Link>&nbsp;| &nbsp;</span>;
-                        })}
-                    </Text>
-                </div>
-            </div>
-            {/* <div class="code-holder" style={{ width: "100%", overflowX: "scroll", height: "auto", textAlign: "center" }}>
-                <code style={{ whiteSpace: "nowrap" }}>
-                    ar text = 'This is a bit of longer text that ends up wrapping around and
-                    messing up the rest of the formatting.';
-                </code>
-            </div> */}
+            {/* <Carousel partialVisible={true} responsive={responsive}>
+
+                {category.map((name, index) => {
+                    return <div><Link key={index++} to={"/blog/category/" + name}>{name}</Link>&nbsp;| &nbsp;</div>;
+                })}
+            </Carousel> */}
+
+            <Carousel responsive={responsive}>
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+            </Carousel>
 
         </>
     )
