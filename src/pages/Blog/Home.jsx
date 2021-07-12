@@ -83,6 +83,7 @@ function Home() {
       </Helmet>
 
       <IntroSection />
+      <br /><br /><br /><br />
 
 
       <Heading content="Recent Posts" />
