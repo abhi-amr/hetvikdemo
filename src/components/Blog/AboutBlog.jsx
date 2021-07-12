@@ -7,6 +7,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import AboutBlogImgBackground from '../../images/Blog/blogIntro.png';
 //import endpoint from '../axios';
 import './AboutBlog.css';
+import CategorySlider from "../../components/Blog/CategorySlider";
 
 
 const aboutBlogImgBackgroundStyle = {
@@ -93,6 +94,9 @@ function AboutBlog() {
 
                     </Col>
                     <MdKeyboardArrowRight />
+                </Row>
+                <Row>
+                    <CategorySlider />
                 </Row>
                 <br />
             </Container>

@@ -11,6 +11,7 @@ import endpoint from "../../components/axios";
 
 
 
+
 function Home() {
   /*api call for Recent Blogs*/
   const [recentCard, setRecentCard] = useState([]);
